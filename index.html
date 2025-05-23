@@ -5,45 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Koushik Subraveti - Data Scientist Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header class="hero-section">
-        <div class="container">
-            <div class="hero-content">
-                <div class="profile-picture">
-                    <img src="https://github.com/koushikace/koushikace.github.io/blob/main/images/images/git%20pic.jpg?raw=true" alt="Koushik Subraveti's Profile Picture">
-                </div>
-                <h1>KOUSIK SUBRAVETI</h1>
-                <p class="tagline">Data Scientist | Machine Learning | ETL & Big Data Processing</p>
-                <div class="contact-info">
-                    <p><i class="fas fa-envelope"></i> kousiksubraveti@gmail.com</p>
-                    <p><i class="fas fa-phone-alt"></i> +44 7570 301781</p>
-                    <p><i class="fas fa-map-marker-alt"></i> London, UK</p>
-                </div>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/kousik-s-a22459b2" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                    <a href="https://github.com/koushikace" target="_blank" aria-label="GitHub Profile"><i class="fab fa-github"></i> GitHub</a>
-                    </div>
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+
+    <nav id="navbar" class="">
+        <div class="container nav-container">
+            <a href="#hero" class="site-logo">KOUSIK SUBRAVETI</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <header id="hero" class="hero-section">
+        <div class="container hero-content">
+            <div class="profile-picture">
+                <img src="https://github.com/koushikace/koushikace.github.io/blob/main/images/images/git%20pic.jpg?raw=true" alt="Koushik Subraveti's Profile Picture">
             </div>
+            <h1>KOUSIK SUBRAVETI</h1>
+            <p class="tagline">Data Scientist | Machine Learning | ETL & Big Data Processing</p>
+            <div class="hero-social-links">
+                <a href="https://www.linkedin.com/in/kousik-s-a22459b2" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/koushikace" target="_blank" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
+                </div>
+            <a href="#projects" class="btn btn-primary hero-btn">Explore My Work <i class="fas fa-arrow-down"></i></a>
         </div>
     </header>
 
     <main>
         <section id="about" class="section-padding">
             <div class="container">
-                <h2>About Me</h2>
-                <div class="section-content">
+                <h2 class="section-title">About Me</h2>
+                <div class="section-content about-content">
                     <p>
-                        Data Scientist with nearly four years of experience in data analytics, machine learning, and process automation across
-                        various domains, including fraud detection and customer segmentation. My expertise lies in leveraging Python, SQL, and data visualization tools like Tableau
-                        to drive data-informed decisions and improve operational efficiency. I thrive in collaborative environments where I can solve complex problems, build
-                        scalable data solutions, and contribute to business growth.
+                        A passionate Data Scientist with nearly four years of experience in data analytics, machine learning, and process automation across
+                        diverse domains, including fraud detection and customer segmentation. My expertise lies in leveraging Python, SQL, and robust data visualization tools like Tableau
+                        to drive data-informed decisions and significantly improve operational efficiency.
                     </p>
                     <p>
-                        Over the next five years, I aim to lead a data science team, delivering impactful AI solutions,
-                        and progress into a leadership role where I can shape data-driven transformations at an enterprise level.
+                        I thrive in collaborative environments where I can tackle complex problems, architect scalable data solutions, and directly contribute to business growth. Over the next five years, my aspiration is to lead a high-performing data science team, delivering impactful AI solutions,
+                        and progressing into a strategic leadership role where I can shape enterprise-level data-driven transformations.
                     </p>
                 </div>
             </div>
@@ -51,148 +65,147 @@
 
         <section id="skills" class="section-padding bg-light">
             <div class="container">
-                <h2>Skills</h2>
+                <h2 class="section-title">My Toolkit</h2>
                 <div class="section-content skills-grid">
                     <div class="skill-category">
-                        <h3>Machine Learning & Predictive Modeling</h3>
-                        <ul>
-                            <li><i class="fas fa-brain"></i> XGBoost, Random Forest, Logistic Regression</li>
-                            <li><i class="fas fa-robot"></i> Deep Learning Frameworks (PyTorch, TensorFlow Keras API)</li>
-                            <li><i class="fas fa-calendar-alt"></i> Time Series, Predictive Analytics</li>
-                        </ul>
+                        <h3><i class="fas fa-chart-line"></i> Machine Learning & Predictive Modeling</h3>
+                        <div class="skill-tags">
+                            <span>XGBoost</span><span>Random Forest</span><span>Logistic Regression</span><span>Deep Learning (PyTorch, TensorFlow)</span><span>LSTM</span><span>Time Series</span><span>Predictive Analytics</span>
+                        </div>
                     </div>
                     <div class="skill-category">
-                        <h3>Data Analytics & Visualization</h3>
-                        <ul>
-                            <li><i class="fas fa-chart-bar"></i> Tableau, Power BI, Excel, Spotfire</li>
-                            <li><i class="fas fa-chart-pie"></i> Interactive Dashboards</li>
-                            <li><i class="fas fa-search"></i> Exploratory Data Analysis (EDA)</li>
-                        </ul>
+                        <h3><i class="fas fa-chart-area"></i> Data Analytics & Visualization</h3>
+                        <div class="skill-tags">
+                            <span>Tableau</span><span>Power BI</span><span>Excel</span><span>Spotfire</span><span>Interactive Dashboards</span><span>EDA</span>
+                        </div>
                     </div>
                     <div class="skill-category">
-                        <h3>ETL & Big Data Processing</h3>
-                        <ul>
-                            <li><i class="fas fa-database"></i> SQL, PostgreSQL</li>
-                            <li><i class="fas fa-cogs"></i> PySpark, Databricks</li>
-                            <li><i class="fas fa-cloud"></i> Azure Cloud Platform</li>
-                        </ul>
+                        <h3><i class="fas fa-database"></i> ETL & Big Data Processing</h3>
+                        <div class="skill-tags">
+                            <span>SQL</span><span>PostgreSQL</span><span>PySpark</span><span>Databricks</span><span>Apache Spark</span>
+                        </div>
                     </div>
                     <div class="skill-category">
-                        <h3>Cloud & Automation</h3>
-                        <ul>
-                            <li><i class="fab fa-aws"></i> AWS Cloud Watch, AWS Lambda</li>
-                            <li><i class="fas fa-sync-alt"></i> Workflow Automation, CI/CD (Jenkins)</li>
-                        </ul>
+                        <h3><i class="fas fa-cloud"></i> Cloud & Automation</h3>
+                        <div class="skill-tags">
+                            <span>Azure</span><span>AWS Cloud Watch</span><span>AWS Lambda</span><span>Workflow Automation</span><span>CI/CD (Jenkins)</span>
+                        </div>
                     </div>
                     <div class="skill-category">
-                        <h3>NLP & Text Mining</h3>
-                        <ul>
-                            <li><i class="fas fa-language"></i> Natural Language Processing (NLTK)</li>
-                            <li><i class="fas fa-comment-dots"></i> Sentiment Analysis</li>
-                        </ul>
+                        <h3><i class="fas fa-language"></i> NLP & Text Mining</h3>
+                        <div class="skill-tags">
+                            <span>Natural Language Processing</span><span>NLTK</span><span>Sentiment Analysis</span>
+                        </div>
                     </div>
                     <div class="skill-category">
-                        <h3>Programming & Methodologies</h3>
-                        <ul>
-                            <li><i class="fab fa-python"></i> Python (NumPy, Pandas, Scikit-learn, Matplotlib, Seaborn)</li>
-                            <li><i class="fas fa-code"></i> Java, .Net, JavaScript, C++ (Knowledge)</li>
-                            <li><i class="fas fa-project-diagram"></i> SDLC, Agile, Waterfall</li>
-                        </ul>
+                        <h3><i class="fas fa-code"></i> Programming & Methodologies</h3>
+                        <div class="skill-tags">
+                            <span>Python (NumPy, Pandas, Scikit-learn)</span><span>R</span><span>Java</span><span>.Net</span><span>JavaScript</span><span>C++</span><span>SDLC</span><span>Agile</span><span>Waterfall</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="experience" class="section-padding">
+        <section id="projects" class="section-padding">
             <div class="container">
-                <h2>Professional Experience</h2>
-                <div class="section-content">
-                    <div class="experience-item">
-                        <h3>Data Scientist, FICUS TEXAS TECHNOLOGY</h3>
-                        <p class="company-info">August 2022 – Present</p>
-                        <ul>
-                            <li>Designed and deployed an AI/ML data pipeline for continuous monitoring and performance evaluation of deployed models.</li>
-                            <li>Developed and fine-tuned machine learning models using LSTM for time series prediction and Convolutional Neural Networks (CNNs) for classification.</li>
-                            <li>Executed extensive exploratory data analysis (EDA) using Python (NumPy, Pandas, Matplotlib, Seaborn) to uncover insights.</li>
-                            <li>Implemented NLP models for sentiment analysis leveraging NLTK and integrated open-source AI frameworks (PyTorch, TensorFlow, Scikit-learn).</li>
-                            <li>Automated backend application support with Python, Shell scripts, and Perl; managed data flow from PostgreSQL databases.</li>
-                        </ul>
-                    </div>
-                    <div class="experience-item">
-                        <h3>Data Analyst, FICUS TEXAS TECHNOLOGY</h3>
-                        <p class="company-info">April 2021 – August 2022</p>
-                        <ul>
-                            <li>Improved model accuracy by 20% by developing ML models for predictive analytics, customer segmentation, and fraud detection on Azure.</li>
-                            <li>Reduced data processing time by 40% and improved efficiency through optimized ETL pipelines and big data solutions with SQL, Apache Spark, and Databricks.</li>
-                            <li>Built interactive dashboards and visualizations using Tableau, Power BI, and Spotfire, enhancing real-time insights and decision-making speed by 30%.</li>
-                            <li>Led end-to-end data science initiatives, including data mining, statistical analysis, and NLP applications, boosting customer retention by 15%.</li>
-                            <li>Automated data workflows and reporting processes, cutting manual effort by 50% and ensuring seamless data integration across systems.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="section-padding bg-light">
-            <div class="container">
-                <h2>Featured Projects</h2>
+                <h2 class="section-title">Featured Projects</h2>
                 <div class="section-content projects-grid">
 
                     <div class="project-item">
+                        <div class="project-icon"><i class="fas fa-shield-alt"></i></div>
                         <h3>Online Payment Fraud Detection</h3>
-                        <p>This project aims to build and evaluate machine learning models for detecting fraudulent transactions in an online payment dataset. It covers data analysis, preprocessing, and machine learning model training pipeline to predict fraudulent transactions using Python, SQL, and various ML algorithms like Logistic Regression, XGBoost, and Random Forest. Git LFS is used for the large dataset.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/koushikace/Online-Payment-Fraud-Detection" target="_blank" class="btn-project">View on GitHub <i class="fas fa-external-link-alt"></i></a>
-                        </div>
+                        <p>Built and evaluated ML models to detect fraudulent online transactions. Covered data analysis, preprocessing, and model training using Logistic Regression, XGBoost, and Random Forest on a large dataset with Git LFS.</p>
+                        <a href="https://github.com/koushikace/Online-Payment-Fraud-Detection" target="_blank" class="btn btn-secondary">View Project <i class="fas fa-arrow-right"></i></a>
                     </div>
 
                     <div class="project-item">
-                        <h3>Performance Analysis of NLP Techniques on Laptop Reviews</h3>
-                        <p>This project performs sentiment analysis on Amazon laptop reviews, classifying them as positive or negative/neutral. It details comprehensive NLP techniques including text cleaning, stop word removal, lemmatization, TF-IDF feature extraction, and handling class imbalance with SMOTE. The Decision Tree Classifier achieved 80.43% accuracy on the validation set.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/koushikace/Performance-analysis-of-NLP-tecniques-on-laptop-reviews" target="_blank" class="btn-project">View on GitHub <i class="fas fa-external-link-alt"></i></a>
-                        </div>
+                        <div class="project-icon"><i class="fas fa-laptop-code"></i></div>
+                        <h3>NLP Analysis on Laptop Reviews</h3>
+                        <p>Performed sentiment analysis on Amazon laptop reviews (positive/negative/neutral). Implemented comprehensive NLP techniques like text cleaning, TF-IDF, and SMOTE for class imbalance. Achieved 80.43% accuracy with Decision Tree Classifier.</p>
+                        <a href="https://github.com/koushikace/Performance-analysis-of-NLP-tecniques-on-laptop-reviews" target="_blank" class="btn btn-secondary">View Project <i class="fas fa-arrow-right"></i></a>
                     </div>
 
                     <div class="project-item">
+                        <div class="project-icon"><i class="fab fa-twitter"></i></div>
                         <h3>Twitter Sentiment Analysis</h3>
-                        <p>This project focuses on classifying tweet sentiments (positive, negative, or neutral) using Twitter data. It includes data preprocessing, exploratory data analysis, text cleaning (punctuation, lowercasing, stop words, stemming/lemmatization), and building machine learning models like Logistic Regression and Naive Bayes for classification.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/koushikace/Twitter-Sentiment-Analysis" target="_blank" class="btn-project">View on GitHub <i class="fas fa-external-link-alt"></i></a>
-                        </div>
+                        <p>Classified tweet sentiments (positive, negative, neutral) through data preprocessing, EDA, and text cleaning. Built machine learning models (Logistic Regression, Naive Bayes) for robust classification of social media data.</p>
+                        <a href="https://github.com/koushikace/Twitter-Sentiment-Analysis" target="_blank" class="btn btn-secondary">View Project <i class="fas fa-arrow-right"></i></a>
                     </div>
 
                     <div class="project-item">
+                        <div class="project-icon"><i class="fas fa-credit-card"></i></div>
                         <h3>Default of Credit Card Clients Prediction</h3>
-                        <p>This project involves building models to predict whether a credit card client will default on their payment. The dataset includes demographic, financial, and payment status information, enabling the creation of binary classification, multi-class classification, regression, clustering, or association rule mining models using various machine learning algorithms.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/koushikace/Default-of-Credit-Card-Clients" target="_blank" class="btn-project">View on GitHub <i class="fas fa-external-link-alt"></i></a>
-                        </div>
+                        <p>Developed predictive models to forecast credit card payment defaults using demographic, financial, and payment status data. Explored various ML approaches including binary/multi-class classification and regression models.</p>
+                        <a href="https://github.com/koushikace/Default-of-Credit-Card-Clients" target="_blank" class="btn btn-secondary">View Project <i class="fas fa-arrow-right"></i></a>
                     </div>
 
                 </div>
-                <div class="section-content text-center" style="margin-top: 50px;">
-                    <a href="https://github.com/koushikace?tab=repositories" target="_blank" class="btn-project btn-large">See More Projects on GitHub <i class="fas fa-arrow-right"></i></a>
+                <div class="text-center" style="margin-top: 60px;">
+                    <a href="https://github.com/koushikace?tab=repositories" target="_blank" class="btn btn-primary btn-large">See All My Projects <i class="fas fa-code-branch"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="section-padding bg-light">
+            <div class="container">
+                <h2 class="section-title">Professional Journey</h2>
+                <div class="section-content timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>Data Scientist, FICUS TEXAS TECHNOLOGY</h3>
+                            <p class="company-info">August 2022 – Present</p>
+                            <ul>
+                                <li>Designed and deployed an AI/ML data pipeline for continuous monitoring and performance evaluation of deployed models.</li>
+                                <li>Developed and fine-tuned machine learning models using LSTM for time series prediction and Convolutional Neural Networks (CNNs) for classification.</li>
+                                <li>Executed extensive exploratory data analysis (EDA) using Python (NumPy, Pandas, Matplotlib, Seaborn) to uncover insights.</li>
+                                <li>Implemented NLP models for sentiment analysis leveraging NLTK and integrated open-source AI frameworks (PyTorch, TensorFlow, Scikit-learn).</li>
+                                <li>Automated backend application support with Python, Shell scripts, and Perl; managed data flow from PostgreSQL databases.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>Data Analyst, FICUS TEXAS TECHNOLOGY</h3>
+                            <p class="company-info">April 2021 – August 2022</p>
+                            <ul>
+                                <li>Improved model accuracy by 20% by developing ML models for predictive analytics, customer segmentation, and fraud detection on Azure.</li>
+                                <li>Reduced data processing time by 40% and improved efficiency through optimized ETL pipelines and big data solutions with SQL, Apache Spark, and Databricks.</li>
+                                <li>Built interactive dashboards and visualizations using Tableau, Power BI, and Spotfire, enhancing real-time insights and decision-making speed by 30%.</li>
+                                <li>Led end-to-end data science initiatives, including data mining, statistical analysis, and NLP applications, boosting customer retention by 15%.</li>
+                                <li>Automated data workflows and reporting processes, cutting manual effort by 50% and ensuring seamless data integration across systems.</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="education" class="section-padding">
             <div class="container">
-                <h2>Education</h2>
-                <div class="section-content">
-                    <div class="experience-item">
+                <h2 class="section-title">Education & Qualifications</h2>
+                <div class="section-content education-grid">
+                    <div class="education-item card">
                         <h3>MSc in Data Science and Analytics with Advanced Research</h3>
-                        <p class="company-info">University of Hertfordshire | 2022 – 2024</p>
-                        <ul>
-                            <li>Modules: Data Mining, Neural Networks and Machine Learning, Applied Data Science and Analytics</li>
+                        <p class="institution">University of Hertfordshire</p>
+                        <p class="years">2022 – 2024</p>
+                        <p class="modules-title">Key Modules:</p>
+                        <ul class="modules-list">
+                            <li>Data Mining</li>
+                            <li>Neural Networks and Machine Learning</li>
+                            <li>Applied Data Science and Analytics</li>
                         </ul>
                     </div>
-                    <div class="experience-item">
+                    <div class="education-item card">
                         <h3>Bachelor’s BE in Electronics and Communications Engineering</h3>
-                        <p class="company-info">JNTU | 2015 – 2019</p>
-                        <ul>
-                            <li>Modules: Digital Signal Processing, Signals and Systems</li>
+                        <p class="institution">JNTU</p>
+                        <p class="years">2015 – 2019</p>
+                        <p class="modules-title">Key Modules:</p>
+                        <ul class="modules-list">
+                            <li>Digital Signal Processing</li>
+                            <li>Signals and Systems</li>
                         </ul>
                     </div>
                 </div>
@@ -201,25 +214,87 @@
 
         <section id="certifications" class="section-padding bg-light">
             <div class="container">
-                <h2>Certifications & Continuous Learning</h2>
-                <div class="section-content">
-                    <ul class="certifications-list">
-                        <li><i class="fas fa-award"></i> Microsoft Certified: Azure AI Fundamentals</li>
-                        <li><i class="fas fa-award"></i> Oracle Autonomous Database Specialist</li>
-                        <li><i class="fas fa-award"></i> Alteryx Machine Learning Fundamentals</li>
-                        <li><i class="fas fa-award"></i> Data Science Virtual Program (British Airways)</li>
-                        <li><i class="fas fa-award"></i> J.P Morgan Excel Skills Virtual Program</li>
-                    </ul>
+                <h2 class="section-title">Certifications & Continuous Learning</h2>
+                <div class="section-content certifications-list">
+                    <div class="cert-item card">
+                        <i class="fas fa-award"></i>
+                        <p>Microsoft Certified: Azure AI Fundamentals</p>
+                    </div>
+                    <div class="cert-item card">
+                        <i class="fas fa-award"></i>
+                        <p>Oracle Autonomous Database Specialist</p>
+                    </div>
+                    <div class="cert-item card">
+                        <i class="fas fa-award"></i>
+                        <p>Alteryx Machine Learning Fundamentals</p>
+                    </div>
+                    <div class="cert-item card">
+                        <i class="fas fa-award"></i>
+                        <p>Data Science Virtual Program (British Airways)</p>
+                    </div>
+                    <div class="cert-item card">
+                        <i class="fas fa-award"></i>
+                        <p>J.P Morgan Excel Skills Virtual Program</p>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="footer-section">
+    <footer id="contact" class="footer-section">
         <div class="container">
-            <p>&copy; 2024 Koushik Subraveti. All rights reserved.</p>
-            <p>Designed with <i class="fas fa-heart" style="color: #e74c3c;"></i> by Gemini</p>
+            <h3>Let's Connect!</h3>
+            <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+            <div class="footer-contact-info">
+                <p><i class="fas fa-envelope"></i> kousiksubraveti@gmail.com</p>
+                <p><i class="fas fa-phone-alt"></i> +44 7570 301781</p>
+                <p><i class="fas fa-map-marker-alt"></i> London, UK</p>
+            </div>
+            <div class="footer-social-links">
+                <a href="https://www.linkedin.com/in/kousik-s-a22459b2" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/koushikace" target="_blank" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
+            </div>
+            <p class="copyright">&copy; 2024 Koushik Subraveti. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // Close mobile nav if open
+                if (document.body.classList.contains('nav-open')) {
+                    document.body.classList.remove('nav-open');
+                }
+            });
+        });
+
+        // Sticky Navbar on Scroll
+        const navbar = document.getElementById('navbar');
+        window.onscroll = function() {
+            if (window.scrollY > 50) { // Adjust scroll threshold as needed
+                navbar.classList.add('sticky');
+            } else {
+                navbar.classList.remove('sticky');
+            }
+        };
+
+        // Mobile Navigation Toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        navToggle.addEventListener('click', () => {
+            document.body.classList.toggle('nav-open');
+        });
+
+        // Close mobile nav on click outside
+        document.addEventListener('click', (e) => {
+            if (!navbar.contains(e.target) && !navToggle.contains(e.target) && document.body.classList.contains('nav-open')) {
+                document.body.classList.remove('nav-open');
+            }
+        });
+    </script>
 </body>
 </html>
