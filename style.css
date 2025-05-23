@@ -3,11 +3,14 @@
     --primary-red: #e74c3c; /* A strong, professional red */
     --secondary-red: #c0392b; /* A slightly darker red for hover */
     --white: #ffffff;
-    --light-gray: #f4f4f4;
+    --light-gray: #f9f9f9; /* Slightly lighter background for alternating sections */
+    --medium-gray: #f4f4f4; /* For light background sections */
     --dark-gray: #333;
     --text-color: #555;
     --heading-color: #2c3e50; /* Darker for headings */
     --border-color: #ddd;
+    --shadow-light: rgba(0, 0, 0, 0.08); /* Lighter shadow for general cards */
+    --shadow-hover: rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */
 
     --font-heading: 'Montserrat', sans-serif;
     --font-body: 'Open Sans', sans-serif;
@@ -26,6 +29,7 @@ body {
     background-color: var(--white);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth; /* Smooth scrolling for internal links */
 }
 
 .container {
@@ -66,25 +70,28 @@ ul {
 /* Section Padding */
 .section-padding {
     padding: 80px 0; /* More spacious padding */
+    text-align: center; /* Center headings and general section content */
 }
 
 .section-padding.bg-light {
-    background-color: var(--light-gray);
+    background-color: var(--medium-gray);
 }
 
 .section-content {
     margin-top: 40px;
     line-height: 1.8; /* Increased line height for readability */
+    text-align: left; /* Align content inside cards/lists to the left */
 }
 
 /* Header/Hero Section */
 .hero-section {
     background: linear-gradient(135deg, var(--primary-red) 0%, var(--secondary-red) 100%);
     color: var(--white);
-    padding: 100px 0; /* Ample vertical space */
+    padding: 100px 0 60px 0; /* Ample vertical space, slightly less at bottom */
     text-align: center;
     position: relative;
-    overflow: hidden; /* For any potential background elements */
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for header */
 }
 
 .hero-content {
@@ -97,12 +104,13 @@ ul {
     font-size: 3.5em; /* Larger name */
     margin-bottom: 10px;
     font-weight: 700;
+    letter-spacing: 1px;
 }
 
 .hero-section .tagline {
     font-size: 1.4em;
     font-weight: 400;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     opacity: 0.9;
 }
 
@@ -110,14 +118,29 @@ ul {
     width: 180px;
     height: 180px;
     border-radius: 50%;
-    border: 5px solid rgba(255, 255, 255, 0.5); /* Semi-transparent white border */
+    border: 5px solid rgba(255, 255, 255, 0.6); /* Slightly more opaque border */
     object-fit: cover;
     margin-bottom: 25px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25); /* More prominent shadow for profile pic */
+}
+
+.contact-info {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    opacity: 0.95;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+
+.contact-info i {
+    margin-right: 10px;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .social-links {
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .social-links a {
@@ -125,13 +148,13 @@ ul {
     font-size: 1.8em;
     margin: 0 15px;
     transition: transform 0.3s ease, color 0.3s ease;
+    display: inline-block; /* Essential for transform to work properly */
 }
 
 .social-links a:hover {
     color: var(--light-gray);
-    transform: translateY(-5px);
+    transform: translateY(-5px) scale(1.05); /* Slight lift and scale on hover */
 }
-
 
 /* About Me Section */
 #about p {
@@ -139,6 +162,7 @@ ul {
     margin-left: auto;
     margin-right: auto;
     font-size: 1.1em;
+    text-align: center; /* Center about me text */
 }
 
 
@@ -154,14 +178,16 @@ ul {
     background-color: var(--white);
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 5px 15px var(--shadow-light); /* Consistent shadow */
     border-top: 4px solid var(--primary-red);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for hover */
 }
 
 .skill-category h3 {
     color: var(--primary-red);
     margin-bottom: 20px;
     font-size: 1.4em;
+    text-align: center; /* Center skill category heading */
 }
 
 .skill-category ul {
@@ -193,8 +219,9 @@ ul {
     padding: 30px;
     margin-bottom: 30px;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 5px 15px var(--shadow-light); /* Consistent shadow */
     border-left: 5px solid var(--primary-red);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for hover */
 }
 
 .experience-item:last-child {
@@ -235,11 +262,12 @@ ul {
     background-color: var(--white);
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 5px 15px var(--shadow-light); /* Consistent shadow */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     border-bottom: 4px solid var(--primary-red);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for hover */
 }
 
 .project-item h3 {
@@ -280,6 +308,53 @@ ul {
     color: var(--white); /* Ensure text remains white on hover */
 }
 
+.btn-project.btn-large {
+    font-size: 1.1em;
+    padding: 15px 30px;
+    margin-top: 30px; /* Space from projects grid */
+}
+
+/* Hover effects for all cards */
+.skill-category:hover,
+.experience-item:hover,
+.project-item:hover {
+    transform: translateY(-8px); /* Lift slightly more on hover for visual impact */
+    box-shadow: 0 12px 25px var(--shadow-hover); /* More pronounced shadow */
+}
+
+/* Education and Certifications sections use similar item styling */
+.certifications-list {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.certifications-list li {
+    background-color: var(--white);
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+    display: flex;
+    align-items: center;
+    font-size: 1.05em;
+    color: var(--text-color);
+    border-left: 4px solid var(--primary-red);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certifications-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.certifications-list li i {
+    color: var(--primary-red);
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
 
 /* Footer */
 .footer-section {
@@ -306,10 +381,24 @@ ul {
 }
 
 
+/* New: Keyframes for the 'pop' or 'vibration' effect on click */
+@keyframes pop-effect {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); } /* Slightly larger than initial */
+    100% { transform: scale(1); }
+}
+
+/* Apply to social links and project buttons */
+.social-links a:active, /* When element is clicked/active */
+.btn-project:active {
+    animation: pop-effect 0.15s ease-out; /* Quick, short animation */
+}
+
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero-section {
-        padding: 80px 0;
+        padding: 80px 0 50px 0;
     }
 
     .hero-section h1 {
@@ -335,10 +424,22 @@ ul {
 
     .skills-grid, .projects-grid {
         grid-template-columns: 1fr; /* Stack columns on smaller screens */
+        gap: 30px;
     }
 
     .skill-category, .experience-item, .project-item {
-        margin-bottom: 25px;
+        margin-bottom: 0; /* Gap handled by grid */
+    }
+
+    .certifications-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .certifications-list li {
+        width: 100%; /* Full width on smaller screens */
+        max-width: 350px; /* Limit width */
+        text-align: left;
     }
 }
 
