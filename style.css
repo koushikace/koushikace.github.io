@@ -425,7 +425,7 @@ ul {
     margin-bottom: 0;
 }
 
-/* New/Improved Skills Section Styling */
+/* New/Improved Skills Section Styling for Technical Expertise */
 .technical-skills-heading {
     margin-top: 60px;
     margin-bottom: 30px;
@@ -438,15 +438,16 @@ ul {
 }
 
 .skill-category {
-    background-color: rgba(255, 255, 255, 0.08);
+    /* Updated to match .skill-item more closely for compatibility */
+    background-color: rgba(255, 255, 255, 0.1);
     padding: 25px;
     border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15); /* Matched to skill-item */
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .skill-category:hover {
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: rgba(255, 255, 255, 0.2); /* Matched to skill-item */
     transform: translateY(-5px);
 }
 
