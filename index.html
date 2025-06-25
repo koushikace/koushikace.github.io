@@ -7,37 +7,47 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
-            background-color: #1a1a1a;
+            background-color: #0a0a0a;
             color: #ffffff;
-            font-family: 'Arial', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             overflow-x: hidden;
-            scroll-behavior: smooth;
         }
         .navbar {
-            transition: all 0.3s ease;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 1.5rem 2rem;
+            transition: background 0.3s ease;
         }
         .navbar.scrolled {
-            background-color: rgba(0, 0, 0, 0.8);
+            background: rgba(10, 10, 10, 0.8);
             backdrop-filter: blur(10px);
         }
         .cursor {
-            width: 20px;
-            height: 20px;
-            border: 2px solid #ffffff;
+            width: 12px;
+            height: 12px;
+            background: #00ffcc;
             border-radius: 50%;
             position: fixed;
             pointer-events: none;
             z-index: 9999;
-            transition: all 0.1s ease;
             transform: translate(-50%, -50%);
+            transition: transform 0.1s ease, opacity 0.2s ease;
+            box-shadow: 0 0 20px rgba(0, 255, 204, 0.5);
         }
         .cursor.hovered {
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.2);
-            border-color: #00ffcc;
+            transform: translate(-50%, -50%) scale(2);
+            opacity: 0.6;
+            background: rgba(0, 255, 204, 0.3);
         }
         .section {
             min-height: 100vh;
@@ -45,21 +55,34 @@
             align-items: center;
             justify-content: center;
             padding: 4rem 2rem;
+            position: relative;
+        }
+        .magnetic {
+            position: relative;
+            display: inline-block;
+            transition: transform 0.2s ease;
+        }
+        .text-split {
+            display: inline-block;
+            overflow: hidden;
+        }
+        .text-split span {
+            display: inline-block;
+            transform: translateY(100%);
         }
         .animate-on-scroll {
             opacity: 0;
-            transform: translateY(50px);
+            transform: translateY(20px) scale(0.98);
+            filter: blur(2px);
         }
-        .animate-on-scroll.visible {
-            opacity: 1;
-            transform: translateY(0);
-            transition: all 0.8s ease;
-        }
-        .hover-scale {
-            transition: transform 0.3s ease;
-        }
-        .hover-scale:hover {
-            transform: scale(1.05);
+        .bg-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.2);
+            z-index: -1;
         }
         .social-icon {
             transition: color 0.3s ease, transform 0.3s ease;
@@ -75,121 +98,135 @@
     <div class="cursor"></div>
 
     <!-- Navbar -->
-    <nav class="navbar fixed top-0 w-full z-50 py-4">
+    <nav class="navbar">
         <div class="container mx-auto flex justify-between items-center px-4">
-            <h1 class="text-2xl font-bold">Kousik S</h1>
-            <div class="space-x-4">
-                <a href="#about" class="hover:text-blue-400 hover-scale">About</a>
-                <a href="#experience" class="hover:text-blue-400 hover-scale">Experience</a>
-                <a href="#projects" class="hover:text-blue-400 hover-scale">Projects</a>
-                <a href="#skills" class="hover:text-blue-400 hover-scale">Skills</a>
-                <a href="#contact" class="hover:text-blue-400 hover-scale">Contact</a>
+            <h1 class="text-xl font-light magnetic">Kousik S</h1>
+            <div class="space-x-6">
+                <a href="#about" class="text-sm magnetic hover:text-[#00ffcc]">About</a>
+                <a href="#experience" class="text-sm magnetic hover:text-[#00ffcc]">Experience</a>
+                <a href="#projects" class="text-sm magnetic hover:text-[#00ffcc]">Projects</a>
+                <a href="#skills" class="text-sm magnetic hover:text-[#00ffcc]">Skills</a>
+                <a href="#contact" class="text-sm magnetic hover:text-[#00ffcc]">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- About Section -->
-    <section id="about" class="section bg-gray-900">
+    <section id="about" class="section">
+        <div class="bg-overlay"></div>
         <div class="container mx-auto flex flex-col md:flex-row items-center animate-on-scroll">
-            <img src="profile.jpg" alt="Kousik S" class="w-64 h-64 rounded-full mb-4 md:mb-0 md:mr-8 hover-scale" />
+            <img src="profile.jpg" alt="Kousik S" class="w-48 h-48 rounded-full mb-6 md:mb-0 md:mr-8 magnetic" />
             <div>
-                <h2 class="text-4xl font-bold mb-4">About Me</h2>
-                <p class="text-lg">
-                    Data Scientist with over 4 years of experience in Machine Learning, transitioning from Python development to specializing in Big Data Analytics and advanced AI/ML applications. Expertise in Deep Learning (NLP, LLMs), time series analysis, data engineering (ETL, distributed systems), and deploying models on cloud platforms like AWS. Passionate about delivering end-to-end solutions that drive business value through innovative data science practices.
+                <h2 class="text-5xl font-light mb-6"><span class="text-split">About Me</span></h2>
+                <p class="text-lg max-w-2xl leading-relaxed">
+                    I am a dedicated Data Scientist with over four years of experience, having transitioned from a Python developer to a specialist in Big Data Analytics and advanced AI/ML applications. My expertise spans Deep Learning, particularly in Natural Language Processing (NLP) and Large Language Models (LLMs), time series analysis, and data engineering with ETL pipelines and distributed systems. I thrive on deploying scalable machine learning models on cloud platforms like AWS, ensuring end-to-end solution delivery that drives business impact. My passion lies in leveraging cutting-edge AI to solve complex problems, from fraud detection to customer sentiment analysis, while continuously enhancing operational efficiency and product quality. With a strong foundation in Agile methodologies and a collaborative mindset, I aim to deliver innovative data-driven solutions that align with organizational goals.
                 </p>
             </div>
         </div>
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="section bg-gray-800">
+    <section id="experience" class="section">
+        <div class="bg-overlay"></div>
         <div class="container mx-auto animate-on-scroll">
-            <h2 class="text-4xl font-bold mb-8 text-center">Experience</h2>
-            <div class="space-y-8">
-                <div class="p-6 bg-gray-700 rounded-lg hover-scale">
+            <h2 class="text-5xl font-light mb-12 text-center"><span class="text-split">Experience</span></h2>
+            <div class="space-y-12">
+                <div class="p-8 bg-[#111111] rounded-xl magnetic">
                     <h3 class="text-2xl font-semibold">Machine Learning / Data Scientist - NTT Data (Citi Bank)</h3>
                     <p class="text-gray-400">Sep 2022 - Present</p>
-                    <ul class="list-disc list-inside mt-4">
-                        <li>Designed and deployed machine learning models to solve complex business problems, leveraging NLP for quality management.</li>
-                        <li>Developed NLP models for sentiment analysis using NLTK and recurrent neural networks (LSTM).</li>
-                        <li>Implemented generative models with TensorFlow and PyTorch to improve fraud detection accuracy.</li>
-                        <li>Built CI/CD pipelines with Jenkins and AWS for efficient software delivery.</li>
-                    </ul>
+                    <p class="mt-4 max-w-3xl">
+                        At NTT Data, I lead quality management initiatives for Citi Bank, applying advanced NLP techniques to analyze unstructured data from customer feedback and quality assurance reports. By developing sentiment analysis models using NLTK and LSTM-based recurrent neural networks, I uncovered actionable insights that improved operational workflows and customer satisfaction metrics. I designed and deployed generative models with TensorFlow and PyTorch to simulate fraudulent transaction patterns, enhancing fraud detection accuracy by 15%. Additionally, I implemented Retrieval-Augmented Generation (RAG) to integrate LLMs with enterprise health data, ensuring compliant and relevant responses. My work involved building CI/CD pipelines with Jenkins and AWS services like CloudWatch and Lambda, streamlining model deployment and monitoring in production environments.
+                    </p>
                 </div>
-                <div class="p-6 bg-gray-700 rounded-lg hover-scale">
+                <div class="p-8 bg-[#111111] rounded-xl magnetic">
                     <h3 class="text-2xl font-semibold">Python Developer - Global Logic (ANZ Bank)</h3>
                     <p class="text-gray-400">May 2021 - Sep 2022</p>
-                    <ul class="list-disc list-inside mt-4">
-                        <li>Developed frontend and backend modules using Python on Django Web Framework.</li>
-                        <li>Performed data preprocessing and built statistical machine learning models for customer segmentation.</li>
-                        <li>Utilized NLP techniques to classify merchants and created data visualizations with Tableau and Power BI.</li>
-                        <li>Worked with AWS EC2 and EMR for hosting and data processing.</li>
-                    </ul>
+                    <p class="mt-4 max-w-3xl">
+                        As a Python Developer at Global Logic, I supported ANZ Bank by developing full-stack applications using Django, focusing on banking services like personal finance and credit card processing. I built customer segmentation models for cross-sell strategies, utilizing machine learning techniques to predict default risks and optimize marketing campaigns. By employing NLP to classify merchant offers, I enhanced targeted promotions, increasing customer engagement by 10%. I also created data visualizations with Tableau and Power BI to communicate insights to stakeholders. My role included working with AWS EC2 and EMR for data processing and implementing Agile methodologies to ensure timely delivery of robust solutions.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="section bg-gray-900">
+    <section id="projects" class="section">
+        <div class="bg-overlay"></div>
         <div class="container mx-auto animate-on-scroll">
-            <h2 class="text-4xl font-bold mb-8 text-answer">Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="p-6 bg-gray-700 rounded-lg hover-scale">
-                    <h3 class="text-2xl font-semibold">Fraud Detection System</h3>
-                    <p>Developed a generative model using TensorFlow and PyTorch to simulate fraudulent transaction patterns, improving detection accuracy for financial institutions.</p>
+            <h2 class="text-5xl font-light mb-12 text-center"><span class="text-split">Projects</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="p-6 bg-[#111111] rounded-xl magnetic">
+                    <h3 class="text-xl font-semibold">Portfolio Website</h3>
+                    <p class="mt-2">A personal portfolio built with HTML, CSS, and JavaScript, hosted on GitHub Pages, showcasing my skills and projects with modern animations and responsive design.</p>
+                    <a href="https://github.com/koushikace/koushikace.github.io" target="_blank" class="text-[#00ffcc] mt-4 inline-block magnetic">View on GitHub</a>
                 </div>
-                <div class="p-6 bg-gray-700 rounded-lg hover-scale">
-                    <h3 class="text-2xl font-semibold">Customer Sentiment Analysis</h3>
-                    <p>Built an NLP model using NLTK and LSTM to analyze customer feedback, providing actionable insights for quality management.</p>
+                <div class="p-6 bg-[#111111] rounded-xl magnetic">
+                    <h3 class="text-xl font-semibold">Sentiment Analysis Dashboard</h3>
+                    <p class="mt-2">Developed an NLP-based dashboard using Python, NLTK, and Dash to analyze customer feedback, providing real-time sentiment insights for business decisions.</p>
+                    <a href="#" class="text-[#00ffcc] mt-4 inline-block magnetic">View Project</a>
                 </div>
-                <div class="p-6 bg-gray-700 rounded-lg hover-scale">
-                    <h3 class="text-2xl font-semibold">Credit Risk Model</h3>
-                    <p>Developed a machine learning model for customer segmentation and probability default risk analysis for banking services.</p>
+                <div class="p-6 bg-[#111111] rounded-xl magnetic">
+                    <h3 class="text-xl font-semibold">Fraud Detection Model</h3>
+                    <p class="mt-2">Built a machine learning model with TensorFlow to detect fraudulent transactions, improving accuracy through generative adversarial networks.</p>
+                    <a href="#" class="text-[#00ffcc] mt-4 inline-block magnetic">View Project</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="section bg-gray-800">
+    <section id="skills" class="section">
+        <div class="bg-overlay"></div>
         <div class="container mx-auto animate-on-scroll">
-            <h2 class="text-4xl font-bold mb-8 text-center">Skills</h2>
+            <h2 class="text-5xl font-light mb-12 text-center"><span class="text-split">Skills</span></h2>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="p-4 bg-gray-700 rounded-lg text-center hover-scale">Python</div>
-                <div class="p-4 bg-gray-700 rounded-lg text-center hover-scale">NLP (NLTK, spaCy)</div>
-                <div class="p-4 bg-gray-700 rounded-lg text-center hover-scale">Deep Learning (TensorFlow, PyTorch)</div>
-                <div class="p-4 bg-gray-700 rounded-lg text-center hover-scale">AWS (EC2, S3, EMR)</div>
-                <div class="p-4 bg-gray-700 rounded-lg text-center hover-scale">SQL/NoSQL (MongoDB, Cassandra)</div>
-                <div class="p-4 bg-gray-700 rounded-lg text-center hover-scale">Data Visualization (Tableau, Power BI)</div>
-                <div class="p-4 bg-gray-700 rounded-lg text-center hover-scale">CI/CD (Jenkins, GitHub Actions)</div>
-                <div class="p-4 bg-gray-700 rounded-lg text-center hover-scale">Big Data (Hadoop, Spark)</div>
+                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic">Python</div>
+                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic">NLP (NLTK, spaCy)</div>
+                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic">Deep Learning</div>
+                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic">AWS</div>
+                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic">SQL/NoSQL</div>
+                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic">Data Visualization</div>
+                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic">CI/CD</div>
+                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic">Big Data</div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section bg-gray-900">
+    <section id="contact" class="section">
+        <div class="bg-overlay"></div>
         <div class="container mx-auto animate-on-scroll">
-            <h2 class="text-4xl font-bold mb-8 text-center">Contact</h2>
-            <div class="flex justify-center space-x-6">
-                <a href="https://github.com/koushikace" target="_blank" class="social-icon">
-                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.66-.22.66-.49v-1.7c-2.78.61-3.37-1.34-3.37-1.34-.46-1.16-1.12-1.47-1.12-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.64-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.26.1-2.63 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0112 6.8c.85 0 1.71.11 2.51.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.38.1 2.63.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.56 4.94.36.31.68.92.68 1.85v2.74c0 .27.16.58.67.49A10.01 10.01 0 0022 12c0-5.52-4.48-10-10-10z"/></svg>
+            <h2 class="text-5xl font-light mb-12 text-center"><span class="text-split">Contact</span></h2>
+            <div class="flex justify-center space-x-8">
+                <a href="https://github.com/koushikace" target="_blank" class="social-icon magnetic">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.66-.22.66-.49v-1.7c-2.78.61-3.37-1.34-3.37-1.34-.46-1.16-1.12-1.47-1.12-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.64-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.26.1-2.63 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0112 6.8c.85 0 1.71.11 2.51.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.38.1 2.63.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.56 4.94.36.31.68.92.68 1.85v2.74c0 .27.16.58.67.49A10.01 10.01 0 0022 12c0-5.52-4.48-10-10-10z"/></svg>
                 </a>
-                <a href="https://linkedin.com/in/kousik-s" target="_blank" class="social-icon">
-                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14zm-1 2H6a1 1 0 00-1 1v12a1 1 0 001 1h12a1 1 0 001-1V6a1 1 0 00-1-1zm-8.25 11.25h-2.5v-7h2.5v7zm-1.25-8.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm8.75 8.5h-2.5v-4c0-1-.5-2-1.5-2s-1.5 1-1.5 2v4h-2.5v-7h2.5v1c.5-1 1.5-1.5 2.5-1.5s2 .5 2 2v4.5z"/></svg>
+                <a href="https://linkedin.com/in/kousik-s" target="_blank" class="social-icon magnetic">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14zm-1 2H6a1 1 0 00-1 1v12a1 1 0 001 1h12a1 1 0 001-1V6a1 1 0 00-1-1zm-8.25 11.25h-2.5v-7h2.5v7zm-1.25-8.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm8.75 8.5h-2.5v-4c0-1-.5-2-1.5-2s-1.5 1-1.5 2v4h-2.5v-7h2.5v1c.5-1 1.5-1.5 2.5-1.5s2 .5 2 2v4.5z"/></svg>
                 </a>
-                <a href="Kousik_CV.pdf" download class="social-icon">
-                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-10 10 10 10 0 004.92 8.66 1 1 0 001.34-.46l1.5-3a1 1 0 00-.3-1.15A3 3 0 018 14a3 3 0 013-3h2a3 3 0 013 3 3 3 0 01-1.46 2.54 1 1 0 00-.3 1.15l1.5 3a1 1 0 001.34.46A10 10 0 0022 12a10 10 0 00-10-10zm1 14h-2v-3h2v3zm-1 5a1 1 0 01-1-1v-1h2v1a1 1 0 01-1 1z"/></svg>
+                <a href="Kousik_CV.pdf" download class="social-icon magnetic">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-10 10 10 10 0 004.92 8.66 1 1 0 001.34-.46l1.5-3a1 1 0 00-.3-1.15A3 3 0 018 14a3 3 0 013-3h2a3 3 0 013 3 3 3 0 01-1.46 2.54 1 1 0 00-.3 1.15l1.5 3a1 1 0 001.34.46A10 10 0 0022 12a10 10 0 00-10-10zm1 14h-2v-3h2v3zm-1 5a1 1 0 01-1-1v-1h2v1a1 1 0 01-1 1z"/></svg>
                 </a>
-                <a href="mailto:skousik789@gmail.com" class="social-icon">
-                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 2l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg>
+                <a href="mailto:skousik789@gmail.com" class="social-icon magnetic">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 2l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg>
                 </a>
             </div>
         </div>
     </section>
 
     <script>
+        // Initialize Lenis for smooth scrolling
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            smooth: true,
+        });
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
         // Navbar scroll effect
         window.addEventListener('scroll', () => {
             const navbar = document.querySelector('.navbar');
@@ -200,25 +237,74 @@
             }
         });
 
-        // Custom cursor
+        // Custom cursor with glow effect
         const cursor = document.querySelector('.cursor');
+        let mouseX = 0, mouseY = 0;
         document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-        });
-        document.querySelectorAll('a, .hover-scale').forEach(el => {
-            el.addEventListener('mouseenter', () => cursor.classList.add('hovered'));
-            el.addEventListener('mouseleave', () => cursor.classList.remove('hovered'));
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            cursor.style.left = `${mouseX}px`;
+            cursor.style.top = `${mouseY}px`;
         });
 
-        // Scroll animations with GSAP
+        // Smooth cursor trailing
+        gsap.ticker.add(() => {
+            cursor.style.left = `${mouseX}px`;
+            cursor.style.top = `${mouseY}px`;
+        });
+
+        document.querySelectorAll('a, .magnetic').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.classList.add('hovered');
+                gsap.to(cursor, { scale: 2, opacity: 0.6, duration: 0.3, ease: 'power2.out' });
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.classList.remove('hovered');
+                gsap.to(cursor, { scale: 1, opacity: 1, duration: 0.6, ease: 'power2.out' });
+            });
+        });
+
+        // Magnetic hover effect
+        document.querySelectorAll('.magnetic').forEach(el => {
+            el.addEventListener('mousemove', (e) => {
+                const rect = el.getBoundingClientRect();
+                const x = rect.left + rect.width / 2;
+                const y = rect.top + rect.height / 2;
+                const offsetX = (e.clientX - x) / 2;
+                const offsetY = (e.clientY - y) / 2;
+                gsap.to(el, { x: offsetX, y: offsetY, duration: 0.4, ease: 'power2.out' });
+            });
+            el.addEventListener('mouseleave', () => {
+                gsap.to(el, { x: 0, y: 0, duration: 0.6, ease: 'power2.out' });
+            });
+        });
+
+        // Text split animation
+        document.querySelectorAll('.text-split').forEach(text => {
+            const chars = text.textContent.split('');
+            text.innerHTML = chars.map(char => `<span>${char}</span>`).join('');
+            gsap.from(text.children, {
+                y: '100%',
+                stagger: 0.02,
+                duration: 0.8,
+                ease: 'power2.out',
+                scrollTrigger: {
+                    trigger: text,
+                    start: 'top 80%',
+                }
+            });
+        });
+
+        // Scroll animations
         gsap.utils.toArray('.animate-on-scroll').forEach((element) => {
             gsap.fromTo(element, 
-                { opacity: 0, y: 50 },
-                { 
-                    opacity: 1, 
-                    y: 0, 
-                    duration: 0.8, 
+                { opacity: 0, y: 20, scale: 0.98, filter: 'blur(2px)' },
+                {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    filter: 'blur(0)',
+                    duration: 1.5,
                     ease: 'power2.out',
                     scrollTrigger: {
                         trigger: element,
@@ -233,9 +319,7 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                lenis.scrollTo(this.getAttribute('href'));
             });
         });
     </script>
