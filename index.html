@@ -3,70 +3,114 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kousik Subraveti - Data Scientist</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <meta name="description" content="Portfolio of Kousik Subraveti – Data Scientist and ML Engineer specializing in NLP and LLMs." />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <title>Kousik Subraveti - Data Scientist Portfolio</title>
+    <meta name="description" content="Portfolio of Kousik Subraveti – NLP/LLM Data Scientist with expertise in AI, ML, Big Data, and AWS cloud deployment.">
+    <meta name="keywords" content="Kousik Subraveti, Data Scientist, NLP, LLM, Python, Machine Learning, AWS, AI, Portfolio">
+    <meta name="author" content="Kousik Subraveti">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script defer src="script.js"></script>
 </head>
 <body>
+    <!-- LOADER -->
+    <div id="loader">
+        <div class="loading-text">Loading...</div>
+    </div>
+
+    <!-- HEADER -->
     <header>
         <div class="container">
             <h1>Kousik Subraveti</h1>
             <nav>
                 <ul>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#work">Work</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
+                    <li><button id="theme-toggle">Toggle Theme</button></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main>
-        <section id="about" class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <h2>Data Scientist & ML Engineer</h2>
-                    <p>Specializing in NLP, LLMs, and building intelligent systems that solve real business problems with elegant engineering and deep learning.</p>
-                    <a href="#work" class="btn">View My Work</a>
+    <!-- HERO -->
+    <section id="about" class="hero">
+        <div class="hero-background">
+            <div class="fog"></div>
+            <div class="mountain"></div>
+        </div>
+        <div class="container hero-content" data-aos="fade-up">
+            <h2>Hi, I'm Kousik Subraveti</h2>
+            <p>Data Scientist specializing in NLP, LLMs, Time Series, and AI Solutions at scale.</p>
+            <a href="#projects" class="btn">Explore My Work</a>
+        </div>
+        <div class="scroll-cue"></div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 data-aos="fade-up">Experience</h2>
+            <div class="experience-block" data-aos="fade-up" data-aos-delay="100">
+                <h3>NTT Data | Citi Bank</h3>
+                <p><strong>Role:</strong> Machine Learning/Data Scientist | Sep 2022 – Present</p>
+                <p>Leading NLP-driven quality management projects integrating unstructured data and LLMs for business insights. Designed fraud detection systems, deployed ML models with RAG architecture, and used AWS extensively.</p>
+            </div>
+            <div class="experience-block" data-aos="fade-up" data-aos-delay="200">
+                <h3>Global Logic | ANZ Bank</h3>
+                <p><strong>Role:</strong> Python Developer | May 2021 – Sep 2022</p>
+                <p>Developed backend platforms and ML pipelines using Python, SQL, and AWS. Focused on customer segmentation, sentiment classification, and CI/CD automation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 data-aos="fade-up">Key Projects</h2>
+            <div class="project-grid">
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Fraud Detection System</h3>
+                    <p>Simulated fraudulent transaction patterns with generative AI to improve detection accuracy by 35%.</p>
+                </div>
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Compliance Chatbot</h3>
+                    <p>Built an LLM-based chatbot using RAG to interface with regulatory data and enterprise documents.</p>
+                </div>
+                <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                    <h3>Quality Management NLP</h3>
+                    <p>Used LSTM and NLP to analyze QA feedback and reduce operational error rates across banking workflows.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="work" class="projects">
-            <div class="container">
-                <h2>Selected Projects</h2>
-                <div class="project-grid">
-                    <div class="project-card">
-                        <h3>Fraud Detection System</h3>
-                        <p>Developed generative AI models to simulate fraudulent transaction patterns, improving detection accuracy by 35%.</p>
-                    </div>
-                    <div class="project-card">
-                        <h3>Compliance Chatbot</h3>
-                        <p>Implemented Retrieval-Augmented Generation (RAG) architecture to connect LLMs with enterprise policy documents.</p>
-                    </div>
-                    <div class="project-card">
-                        <h3>Sentiment Analysis Pipeline</h3>
-                        <p>Built an NLP system that processes customer feedback from multiple channels in real-time to surface actionable insights.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+        <div class="container" data-aos="fade-up">
+            <h2>Get in Touch</h2>
+            <p>Let’s work together or discuss something cool.</p>
+            <a href="mailto:skousik789@gmail.com" class="btn">Email Me</a>
+            <a href="Kousik_CV.pdf" class="btn" download style="margin-left: 10px;">Download CV</a>
+        </div>
+    </section>
 
-        <section id="contact" class="contact">
-            <div class="container">
-                <h2>Get In Touch</h2>
-                <p>Interested in working together or have a project in mind?</p>
-                <a href="mailto:skousik789@gmail.com" class="btn">Email Me</a>
-            </div>
-        </section>
-    </main>
-
+    <!-- FOOTER -->
     <footer>
         <div class="container">
             <p>&copy; 2025 Kousik Subraveti. All rights reserved.</p>
+            <svg width="100" height="30" viewBox="0 0 100 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <text x="0" y="20" fill="white" font-family="Inter, sans-serif" font-size="16">~ Kousik</text>
+            </svg>
         </div>
     </footer>
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init();</script>
 </body>
 </html>
