@@ -1,116 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kousik Subraveti - Data Scientist Portfolio</title>
-    <meta name="description" content="Portfolio of Kousik Subraveti – NLP/LLM Data Scientist with expertise in AI, ML, Big Data, and AWS cloud deployment.">
-    <meta name="keywords" content="Kousik Subraveti, Data Scientist, NLP, LLM, Python, Machine Learning, AWS, AI, Portfolio">
-    <meta name="author" content="Kousik Subraveti">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script defer src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kousik S - Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        .navbar {
+            transition: all 0.3s ease;
+        }
+        .navbar.scrolled {
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+        }
+        .cursor {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: all 0.1s ease;
+            transform: translate(-50%, -50%);
+        }
+        .cursor.hovered {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-color: #00ffcc;
+        }
+        .section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 2rem;
+        }
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.8s ease;
+        }
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+        .social-icon {
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        .social-icon:hover {
+            color: #00ffcc;
+            transform: translateY(-5px);
+        }
+    </style>
 </head>
 <body>
-    <!-- LOADER -->
-    <div id="loader">
-        <div class="loading-text">Loading...</div>
-    </div>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
 
-    <!-- HEADER -->
-    <header>
-        <div class="container">
-            <h1>Kousik Subraveti</h1>
-            <nav>
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><button id="theme-toggle">Toggle Theme</button></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <!-- HERO -->
-    <section id="about" class="hero">
-        <div class="hero-background">
-            <div class="fog"></div>
-            <div class="mountain"></div>
-        </div>
-        <div class="container hero-content" data-aos="fade-up">
-            <h2>Hi, I'm Kousik Subraveti</h2>
-            <p>Data Scientist specializing in NLP, LLMs, Time Series, and AI Solutions at scale.</p>
-            <a href="#projects" class="btn">Explore My Work</a>
-        </div>
-        <div class="scroll-cue"></div>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section id="experience" class="section">
-        <div class="container">
-            <h2 data-aos="fade-up">Experience</h2>
-            <div class="experience-block" data-aos="fade-up" data-aos-delay="100">
-                <h3>NTT Data | Citi Bank</h3>
-                <p><strong>Role:</strong> Machine Learning/Data Scientist | Sep 2022 – Present</p>
-                <p>Leading NLP-driven quality management projects integrating unstructured data and LLMs for business insights. Designed fraud detection systems, deployed ML models with RAG architecture, and used AWS extensively.</p>
+    <!-- Navbar -->
+    <nav class="navbar fixed top-0 w-full z-50 py-4">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <h1 class="text-2xl font-bold">Kousik S</h1>
+            <div class="space-x-4">
+                <a href="#about" class="hover:text-blue-400 hover-scale">About</a>
+                <a href="#experience" class="hover:text-blue-400 hover-scale">Experience</a>
+                <a href="#projects" class="hover:text-blue-400 hover-scale">Projects</a>
+                <a href="#skills" class="hover:text-blue-400 hover-scale">Skills</a>
+                <a href="#contact" class="hover:text-blue-400 hover-scale">Contact</a>
             </div>
-            <div class="experience-block" data-aos="fade-up" data-aos-delay="200">
-                <h3>Global Logic | ANZ Bank</h3>
-                <p><strong>Role:</strong> Python Developer | May 2021 – Sep 2022</p>
-                <p>Developed backend platforms and ML pipelines using Python, SQL, and AWS. Focused on customer segmentation, sentiment classification, and CI/CD automation.</p>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about" class="section bg-gray-900">
+        <div class="container mx-auto flex flex-col md:flex-row items-center animate-on-scroll">
+            <img src="profile.jpg" alt="Kousik S" class="w-64 h-64 rounded-full mb-4 md:mb-0 md:mr-8 hover-scale" />
+            <div>
+                <h2 class="text-4xl font-bold mb-4">About Me</h2>
+                <p class="text-lg">
+                    Data Scientist with over 4 years of experience in Machine Learning, transitioning from Python development to specializing in Big Data Analytics and advanced AI/ML applications. Expertise in Deep Learning (NLP, LLMs), time series analysis, data engineering (ETL, distributed systems), and deploying models on cloud platforms like AWS. Passionate about delivering end-to-end solutions that drive business value through innovative data science practices.
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 data-aos="fade-up">Key Projects</h2>
-            <div class="project-grid">
-                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-                    <h3>Fraud Detection System</h3>
-                    <p>Simulated fraudulent transaction patterns with generative AI to improve detection accuracy by 35%.</p>
+    <!-- Experience Section -->
+    <section id="experience" class="section bg-gray-800">
+        <div class="container mx-auto animate-on-scroll">
+            <h2 class="text-4xl font-bold mb-8 text-center">Experience</h2>
+            <div class="space-y-8">
+                <div class="p-6 bg-gray-700 rounded-lg hover-scale">
+                    <h3 class="text-2xl font-semibold">Machine Learning / Data Scientist - NTT Data (Citi Bank)</h3>
+                    <p class="text-gray-400">Sep 2022 - Present</p>
+                    <ul class="list-disc list-inside mt-4">
+                        <li>Designed and deployed machine learning models to solve complex business problems, leveraging NLP for quality management.</li>
+                        <li>Developed NLP models for sentiment analysis using NLTK and recurrent neural networks (LSTM).</li>
+                        <li>Implemented generative models with TensorFlow and PyTorch to improve fraud detection accuracy.</li>
+                        <li>Built CI/CD pipelines with Jenkins and AWS for efficient software delivery.</li>
+                    </ul>
                 </div>
-                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-                    <h3>Compliance Chatbot</h3>
-                    <p>Built an LLM-based chatbot using RAG to interface with regulatory data and enterprise documents.</p>
-                </div>
-                <div class="project-card" data-aos="fade-up" data-aos-delay="300">
-                    <h3>Quality Management NLP</h3>
-                    <p>Used LSTM and NLP to analyze QA feedback and reduce operational error rates across banking workflows.</p>
+                <div class="p-6 bg-gray-700 rounded-lg hover-scale">
+                    <h3 class="text-2xl font-semibold">Python Developer - Global Logic (ANZ Bank)</h3>
+                    <p class="text-gray-400">May 2021 - Sep 2022</p>
+                    <ul class="list-disc list-inside mt-4">
+                        <li>Developed frontend and backend modules using Python on Django Web Framework.</li>
+                        <li>Performed data preprocessing and built statistical machine learning models for customer segmentation.</li>
+                        <li>Utilized NLP techniques to classify merchants and created data visualizations with Tableau and Power BI.</li>
+                        <li>Worked with AWS EC2 and EMR for hosting and data processing.</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="contact">
-        <div class="container" data-aos="fade-up">
-            <h2>Get in Touch</h2>
-            <p>Let’s work together or discuss something cool.</p>
-            <a href="mailto:skousik789@gmail.com" class="btn">Email Me</a>
-            <a href="Kousik_CV.pdf" class="btn" download style="margin-left: 10px;">Download CV</a>
+    <!-- Projects Section -->
+    <section id="projects" class="section bg-gray-900">
+        <div class="container mx-auto animate-on-scroll">
+            <h2 class="text-4xl font-bold mb-8 text-answer">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="p-6 bg-gray-700 rounded-lg hover-scale">
+                    <h3 class="text-2xl font-semibold">Fraud Detection System</h3>
+                    <p>Developed a generative model using TensorFlow and PyTorch to simulate fraudulent transaction patterns, improving detection accuracy for financial institutions.</p>
+                </div>
+                <div class="p-6 bg-gray-700 rounded-lg hover-scale">
+                    <h3 class="text-2xl font-semibold">Customer Sentiment Analysis</h3>
+                    <p>Built an NLP model using NLTK and LSTM to analyze customer feedback, providing actionable insights for quality management.</p>
+                </div>
+                <div class="p-6 bg-gray-700 rounded-lg hover-scale">
+                    <h3 class="text-2xl font-semibold">Credit Risk Model</h3>
+                    <p>Developed a machine learning model for customer segmentation and probability default risk analysis for banking services.</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Kousik Subraveti. All rights reserved.</p>
-            <svg width="100" height="30" viewBox="0 0 100 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <text x="0" y="20" fill="white" font-family="Inter, sans-serif" font-size="16">~ Kousik</text>
-            </svg>
+    <!-- Skills Section -->
+    <section id="skills" class="section bg-gray-800">
+        <div class="container mx-auto animate-on-scroll">
+            <h2 class="text-4xl font-bold mb-8 text-center">Skills</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="p-4 bg-gray-700 rounded-lg text-center hover-scale">Python</div>
+                <div class="p-4 bg-gray-700 rounded-lg text-center hover-scale">NLP (NLTK, spaCy)</div>
+                <div class="p-4 bg-gray-700 rounded-lg text-center hover-scale">Deep Learning (TensorFlow, PyTorch)</div>
+                <div class="p-4 bg-gray-700 rounded-lg text-center hover-scale">AWS (EC2, S3, EMR)</div>
+                <div class="p-4 bg-gray-700 rounded-lg text-center hover-scale">SQL/NoSQL (MongoDB, Cassandra)</div>
+                <div class="p-4 bg-gray-700 rounded-lg text-center hover-scale">Data Visualization (Tableau, Power BI)</div>
+                <div class="p-4 bg-gray-700 rounded-lg text-center hover-scale">CI/CD (Jenkins, GitHub Actions)</div>
+                <div class="p-4 bg-gray-700 rounded-lg text-center hover-scale">Big Data (Hadoop, Spark)</div>
+            </div>
         </div>
-    </footer>
+    </section>
 
-    <!-- AOS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init();</script>
+    <!-- Contact Section -->
+    <section id="contact" class="section bg-gray-900">
+        <div class="container mx-auto animate-on-scroll">
+            <h2 class="text-4xl font-bold mb-8 text-center">Contact</h2>
+            <div class="flex justify-center space-x-6">
+                <a href="https://github.com/koushikace" target="_blank" class="social-icon">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.66-.22.66-.49v-1.7c-2.78.61-3.37-1.34-3.37-1.34-.46-1.16-1.12-1.47-1.12-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.64-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.26.1-2.63 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0112 6.8c.85 0 1.71.11 2.51.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.38.1 2.63.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.56 4.94.36.31.68.92.68 1.85v2.74c0 .27.16.58.67.49A10.01 10.01 0 0022 12c0-5.52-4.48-10-10-10z"/></svg>
+                </a>
+                <a href="https://linkedin.com/in/kousik-s" target="_blank" class="social-icon">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14zm-1 2H6a1 1 0 00-1 1v12a1 1 0 001 1h12a1 1 0 001-1V6a1 1 0 00-1-1zm-8.25 11.25h-2.5v-7h2.5v7zm-1.25-8.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm8.75 8.5h-2.5v-4c0-1-.5-2-1.5-2s-1.5 1-1.5 2v4h-2.5v-7h2.5v1c.5-1 1.5-1.5 2.5-1.5s2 .5 2 2v4.5z"/></svg>
+                </a>
+                <a href="Kousik_CV.pdf" download class="social-icon">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-10 10 10 10 0 004.92 8.66 1 1 0 001.34-.46l1.5-3a1 1 0 00-.3-1.15A3 3 0 018 14a3 3 0 013-3h2a3 3 0 013 3 3 3 0 01-1.46 2.54 1 1 0 00-.3 1.15l1.5 3a1 1 0 001.34.46A10 10 0 0022 12a10 10 0 00-10-10zm1 14h-2v-3h2v3zm-1 5a1 1 0 01-1-1v-1h2v1a1 1 0 01-1 1z"/></svg>
+                </a>
+                <a href="mailto:skousik789@gmail.com" class="social-icon">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 2l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Custom cursor
+        const cursor = document.querySelector('.cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+        document.querySelectorAll('a, .hover-scale').forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('hovered'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('hovered'));
+        });
+
+        // Scroll animations with GSAP
+        gsap.utils.toArray('.animate-on-scroll').forEach((element) => {
+            gsap.fromTo(element, 
+                { opacity: 0, y: 50 },
+                { 
+                    opacity: 1, 
+                    y: 0, 
+                    duration: 0.8, 
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: element,
+                        start: 'top 80%',
+                        toggleActions: 'play none none reverse'
+                    }
+                }
+            );
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
