@@ -19,6 +19,7 @@
             color: #ffffff;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             overflow-x: hidden;
+            position: relative;
         }
         .navbar {
             position: fixed;
@@ -45,7 +46,7 @@
             box-shadow: 0 0 20px rgba(0, 255, 204, 0.5);
         }
         .cursor.hovered {
-            transform: translate(-50%, -50%) scale(2);
+            transform: translate(-50%, -50%) scale(1.5);
             opacity: 0.6;
             background: rgba(0, 255, 204, 0.3);
         }
@@ -56,6 +57,7 @@
             justify-content: center;
             padding: 4rem 2rem;
             position: relative;
+            z-index: 2;
         }
         .magnetic {
             position: relative;
@@ -82,7 +84,7 @@
             width: 100%;
             height: 100%;
             background: rgba(0, 0, 0, 0.2);
-            z-index: -1;
+            z-index: 1;
         }
         .social-icon {
             transition: color 0.3s ease, transform 0.3s ease;
@@ -91,9 +93,80 @@
             color: #00ffcc;
             transform: translateY(-5px);
         }
+        .mountain-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .mountain {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 50%;
+            background-size: cover;
+            background-position: bottom;
+        }
+        .mountain-1 {
+            background-image: url('mountain1.png');
+            z-index: 1;
+            opacity: 0.6;
+        }
+        .mountain-2 {
+            background-image: url('mountain2.png');
+            z-index: 2;
+            opacity: 0.4;
+        }
+        .mountain-3 {
+            background-image: url('mountain3.png');
+            z-index: 3;
+            opacity: 0.3;
+        }
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+            opacity: 0.2;
+            z-index: 0;
+        }
+        .section-heading {
+            position: fixed;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 90;
+            font-size: 3rem;
+            font-weight: 300;
+            color: #ffffff;
+            opacity: 0;
+            text-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
+            transition: opacity 0.3s ease;
+        }
+        .section-heading.active {
+            opacity: 0.7;
+        }
     </style>
 </head>
 <body>
+    <!-- Starry Background -->
+    <div class="stars"></div>
+
+    <!-- Mountain Layers -->
+    <div class="mountain-container">
+        <div class="mountain mountain-1"></div>
+        <div class="mountain mountain-2"></div>
+        <div class="mountain mountain-3"></div>
+    </div>
+
+    <!-- Section Heading -->
+    <div class="section-heading" id="section-heading"></div>
+
     <!-- Custom Cursor -->
     <div class="cursor"></div>
 
@@ -135,14 +208,14 @@
                     <h3 class="text-2xl font-semibold">Machine Learning / Data Scientist - NTT Data (Citi Bank)</h3>
                     <p class="text-gray-400">Sep 2022 - Present</p>
                     <p class="mt-4 max-w-3xl">
-                        At NTT Data, I lead quality management initiatives for Citi Bank, applying advanced NLP techniques to analyze unstructured data from customer feedback and quality assurance reports. By developing sentiment analysis models using NLTK and LSTM-based recurrent neural networks, I uncovered actionable insights that improved operational workflows and customer satisfaction metrics. I designed and deployed generative models with TensorFlow and PyTorch to simulate fraudulent transaction patterns, enhancing fraud detection accuracy by 15%. Additionally, I implemented Retrieval-Augmented Generation (RAG) to integrate LLMs with enterprise health data, ensuring compliant and relevant responses. My work involved building CI/CD pipelines with Jenkins and AWS services like CloudWatch and Lambda, streamlining model deployment and monitoring in production environments.
+                        At NTT Data, I lead quality management initiatives for Citi Bank, applying advanced NLP techniques to analyze unstructured data from customer feedback and quality assurance reports. By developing sentiment analysis models using NLTK and LSTM-based recurrent neural networks, I uncovered actionable insights that improved operational workflows and customer satisfaction metrics. I designed and deployed generative models with TensorFlow and PyTorch to simulate fraudulent transaction patterns, enhancing fraud detection accuracy by 15%. Additionally, I implemented Retrieval-Augmented Generation (RAG) to integrate LLMs with enterprise health data, ensuring compliant and relevant responses. My work involved building CI/CD pipelines with Jenkins and optimizing AWS services like CloudWatch and Lambda, streamlining model deployment and monitoring in production environments.
                     </p>
                 </div>
                 <div class="p-8 bg-[#111111] rounded-xl magnetic">
                     <h3 class="text-2xl font-semibold">Python Developer - Global Logic (ANZ Bank)</h3>
                     <p class="text-gray-400">May 2021 - Sep 2022</p>
                     <p class="mt-4 max-w-3xl">
-                        As a Python Developer at Global Logic, I supported ANZ Bank by developing full-stack applications using Django, focusing on banking services like personal finance and credit card processing. I built customer segmentation models for cross-sell strategies, utilizing machine learning techniques to predict default risks and optimize marketing campaigns. By employing NLP to classify merchant offers, I enhanced targeted promotions, increasing customer engagement by 10%. I also created data visualizations with Tableau and Power BI to communicate insights to stakeholders. My role included working with AWS EC2 and EMR for data processing and implementing Agile methodologies to ensure timely delivery of robust solutions.
+                        As a Python Developer at Global Logic, I supported ANZ Bank by developing full-stack applications using Django, focusing on banking services like personal finance and credit card processing. I built customer segmentation models for cross-sell strategies, utilizing machine learning techniques to predict default risks and optimize marketing campaigns. By leveraging NLP to classify merchant offers, I enhanced targeted promotions, increasing customer engagement by 10%. I also created data visualizations with Tableau and Power BI to communicate insights to stakeholders. My role included working with AWS EC2 and EMR for data processing and implementing Agile methodologies to ensure timely delivery of robust solutions.
                     </p>
                 </div>
             </div>
@@ -156,19 +229,24 @@
             <h2 class="text-5xl font-light mb-12 text-center"><span class="text-split">Projects</span></h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="p-6 bg-[#111111] rounded-xl magnetic">
-                    <h3 class="text-xl font-semibold">Portfolio Website</h3>
-                    <p class="mt-2">A personal portfolio built with HTML, CSS, and JavaScript, hosted on GitHub Pages, showcasing my skills and projects with modern animations and responsive design.</p>
-                    <a href="https://github.com/koushikace/koushikace.github.io" target="_blank" class="text-[#00ffcc] mt-4 inline-block magnetic">View on GitHub</a>
+                    <h3 class="text-xl font-semibold">Twitter Sentiment Analysis</h3>
+                    <p class="mt-2">An NLP-based project using Python and NLTK to analyze sentiment in Twitter data, providing insights into public opinion trends.</p>
+                    <a href="https://github.com/koushikace/twitter-sentiment-analysis" target="_blank" class="text-[#00ffcc] mt-4 inline-block magnetic">View on GitHub</a>
                 </div>
                 <div class="p-6 bg-[#111111] rounded-xl magnetic">
-                    <h3 class="text-xl font-semibold">Sentiment Analysis Dashboard</h3>
-                    <p class="mt-2">Developed an NLP-based dashboard using Python, NLTK, and Dash to analyze customer feedback, providing real-time sentiment insights for business decisions.</p>
-                    <a href="#" class="text-[#00ffcc] mt-4 inline-block magnetic">View Project</a>
+                    <h3 class="text-xl font-semibold">Default of Credit Card Clients</h3>
+                    <p class="mt-2">A machine learning model to predict credit card default risks, built with Python and scikit-learn, improving risk assessment accuracy.</p>
+                    <a href="https://github.com/koushikace/Defaullt-of-credit-card-clients" target="_blank" class="text-[#00ffcc] mt-4 inline-block magnetic">View on GitHub</a>
                 </div>
                 <div class="p-6 bg-[#111111] rounded-xl magnetic">
-                    <h3 class="text-xl font-semibold">Fraud Detection Model</h3>
-                    <p class="mt-2">Built a machine learning model with TensorFlow to detect fraudulent transactions, improving accuracy through generative adversarial networks.</p>
-                    <a href="#" class="text-[#00ffcc] mt-4 inline-block magnetic">View Project</a>
+                    <h3 class="text-xl font-semibold">Online Payment Fraud Detection</h3>
+                    <p class="mt-2">A TensorFlow-based model to detect fraudulent online payment transactions, enhancing security through anomaly detection.</p>
+                    <a href="https://github.com/koushikace/Online-Payment-Fraud-Detection" target="_blank" class="text-[#00ffcc] mt-4 inline-block magnetic">View on GitHub</a>
+                </div>
+                <div class="p-6 bg-[#111111] rounded-xl magnetic">
+                    <h3 class="text-xl font-semibold">NLP Techniques on Laptop Reviews</h3>
+                    <p class="mt-2">A comparative analysis of NLP techniques applied to laptop review datasets, evaluating performance for sentiment classification.</p>
+                    <a href="https://github.com/koushikace/Performance-analysis-of-NLP-tecniques-on-laptop-reviews" target="_blank" class="text-[#00ffcc] mt-4 inline-block magnetic">View on GitHub</a>
                 </div>
             </div>
         </div>
@@ -188,6 +266,20 @@
                 <div class="p-4 bg-[#111111] rounded-xl text-center magnetic">Data Visualization</div>
                 <div class="p-4 bg-[#111111] rounded-xl text-center magnetic">CI/CD</div>
                 <div class="p-4 bg-[#111111] rounded-xl text-center magnetic">Big Data</div>
+                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic">TensorFlow</div>
+                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic">PyTorch</div>
+                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic">Django</div>
+                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic">Tableau</div>
+                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic">Power BI</div>
+                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic">Jenkins</div>
+                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic">AWS CloudWatch</div>
+                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic">AWS Lambda</div>
+                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic">AWS EC2</div>
+                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic">AWS EMR</div>
+                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic">ETL Pipelines</div>
+                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic">Time Series Analysis</div>
+                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic">RAG</div>
+                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic">Generative Models</div>
             </div>
         </div>
     </section>
@@ -256,7 +348,7 @@
         document.querySelectorAll('a, .magnetic').forEach(el => {
             el.addEventListener('mouseenter', () => {
                 cursor.classList.add('hovered');
-                gsap.to(cursor, { scale: 2, opacity: 0.6, duration: 0.3, ease: 'power2.out' });
+                gsap.to(cursor, { scale: 1.5, opacity: 0.6, duration: 0.3, ease: 'power2.out' });
             });
             el.addEventListener('mouseleave', () => {
                 cursor.classList.remove('hovered');
@@ -295,7 +387,7 @@
             });
         });
 
-        // Scroll animations
+        // Scroll animations for sections
         gsap.utils.toArray('.animate-on-scroll').forEach((element) => {
             gsap.fromTo(element, 
                 { opacity: 0, y: 20, scale: 0.98, filter: 'blur(2px)' },
@@ -313,6 +405,65 @@
                     }
                 }
             );
+        });
+
+        // Parallax effect for mountains
+        gsap.to('.mountain-1', {
+            y: -200,
+            ease: 'none',
+            scrollTrigger: {
+                trigger: document.body,
+                start: 'top top',
+                end: 'bottom bottom',
+                scrub: 1
+            }
+        });
+        gsap.to('.mountain-2', {
+            y: -150,
+            ease: 'none',
+            scrollTrigger: {
+                trigger: document.body,
+                start: 'top top',
+                end: 'bottom bottom',
+                scrub: 1.5
+            }
+        });
+        gsap.to('.mountain-3', {
+            y: -100,
+            ease: 'none',
+            scrollTrigger: {
+                trigger: document.body,
+                start: 'top top',
+                end: 'bottom bottom',
+                scrub: 2
+            }
+        });
+
+        // Update section heading on scroll
+        const sections = [
+            { id: 'about', name: 'About' },
+            { id: 'experience', name: 'Experience' },
+            { id: 'projects', name: 'Projects' },
+            { id: 'skills', name: 'Skills' },
+            { id: 'contact', name: 'Contact' }
+        ];
+        const heading = document.getElementById('section-heading');
+        sections.forEach(section => {
+            ScrollTrigger.create({
+                trigger: `#${section.id}`,
+                start: 'top 20%',
+                end: 'bottom 20%',
+                onEnter: () => {
+                    heading.textContent = section.name;
+                    heading.classList.add('active');
+                },
+                onEnterBack: () => {
+                    heading.textContent = section.name;
+                    heading.classList.add('active');
+                },
+                onLeave: () => heading.classList.remove('active'),
+                onLeaveBack: () => heading.classList.remove('active')
+            });
         });
 
         // Smooth scrolling for navigation links
