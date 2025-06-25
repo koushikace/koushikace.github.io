@@ -3,481 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Koushik Subraveti - Data Scientist Portfolio</title>
+    <title>Koushik S - Data Scientist</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <nav id="main-nav">
-        <div class="container nav-content">
-            <a href="#hero" class="site-logo">KOUSIK SUBRAVETI</a>
-            <ul class="nav-links">
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button class="nav-toggle" aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </nav>
-
-    <header id="hero" class="section hero-section">
-        <div class="container hero-content">
-            <div class="profile-picture">
-                <img src="https://github.com/koushikace/koushikace.github.io/blob/main/images/images/git%20pic.jpg?raw=true" alt="Koushik Subraveti's Profile Picture">
-            </div>
-            <h1>Hello, I'm Kousik Subraveti.</h1>
-            <p class="rotating-tagline">
-                <span id="rotating-text"></span>
-            </p>
-            <a href="#projects" class="btn btn-primary scroll-to-projects">View My Work <i class="fas fa-arrow-down"></i></a>
+    <header>
+        <div class="container">
+            <h1>Koushik S</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#work">Work</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <section id="projects" class="section projects-section">
+    <main>
+        <section id="about" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>Data Scientist & ML Engineer</h2>
+                    <p>Specializing in NLP, LLMs, and building intelligent systems that solve real business problems.</p>
+                    <a href="#work" class="btn">View My Work</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="work" class="projects">
+            <div class="container">
+                <h2>Selected Projects</h2>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <h3>Fraud Detection System</h3>
+                        <p>Developed generative AI models to simulate fraudulent transaction patterns, improving detection accuracy by 35%.</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>Compliance Chatbot</h3>
+                        <p>Implemented RAG architecture to connect LLMs with enterprise policy documents.</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>Sentiment Analysis Pipeline</h3>
+                        <p>Built NLP system processing customer feedback from multiple channels.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Get In Touch</h2>
+                <p>Interested in working together or have questions?</p>
+                <a href="mailto:skousik789@gmail.com" class="btn">Email Me</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
         <div class="container">
-            <h2 class="section-heading"><span>Featured Projects</span></h2>
-            <div class="projects-grid">
-
-                <div class="project-card" data-modal-target="fraud-detection-modal">
-                    <div class="project-icon"><i class="fas fa-shield-alt"></i></div>
-                    <h3>Online Payment Fraud Detection</h3>
-                    <p>Machine learning models for real-time fraud detection in online transactions.</p>
-                </div>
-
-                <div class="project-card" data-modal-target="nlp-reviews-modal">
-                    <div class="project-icon"><i class="fas fa-laptop-code"></i></div>
-                    <h3>NLP Analysis on Laptop Reviews</h3>
-                    <p>Sentiment analysis using NLP techniques to classify laptop reviews.</p>
-                </div>
-
-                <div class="project-card" data-modal-target="twitter-sentiment-modal">
-                    <div class="project-icon"><i class="fab fa-twitter"></i></div>
-                    <h3>Twitter Sentiment Analysis</h3>
-                    <p>Classifying tweet sentiments (positive, negative, neutral) using ML models.</p>
-                </div>
-
-                <div class="project-card" data-modal-target="credit-default-modal">
-                    <div class="project-icon"><i class="fas fa-credit-card"></i></div>
-                    <h3>Credit Card Default Prediction</h3>
-                    <p>Predicting credit card payment defaults using various ML algorithms.</p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="section about-section">
-        <div class="container">
-            <h2 class="section-heading"><span>About Me</span></h2>
-            <div class="about-content">
-                <p>
-                    A seasoned Data Scientist with <strong>over 4 years of experience</strong> specializing in <strong>Big Data Analytics</strong> and <strong>advanced AI/ML applications</strong>. I excel in leveraging <strong>Deep Learning (NLP, LLMs)</strong>, time series analysis, and robust data engineering (ETL, distributed systems) to deliver end-to-end solutions. My expertise extends to deploying models on <strong>cloud platforms like AWS and Azure</strong>, ensuring scalability and performance.
-                </p>
-                <p>
-                    I am passionate about transforming complex data into actionable insights, driving data-informed decisions, and significantly improving operational efficiency. My professional journey includes impactful work in <strong>fraud detection, customer segmentation, and process automation</strong>. I thrive in collaborative Agile environments, architecting scalable data solutions, and am committed to continuous learning in cutting-edge technologies to solve real-world business challenges.
-                </p>
-            </div>
-            <div class="skills-overview">
-                <h3 class="sub-heading">My Core Competencies:</h3>
-                <div class="skills-grid">
-                    <div class="skill-item">
-                        <i class="fas fa-brain"></i>
-                        <p>Machine Learning & Predictive Modeling</p>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-chart-bar"></i>
-                        <p>Data Analytics & Visualization</p>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-database"></i>
-                        <p>ETL & Big Data Processing</p>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-cloud"></i>
-                        <p>Cloud & Automation (AWS, Azure)</p>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-language"></i>
-                        <p>NLP & Text Mining (LLMs, RAG)</p>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-code"></i>
-                        <p>Programming (Python, SQL, R)</p>
-                    </div>
-                </div>
-
-                <h3 class="sub-heading technical-skills-heading">Technical Expertise:</h3>
-                <div class="technical-skills-details">
-                    <div class="skill-category">
-                        <h4><i class="fas fa-terminal"></i> Languages & Libraries</h4>
-                        <ul>
-                            <li>Python (NumPy, Pandas, Scikit-learn, Seaborn, NLTK)</li>
-                            <li>SQL, R, PySpark</li>
-                            <li>Perl, Shell scripting</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h4><i class="fas fa-cogs"></i> Deep Learning & AI</h4>
-                        <ul>
-                            <li>CNN, RNN, LSTM, LLMs (fine-tuning GPT, RAG with LangChain)</li>
-                            <li>TensorFlow, PyTorch</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h4><i class="fas fa-server"></i> Cloud & Big Data</h4>
-                        <ul>
-                            <li>AWS (EC2, S3, EMR), Azure, Databricks</li>
-                            <li>Apache Spark, Hadoop (HDFS, Hive, MapReduce), Kafka</li>
-                            <li>MongoDB, Cassandra, DynamoDB, PostgreSQL, Oracle, SQL Server</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h4><i class="fas fa-chart-pie"></i> Visualization & Tools</h4>
-                        <ul>
-                            <li>Tableau, Power BI</li>
-                            <li>Matplotlib, Plotly, Seaborn</li>
-                            <li>Git, GitHub, Jira, CI/CD (GitHub Actions, Jenkins)</li>
-                            <li>Docker, Kubernetes</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h4><i class="fas fa-sitemap"></i> Methodologies</h4>
-                        <ul>
-                            <li>Agile, Scrum, Waterfall</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="experience" class="section experience-section">
-        <div class="container">
-            <h2 class="section-heading"><span>Professional Journey</span></h2>
-            <div class="experience-list">
-                <div class="experience-item">
-                    <h3>Machine Learning / Data Scientist</h3>
-                    <p class="company">NTT DATA <span class="dates">Sep 2022 to till date (Client: Citi Bank)</span></p>
-                    <ul>
-                        <li>Designed, built, and deployed machine learning models and algorithms (including LLMs, RAG systems with LangChain) to solve complex business problems for major financial clients.</li>
-                        <li>Applied NLP techniques to streamline processes and deepen business understanding of quality-related events, uncovering actionable insights for continuous improvement.</li>
-                        <li>Engineered and optimized ETL pipelines, working with SQL/NoSQL databases (Oracle, SQL Server, MongoDB) and distributed systems like Kafka to handle high-volume, high-velocity data.</li>
-                        <li>Implemented CI/CD with GitHub Actions and Jenkins for robust deployment, and contributed to building a monitoring system for model performance on AWS (EC2, S3, EMR).</li>
-                        <li>Collaborated with ML Engineers and Data Scientists to build data and model pipelines, performing data exploration, cleaning, and preprocessing.</li>
-                        <li>Contributed to customer segmentation and cross-sell models, identifying prime customers for salary account campaigns and analyzing customer spend.</li>
-                    </ul>
-                </div>
-                <div class="experience-item">
-                    <h3>Python Developer (Data-focused)</h3>
-                    <p class="company">Global Logic (Client: ANZ Bank) <span class="dates">May 2021 to Sep 2022</span></p>
-                    <ul>
-                        <li>Developed and maintained Python-based applications focused on data processing and analysis for HSBC.</li>
-                        <li>Performed data acquisition, cleaning, and transformation for various projects, ensuring data quality and readiness for analytical models.</li>
-                        <li>Contributed to the development of machine learning models, focusing on data integration and feature engineering.</li>
-                        <li>Implemented automation scripts using Python, Shell, and Perl to streamline data workflows and reporting processes.</li>
-                        <li>Collaborated with cross-functional teams to understand data requirements and deliver robust data solutions.</li>
-                        <li>Gained experience in version control with Git and participated in Agile development cycles using Jira.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="education" class="section education-section">
-        <div class="container">
-            <h2 class="section-heading"><span>Education & Certifications</span></h2>
-            <div class="education-grid">
-                <div class="education-item">
-                    <h3>MSc in Data Science and Analytics with Advanced Research</h3>
-                    <p class="institution">University of Hertfordshire</p>
-                    <p class="years">2022 – 2024</p>
-                    <ul class="modules-list">
-                        <li>Data Mining</li>
-                        <li>Neural Networks and Machine Learning</li>
-                        <li>Applied Data Science and Analytics</li>
-                    </ul>
-                </div>
-                <div class="education-item">
-                    <h3>Bachelor’s BE in Electronics and Communications Engineering</h3>
-                    <p class="institution">JNTU</p>
-                    <p class="years">2015 – 2019</p>
-                    <ul class="modules-list">
-                        <li>Digital Signal Processing</li>
-                        <li>Signals and Systems</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="certifications-list">
-                <h3>Certifications:</h3>
-                <ul>
-                    <li><i class="fas fa-award"></i> Microsoft Certified: Azure AI Fundamentals</li>
-                    <li><i class="fas fa-award"></i> Oracle Autonomous Database Specialist</li>
-                    <li><i class="fas fa-award"></i> Alteryx Machine Learning Fundamentals</li>
-                    <li><i class="fas fa-award"></i> Data Science Virtual Program (British Airways)</li>
-                    <li><i class="fas fa-award"></i> J.P Morgan Excel Skills Virtual Program</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section contact-section">
-        <div class="container">
-            <h2 class="section-heading"><span>Get In Touch</span></h2>
-            <div class="contact-info-grid">
-                <div class="contact-card">
-                    <i class="fas fa-envelope"></i>
-                    <p>Email Me:</p>
-                    <a href="mailto:kousiksubraveti@gmail.com">kousiksubraveti@gmail.com</a>
-                </div>
-                <div class="contact-card">
-                    <i class="fas fa-phone-alt"></i>
-                    <p>Call Me:</p>
-                    <a href="tel:+447570301781">+44 7570 301781</a>
-                </div>
-                <div class="contact-card">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <p>Location:</p>
-                    <span>London, UK</span>
-                </div>
-            </div>
-            <div class="social-links-contact">
-                <a href="https://www.linkedin.com/in/kousik-s-a22459b2" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/koushikace" target="_blank" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Koushik Subraveti. All rights reserved.</p>
+            <p>&copy; 2023 Koushik S. All rights reserved.</p>
         </div>
     </footer>
-
-    <div id="fraud-detection-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <h2>Online Payment Fraud Detection</h2>
-            <p class="modal-intro">This project aims to build and evaluate machine learning models for detecting fraudulent transactions in an online payment dataset. With the increasing volume of digital transactions, identifying and preventing fraud is crucial for financial institutions and e-commerce platforms.</p>
-            <h3>Dataset & Features:</h3>
-            <p>The core dataset is `new_data.csv`, simulated financial transaction data from a mobile money service. It includes features like `step`, `type` (CASH_OUT, PAYMENT, DEBIT, TRANSFER, CASH_IN), `amount`, `nameOrig`, `oldbalanceOrg`, `newbalanceOrg`, `nameDest`, `oldbalanceDest`, `newbalanceDest`, `isFraud` (target variable), and `isFlaggedFraud`. (Note: Dataset size is approx. 470 MB, managed with Git LFS).</p>
-            <h3>Data Exploration & Preprocessing:</h3>
-            <p>Detailed in `onilepayment.ipynb` notebook. Steps include: Initial Data Loading, Categorical/Numerical Feature Identification, EDA (Transaction Type, Fraud Distribution, Time Step, Correlation Heatmap), Feature Engineering (One-Hot Encoding for `type`), Feature/Target Separation, and Data Splitting (70/30 train/test split, `random_state=42`).</p>
-            <h3>Modeling & Evaluation:</h3>
-            <p>Evaluated classification models: Logistic Regression, XGBoost Classifier, Random Forest Classifier. Performance assessed using ROC AUC Score, critical for imbalanced datasets. Confusion Matrix visualized for XGBoost Classifier.</p>
-            <h3>Key Libraries:</h3>
-            <p>NumPy, Pandas, Matplotlib, Seaborn, scikit-learn, XGBoost.</p>
-            <div class="modal-links">
-                <a href="https://github.com/koushikace/Online-Payment-Fraud-Detection" target="_blank" class="btn btn-secondary">View on GitHub <i class="fas fa-external-link-alt"></i></a>
-            </div>
-        </div>
-    </div>
-
-    <div id="nlp-reviews-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <h2>Performance Analysis of NLP Techniques on Laptop Reviews</h2>
-            <p class="modal-intro">This project focuses on performing sentiment analysis on Amazon laptop reviews, classifying them as either "positive" or "negative/neutral" based on text content. It evaluates various NLP techniques and machine learning models.</p>
-            <h3>Dataset:</h3>
-            <p>`Cleansed_laptop data.csv`, containing `comment` (text) and `rating` (1-5 stars). Ratings 1-3 are mapped to 0 (Negative/Neutral), 4-5 to 1 (Positive).</p>
-            <h3>Key Features & Techniques:</h3>
-            <p>Data Loading & Initial Exploration. Text Preprocessing: Lowercasing, Punctuation/Special Character Removal, Stop Word Removal, Lemmatization (NLTK WordNetLemmatizer). Feature Extraction: TF-IDF. Handling Class Imbalance: SMOTE (Synthetic Minority Over-sampling Technique).</p>
-            <h3>Model Training & Evaluation:</h3>
-            <p>Data Splitting (training, validation, testing). Initial model: Decision Tree Classifier. Performance Metrics: Confusion Matrix, Precision, Recall, Accuracy, F1-Score. Achieved 80.43% across all metrics on the validation set, attributed to effective SMOTE handling.</p>
-            <h3>Key Libraries:</h3>
-            <p>Pandas, scikit-learn, imblearn, nltk, regex.</p>
-            <div class="modal-links">
-                <a href="https://github.com/koushikace/Performance-analysis-of-NLP-tecniques-on-laptop-reviews" target="_blank" class="btn btn-secondary">View on GitHub <i class="fas fa-external-link-alt"></i></a>
-            </div>
-        </div>
-    </div>
-
-    <div id="twitter-sentiment-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <h2>Twitter Sentiment Analysis</h2>
-            <p class="modal-intro">This project performs sentiment analysis on Twitter data to classify tweets into categories such as positive, negative, or neutral. It includes data preprocessing, visualization, and machine learning model building for classification.</p>
-            <h3>Project Structure:</h3>
-            <p>Loading Libraries and Data, Reading Train and Test Datasets, Exploratory Data Analysis (EDA) of sentiment distribution and common words, Data Preprocessing (text cleaning, lowercase, punctuation removal), Text Cleaning (stop words, stemming/lemmatization), Model Building (Logistic Regression, Naive Bayes), Evaluation and Conclusion (Accuracy, Precision, Recall, F1-score).</p>
-            <h3>Dependencies:</h3>
-            <p>Pandas, NumPy, Matplotlib, Seaborn, NLTK, scikit-learn, re.</p>
-            <h3>Usage:</h3>
-            <p>Run the notebook `twitter_sentiment_analysis_enhanced.ipynb` cell by cell for step-by-step analysis and results.</p>
-            <div class="modal-links">
-                <a href="https://github.com/koushikace/Twitter-Sentiment-Analysis" target="_blank" class="btn btn-secondary">View on GitHub <i class="fas fa-external-link-alt"></i></a>
-            </div>
-        </div>
-    </div>
-
-    <div id="credit-default-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <h2>Default of Credit Card Clients Prediction</h2>
-            <p class="modal-intro">This project involves building models to predict whether a credit card client will default on their payment in the next month. The dataset contains rich demographic and financial information.</p>
-            <h3>Dataset Features:</h3>
-            <p>`ID`, `LIMIT_BAL` (credit amount), `SEX`, `EDUCATION`, `MARRIAGE`, `AGE`, `PAY_0 - PAY_6` (payment status), `BILL_AMT1 - BILL_AMT6` (bill statements), `PAY_AMT1 - PAY_AMT6` (previous payments), and `default payment next month` (target: 1 = yes, 0 = no).</p>
-            <h3>Types of Models Explored:</h3>
-            <ul>
-                <li>Binary Classification: Predicting default (yes/no) using Logistic Regression, Decision Trees, Random Forests, Neural Networks.</li>
-                <li>Multi-class Classification: Predicting probability of default with more than two classes, using Multinomial Logistic Regression or SVM.</li>
-                <li>Regression Model: Estimating default probability as a continuous variable using Linear Regression, Decision Trees, Random Forests, Neural Networks.</li>
-                <li>Clustering Model: Grouping clients based on demographic/financial info using K-means or Hierarchical Clustering.</li>
-                <li>Association Rule Mining Model: Identifying patterns (e.g., variables associated with default) using Apriori or FP-growth.</li>
-            </ul>
-            <div class="modal-links">
-                <a href="https://github.com/koushikace/Default-of-Credit-Card-Clients" target="_blank" class="btn btn-secondary">View on GitHub <i class="fas fa-external-link-alt"></i></a>
-            </div>
-        </div>
-    </div>
-
-    <div id="overlay"></div> <script>
-        // --- Rotating Text in Hero Section ---
-        const rotatingTextElement = document.getElementById('rotating-text');
-        const taglines = [
-            "A Data Scientist.",
-            "Focused on Machine Learning.",
-            "Building ETL Pipelines.",
-            "Solving Complex Problems.",
-            "Driving Data-Driven Decisions."
-        ];
-        let taglineIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        const typingSpeed = 70; // ms per character
-        const deletingSpeed = 40; // ms per character
-        const delayBetweenTaglines = 1500; // ms before typing/deleting
-
-        function typeWriter() {
-            const currentTagline = taglines[taglineIndex];
-            if (isDeleting) {
-                rotatingTextElement.textContent = currentTagline.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                rotatingTextElement.textContent = currentTagline.substring(0, charIndex + 1);
-                charIndex++;
-            }
-
-            if (!isDeleting && charIndex === currentTagline.length) {
-                setTimeout(() => isDeleting = true, delayBetweenTaglines);
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                taglineIndex = (taglineIndex + 1) % taglines.length;
-            }
-
-            const speed = isDeleting ? deletingSpeed : typingSpeed;
-            setTimeout(typeWriter, speed);
-        }
-
-        document.addEventListener('DOMContentLoaded', typeWriter);
-
-        // --- Sticky Navbar ---
-        const mainNav = document.getElementById('main-nav');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 0) {
-                mainNav.classList.add('sticky');
-            } else {
-                mainNav.classList.remove('sticky');
-            }
-        });
-
-        // --- Mobile Navigation Toggle ---
-        const navToggle = document.querySelector('.nav-toggle');
-        const navLinks = document.querySelector('.nav-links');
-
-        navToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('nav-open');
-            navToggle.classList.toggle('open'); // For potential hamburger icon animation
-        });
-
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('nav-open');
-                navToggle.classList.remove('open');
-            });
-        });
-
-        // Close mobile nav if clicking outside
-        document.addEventListener('click', (e) => {
-            if (!mainNav.contains(e.target) && !navToggle.contains(e.target) && navLinks.classList.contains('nav-open')) {
-                navLinks.classList.remove('nav-open');
-                navToggle.classList.remove('open');
-            }
-        });
-
-
-        // --- Project Modals ---
-        const projectCards = document.querySelectorAll('.project-card');
-        const overlay = document.getElementById('overlay');
-
-        projectCards.forEach(card => {
-            card.addEventListener('click', () => {
-                const modalTargetId = card.dataset.modalTarget;
-                const modal = document.getElementById(modalTargetId);
-                if (modal) {
-                    modal.classList.add('active');
-                    overlay.classList.add('active');
-                    document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
-                }
-            });
-        });
-
-        document.querySelectorAll('.close-button').forEach(button => {
-            button.addEventListener('click', () => {
-                const modal = button.closest('.modal');
-                if (modal) {
-                    modal.classList.remove('active');
-                    overlay.classList.remove('active');
-                    document.body.style.overflow = ''; // Restore scrolling
-                }
-            });
-        });
-
-        overlay.addEventListener('click', () => {
-            document.querySelectorAll('.modal.active').forEach(modal => {
-                modal.classList.remove('active');
-            });
-            overlay.classList.remove('active');
-            document.body.style.overflow = ''; // Restore scrolling
-        });
-
-        // Close modal with Escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && document.querySelector('.modal.active')) {
-                document.querySelector('.modal.active').classList.remove('active');
-                overlay.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        });
-
-        // --- Scroll Animations (using Intersection Observer) ---
-        const sections = document.querySelectorAll('.section');
-
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.2 // Trigger when 20% of the section is visible
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                    // Stop observing once visible if you only want it to animate once
-                    // observer.unobserve(entry.target);
-                } else {
-                    // entry.target.classList.remove('is-visible'); // Uncomment if you want animation to reset on scroll out
-                }
-            });
-        }, observerOptions);
-
-        sections.forEach(section => {
-            observer.observe(section);
-        });
-
-    </script>
 </body>
 </html>
