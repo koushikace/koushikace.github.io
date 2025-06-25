@@ -5,190 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kousik S - Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            background-color: #0a0a0a;
-            color: #ffffff;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            overflow-x: hidden;
-            position: relative;
-        }
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 100;
-            padding: 1.5rem 2rem;
-            transition: background 0.3s ease;
-        }
-        .navbar.scrolled {
-            background: rgba(10, 10, 10, 0.8);
-            backdrop-filter: blur(10px);
-        }
-        .cursor {
-            width: 12px;
-            height: 12px;
-            background: #00ffcc;
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
-            transform: translate(-50%, -50%);
-            transition: transform 0.1s ease, opacity 0.2s ease;
-            box-shadow: 0 0 20px rgba(0, 255, 204, 0.5);
-        }
-        .cursor.hovered {
-            transform: translate(-50%, -50%) scale(1.5);
-            opacity: 0.6;
-            background: rgba(0, 255, 204, 0.3);
-        }
-        .section {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 4rem 2rem;
-            position: relative;
-            z-index: 2;
-        }
-        .magnetic {
-            position: relative;
-            display: inline-block;
-            transition: transform 0.2s ease;
-        }
-        .text-split {
-            display: inline-block;
-            overflow: hidden;
-        }
-        .text-split span {
-            display: inline-block;
-            transform: translateY(100%);
-        }
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(20px) scale(0.98);
-            filter: blur(2px);
-        }
-        .bg-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.2);
-            z-index: 1;
-        }
-        .social-icon {
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
-        .social-icon:hover {
-            color: #00ffcc;
-            transform: translateY(-5px);
-        }
-        .mountain-container {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            pointer-events: none;
-        }
-        .mountain {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            height: 50%;
-            background-size: cover;
-            background-position: bottom;
-        }
-        .mountain-1 {
-            background-image: url('mountain1.png');
-            z-index: 1;
-            opacity: 0.6;
-        }
-        .mountain-2 {
-            background-image: url('mountain2.png');
-            z-index: 2;
-            opacity: 0.4;
-        }
-        .mountain-3 {
-            background-image: url('mountain3.png');
-            z-index: 3;
-            opacity: 0.3;
-        }
-        .stars {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
-            opacity: 0.2;
-            z-index: 0;
-        }
-        .section-heading {
-            position: fixed;
-            top: 80px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 90;
-            font-size: 3rem;
-            font-weight: 300;
-            color: #ffffff;
-            opacity: 0;
-            text-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
-            transition: opacity 0.3s ease;
-        }
-        .section-heading.active {
-            opacity: 0.7;
-        }
-    </style>
 </head>
 <body>
-    <!-- Starry Background -->
-    <div class="stars"></div>
-
-    <!-- Mountain Layers -->
-    <div class="mountain-container">
-        <div class="mountain mountain-1"></div>
-        <div class="mountain mountain-2"></div>
-        <div class="mountain mountain-3"></div>
-    </div>
-
+    <!-- Robotic Animation Background -->
+    <canvas id="circuit"></canvas>
     <!-- Section Heading -->
     <div class="section-heading" id="section-heading"></div>
-
     <!-- Custom Cursor -->
     <div class="cursor"></div>
-
     <!-- Navbar -->
     <nav class="navbar">
         <div class="container mx-auto flex justify-between items-center px-4">
             <h1 class="text-xl font-light magnetic">Kousik S</h1>
             <div class="space-x-6">
-                <a href="#about" class="text-sm magnetic hover:text-[#00ffcc]">About</a>
-                <a href="#experience" class="text-sm magnetic hover:text-[#00ffcc]">Experience</a>
-                <a href="#projects" class="text-sm magnetic hover:text-[#00ffcc]">Projects</a>
-                <a href="#skills" class="text-sm magnetic hover:text-[#00ffcc]">Skills</a>
-                <a href="#contact" class="text-sm magnetic hover:text-[#00ffcc]">Contact</a>
+                <a href="#hero" class="text-sm magnetic hover:text-[#ff0000]">Home</a>
+                <a href="#about" class="text-sm magnetic hover:text-[#ff0000]">About</a>
+                <a href="#experience" class="text-sm magnetic hover:text-[#ff0000]">Experience</a>
+                <a href="#projects" class="text-sm magnetic hover:text-[#ff0000]">Projects</a>
+                <a href="#skills" class="text-sm magnetic hover:text-[#ff0000]">Skills</a>
+                <a href="#contact" class="text-sm magnetic hover:text-[#ff0000]">Contact</a>
             </div>
         </div>
     </nav>
-
+    <!-- Hero Section -->
+    <section id="hero" class="section">
+        <div class="bg-overlay"></div>
+        <div class="container mx-auto text-center animate-on-scroll">
+            <h1 class="text-6xl md:text-8xl font-light mb-4"><span class="text-split">Kousik S</span></h1>
+            <h2 class="text-3xl md:text-4xl font-light mb-6"><span class="text-split">Data Scientist</span></h2>
+            <p class="text-lg max-w-xl mx-auto mb-8">
+                Building AI-driven solutions for a smarter future with expertise in NLP, Deep Learning, and cloud technologies.
+            </p>
+            <a href="#projects" class="inline-block px-6 py-3 bg-[#ff0000] text-white rounded-lg magnetic hover:bg-[#cc0000] transition-colors">
+                Explore My Work
+            </a>
+        </div>
+        <div class="section-divider"></div>
+    </section>
     <!-- About Section -->
     <section id="about" class="section">
         <div class="bg-overlay"></div>
         <div class="container mx-auto flex flex-col md:flex-row items-center animate-on-scroll">
-            <img src="profile.jpg" alt="Kousik S" class="w-48 h-48 rounded-full mb-6 md:mb-0 md:mr-8 magnetic" />
+            <img src="WhatsApp Image 2025-05-23 at 17.19.18_80a79c40.jpg" alt="Kousik S" class="w-48 h-48 rounded-full mb-6 md:mb-0 md:mr-8 magnetic" />
             <div>
                 <h2 class="text-5xl font-light mb-6"><span class="text-split">About Me</span></h2>
                 <p class="text-lg max-w-2xl leading-relaxed">
@@ -196,22 +59,22 @@
                 </p>
             </div>
         </div>
+        <div class="section-divider"></div>
     </section>
-
     <!-- Experience Section -->
     <section id="experience" class="section">
         <div class="bg-overlay"></div>
         <div class="container mx-auto animate-on-scroll">
             <h2 class="text-5xl font-light mb-12 text-center"><span class="text-split">Experience</span></h2>
             <div class="space-y-12">
-                <div class="p-8 bg-[#111111] rounded-xl magnetic">
+                <div class="p-8 bg-[#111111] rounded-xl magnetic project-card">
                     <h3 class="text-2xl font-semibold">Machine Learning / Data Scientist - NTT Data (Citi Bank)</h3>
                     <p class="text-gray-400">Sep 2022 - Present</p>
                     <p class="mt-4 max-w-3xl">
                         At NTT Data, I lead quality management initiatives for Citi Bank, applying advanced NLP techniques to analyze unstructured data from customer feedback and quality assurance reports. By developing sentiment analysis models using NLTK and LSTM-based recurrent neural networks, I uncovered actionable insights that improved operational workflows and customer satisfaction metrics. I designed and deployed generative models with TensorFlow and PyTorch to simulate fraudulent transaction patterns, enhancing fraud detection accuracy by 15%. Additionally, I implemented Retrieval-Augmented Generation (RAG) to integrate LLMs with enterprise health data, ensuring compliant and relevant responses. My work involved building CI/CD pipelines with Jenkins and optimizing AWS services like CloudWatch and Lambda, streamlining model deployment and monitoring in production environments.
                     </p>
                 </div>
-                <div class="p-8 bg-[#111111] rounded-xl magnetic">
+                <div class="p-8 bg-[#111111] rounded-xl magnetic project-card">
                     <h3 class="text-2xl font-semibold">Python Developer - Global Logic (ANZ Bank)</h3>
                     <p class="text-gray-400">May 2021 - Sep 2022</p>
                     <p class="mt-4 max-w-3xl">
@@ -220,70 +83,70 @@
                 </div>
             </div>
         </div>
+        <div class="section-divider"></div>
     </section>
-
     <!-- Projects Section -->
     <section id="projects" class="section">
         <div class="bg-overlay"></div>
         <div class="container mx-auto animate-on-scroll">
             <h2 class="text-5xl font-light mb-12 text-center"><span class="text-split">Projects</span></h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="p-6 bg-[#111111] rounded-xl magnetic">
+                <div class="p-6 bg-[#111111] rounded-xl magnetic project-card">
                     <h3 class="text-xl font-semibold">Twitter Sentiment Analysis</h3>
                     <p class="mt-2">An NLP-based project using Python and NLTK to analyze sentiment in Twitter data, providing insights into public opinion trends.</p>
-                    <a href="https://github.com/koushikace/twitter-sentiment-analysis" target="_blank" class="text-[#00ffcc] mt-4 inline-block magnetic">View on GitHub</a>
+                    <a href="https://github.com/koushikace/twitter-sentiment-analysis" target="_blank" class="text-[#ff0000] mt-4 inline-block magnetic">View on GitHub</a>
                 </div>
-                <div class="p-6 bg-[#111111] rounded-xl magnetic">
+                <div class="p-6 bg-[#111111] rounded-xl magnetic project-card">
                     <h3 class="text-xl font-semibold">Default of Credit Card Clients</h3>
                     <p class="mt-2">A machine learning model to predict credit card default risks, built with Python and scikit-learn, improving risk assessment accuracy.</p>
-                    <a href="https://github.com/koushikace/Defaullt-of-credit-card-clients" target="_blank" class="text-[#00ffcc] mt-4 inline-block magnetic">View on GitHub</a>
+                    <a href="https://github.com/koushikace/Defaullt-of-credit-card-clients" target="_blank" class="text-[#ff0000] mt-4 inline-block magnetic">View on GitHub</a>
                 </div>
-                <div class="p-6 bg-[#111111] rounded-xl magnetic">
+                <div class="p-6 bg-[#111111] rounded-xl magnetic project-card">
                     <h3 class="text-xl font-semibold">Online Payment Fraud Detection</h3>
                     <p class="mt-2">A TensorFlow-based model to detect fraudulent online payment transactions, enhancing security through anomaly detection.</p>
-                    <a href="https://github.com/koushikace/Online-Payment-Fraud-Detection" target="_blank" class="text-[#00ffcc] mt-4 inline-block magnetic">View on GitHub</a>
+                    <a href="https://github.com/koushikace/Online-Payment-Fraud-Detection" target="_blank" class="text-[#ff0000] mt-4 inline-block magnetic">View on GitHub</a>
                 </div>
-                <div class="p-6 bg-[#111111] rounded-xl magnetic">
+                <div class="p-6 bg-[#111111] rounded-xl magnetic project-card">
                     <h3 class="text-xl font-semibold">NLP Techniques on Laptop Reviews</h3>
                     <p class="mt-2">A comparative analysis of NLP techniques applied to laptop review datasets, evaluating performance for sentiment classification.</p>
-                    <a href="https://github.com/koushikace/Performance-analysis-of-NLP-tecniques-on-laptop-reviews" target="_blank" class="text-[#00ffcc] mt-4 inline-block magnetic">View on GitHub</a>
+                    <a href="https://github.com/koushikace/Performance-analysis-of-NLP-tecniques-on-laptop-reviews" target="_blank" class="text-[#ff0000] mt-4 inline-block magnetic">View on GitHub</a>
                 </div>
             </div>
         </div>
+        <div class="section-divider"></div>
     </section>
-
     <!-- Skills Section -->
     <section id="skills" class="section">
         <div class="bg-overlay"></div>
         <div class="container mx-auto animate-on-scroll">
             <h2 class="text-5xl font-light mb-12 text-center"><span class="text-split">Skills</span></h2>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic">Python</div>
-                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic">NLP (NLTK, spaCy)</div>
-                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic">Deep Learning</div>
-                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic">AWS</div>
-                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic">SQL/NoSQL</div>
-                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic">Data Visualization</div>
-                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic">CI/CD</div>
-                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic">Big Data</div>
-                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic">TensorFlow</div>
-                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic">PyTorch</div>
-                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic">Django</div>
-                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic">Tableau</div>
-                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic">Power BI</div>
-                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic">Jenkins</div>
-                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic">AWS CloudWatch</div>
-                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic">AWS Lambda</div>
-                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic">AWS EC2</div>
-                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic">AWS EMR</div>
-                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic">ETL Pipelines</div>
-                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic">Time Series Analysis</div>
-                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic">RAG</div>
-                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic">Generative Models</div>
+                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic skill-tile">Python</div>
+                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic skill-tile">NLP (NLTK, spaCy)</div>
+                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic skill-tile">Deep Learning</div>
+                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic skill-tile">AWS</div>
+                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic skill-tile">SQL/NoSQL</div>
+                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic skill-tile">Data Visualization</div>
+                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic skill-tile">CI/CD</div>
+                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic skill-tile">Big Data</div>
+                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic skill-tile">TensorFlow</div>
+                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic skill-tile">PyTorch</div>
+                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic skill-tile">Django</div>
+                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic skill-tile">Tableau</div>
+                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic skill-tile">Power BI</div>
+                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic skill-tile">Jenkins</div>
+                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic skill-tile">AWS CloudWatch</div>
+                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic skill-tile">AWS Lambda</div>
+                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic skill-tile">AWS EC2</div>
+                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic skill-tile">AWS EMR</div>
+                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic skill-tile">ETL Pipelines</div>
+                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic skill-tile">Time Series Analysis</div>
+                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic skill-tile">RAG</div>
+                <div class="p-4 bg-[#111111] rounded-xl text-center magnetic skill-tile">Generative Models</div>
             </div>
         </div>
+        <div class="section-divider"></div>
     </section>
-
     <!-- Contact Section -->
     <section id="contact" class="section">
         <div class="bg-overlay"></div>
@@ -304,9 +167,85 @@
                 </a>
             </div>
         </div>
+        <div class="section-divider"></div>
     </section>
-
     <script>
+        // Robotic Circuit Animation
+        const canvas = document.getElementById('circuit');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        const nodes = [];
+        const mouse = { x: null, y: null };
+        class Node {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 3 + 1;
+                this.speedX = Math.random() * 0.5 - 0.25;
+                this.speedY = Math.random() * 0.5 - 0.25;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+                const dx = mouse.x - this.x;
+                const dy = mouse.y - this.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                if (distance < 100) {
+                    this.x += dx / 100;
+                    this.y += dy / 100;
+                }
+            }
+            draw() {
+                ctx.fillStyle = '#ffffff';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+        function initCircuit() {
+            for (let i = 0; i < 50; i++) {
+                nodes.push(new Node());
+            }
+        }
+        function connectNodes() {
+            for (let i = 0; i < nodes.length; i++) {
+                for (let j = i + 1; j < nodes.length; j++) {
+                    const dx = nodes[i].x - nodes[j].x;
+                    const dy = nodes[i].y - nodes[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < 100) {
+                        ctx.strokeStyle = `rgba(255, 0, 0, ${1 - distance / 100})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.beginPath();
+                        ctx.moveTo(nodes[i].x, nodes[i].y);
+                        ctx.lineTo(nodes[j].x, nodes[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+        function animateCircuit() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            nodes.forEach(node => {
+                node.update();
+                node.draw();
+            });
+            connectNodes();
+            requestAnimationFrame(animateCircuit);
+        }
+        initCircuit();
+        animateCircuit();
+        window.addEventListener('mousemove', (e) => {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+        });
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
         // Initialize Lenis for smooth scrolling
         const lenis = new Lenis({
             duration: 1.2,
@@ -318,7 +257,6 @@
             requestAnimationFrame(raf);
         }
         requestAnimationFrame(raf);
-
         // Navbar scroll effect
         window.addEventListener('scroll', () => {
             const navbar = document.querySelector('.navbar');
@@ -328,7 +266,6 @@
                 navbar.classList.remove('scrolled');
             }
         });
-
         // Custom cursor with glow effect
         const cursor = document.querySelector('.cursor');
         let mouseX = 0, mouseY = 0;
@@ -338,13 +275,10 @@
             cursor.style.left = `${mouseX}px`;
             cursor.style.top = `${mouseY}px`;
         });
-
-        // Smooth cursor trailing
         gsap.ticker.add(() => {
             cursor.style.left = `${mouseX}px`;
             cursor.style.top = `${mouseY}px`;
         });
-
         document.querySelectorAll('a, .magnetic').forEach(el => {
             el.addEventListener('mouseenter', () => {
                 cursor.classList.add('hovered');
@@ -355,7 +289,6 @@
                 gsap.to(cursor, { scale: 1, opacity: 1, duration: 0.6, ease: 'power2.out' });
             });
         });
-
         // Magnetic hover effect
         document.querySelectorAll('.magnetic').forEach(el => {
             el.addEventListener('mousemove', (e) => {
@@ -370,7 +303,6 @@
                 gsap.to(el, { x: 0, y: 0, duration: 0.6, ease: 'power2.out' });
             });
         });
-
         // Text split animation
         document.querySelectorAll('.text-split').forEach(text => {
             const chars = text.textContent.split('');
@@ -386,7 +318,6 @@
                 }
             });
         });
-
         // Scroll animations for sections
         gsap.utils.toArray('.animate-on-scroll').forEach((element) => {
             gsap.fromTo(element, 
@@ -406,41 +337,9 @@
                 }
             );
         });
-
-        // Parallax effect for mountains
-        gsap.to('.mountain-1', {
-            y: -200,
-            ease: 'none',
-            scrollTrigger: {
-                trigger: document.body,
-                start: 'top top',
-                end: 'bottom bottom',
-                scrub: 1
-            }
-        });
-        gsap.to('.mountain-2', {
-            y: -150,
-            ease: 'none',
-            scrollTrigger: {
-                trigger: document.body,
-                start: 'top top',
-                end: 'bottom bottom',
-                scrub: 1.5
-            }
-        });
-        gsap.to('.mountain-3', {
-            y: -100,
-            ease: 'none',
-            scrollTrigger: {
-                trigger: document.body,
-                start: 'top top',
-                end: 'bottom bottom',
-                scrub: 2
-            }
-        });
-
         // Update section heading on scroll
         const sections = [
+            { id: 'hero', name: 'Home' },
             { id: 'about', name: 'About' },
             { id: 'experience', name: 'Experience' },
             { id: 'projects', name: 'Projects' },
@@ -465,7 +364,6 @@
                 onLeaveBack: () => heading.classList.remove('active')
             });
         });
-
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
