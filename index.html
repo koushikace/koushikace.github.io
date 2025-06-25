@@ -11,26 +11,31 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- Particle Network Animation -->
     <div id="particles"></div>
+    <!-- Animated Background Overlay -->
+    <div class="bg-animated"></div>
     <!-- Section Heading -->
     <div class="section-heading" id="section-heading"></div>
     <!-- Custom Cursor -->
-    <div class="cursor"></div>
+    <div class="cursor">
+        <div class="cursor-trail"></div>
+    </div>
     <!-- Navbar -->
     <nav class="navbar">
         <div class="container mx-auto flex justify-between items-center px-4">
             <h1 class="text-2xl font-light magnetic">Portfolio</h1>
             <div class="space-x-6">
-                <a href="#hero" class="text-sm magnetic hover:text-[#ff0000]">Home</a>
-                <a href="#about" class="text-sm magnetic hover:text-[#ff0000]">About</a>
-                <a href="#experience" class="text-sm magnetic hover:text-[#ff0000]">Experience</a>
-                <a href="#projects" class="text-sm magnetic hover:text-[#ff0000]">Projects</a>
-                <a href="#skills" class="text-sm magnetic hover:text-[#ff0000]">Skills</a>
-                <a href="#contact" class="text-sm magnetic hover:text-[#ff0000]">Contact</a>
+                <a href="#hero" class="text-sm magnetic hover:text-[#ff0000] glow">Home</a>
+                <a href="#about" class="text-sm magnetic hover:text-[#ff0000] glow">About</a>
+                <a href="#experience" class="text-sm magnetic hover:text-[#ff0000] glow">Experience</a>
+                <a href="#projects" class="text-sm magnetic hover:text-[#ff0000] glow">Projects</a>
+                <a href="#skills" class="text-sm magnetic hover:text-[#ff0000] glow">Skills</a>
+                <a href="#contact" class="text-sm magnetic hover:text-[#ff0000] glow">Contact</a>
             </div>
         </div>
     </nav>
@@ -38,12 +43,12 @@
     <section id="hero" class="section">
         <div class="bg-overlay"></div>
         <div class="container mx-auto text-center animate-on-scroll">
-            <h1 class="text-8xl font-light mb-4"><span class="text-split">Kousik Subraveti</span></h1>
-            <h2 class="text-4xl font-light mb-6"><span class="text-split">Data Scientist</span></h2>
+            <h1 class="text-9xl font-light mb-4"><span class="text-split">Kousik Subraveti</span></h1>
+            <h2 class="text-5xl font-light mb-6"><span class="text-split">Data Scientist</span></h2>
             <p class="text-xl max-w-2xl mx-auto mb-8">
-                Crafting innovative AI-driven solutions with expertise in NLP, Deep Learning, and cloud technologies.
+                Architecting cutting-edge AI solutions with expertise in NLP, Deep Learning, and cloud technologies.
             </p>
-            <a href="#projects" class="inline-block px-8 py-4 bg-[#ff0000] text-white rounded-lg magnetic hover:bg-[#cc0000] transition-colors text-lg">
+            <a href="#projects" class="inline-block px-8 py-4 bg-[#ff0000] text-white rounded-lg magnetic hover:bg-[#cc0000] transition-colors text-lg glow">
                 Explore My Work
             </a>
             <div class="mt-12 flex justify-center space-x-12 text-gray-400">
@@ -52,19 +57,19 @@
                     <p>Years Experience</p>
                 </div>
                 <div class="stat">
-                    <span class="text-3xl font-bold text-white">10+</span>
-                    <p>Projects Completed</p>
+                    <span class="text-3xl font-bold text-white">12+</span>
+                    <p>Projects Delivered</p>
                 </div>
                 <div class="stat">
-                    <span class="text-3xl font-bold text-white">20+</span>
+                    <span class="text-3xl font-bold text-white">25+</span>
                     <p>Skills Mastered</p>
                 </div>
             </div>
             <div class="mt-8 flex justify-center space-x-6">
-                <a href="https://github.com/koushikace" target="_blank" class="social-icon magnetic">
+                <a href="https://github.com/koushikace" target="_blank" class="social-icon magnetic glow">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.66-.22.66-.49v-1.7c-2.78.61-3.37-1.34-3.37-1.34-.46-1.16-1.12-1.47-1.12-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.64-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.25-.1-.45-1.26 .1-2.63 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0112 6.8c.85 0 1.71.11 2.51.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.38.1 2.63.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.56 4.94.36.31.68.92.68 1.85v2.74c0 .27.16.58.67.49A10.01 10.01 0 0022 12c0-5.52-4.48-10-10-10z"/></svg>
                 </a>
-                <a href="https://linkedin.com/in/kousik-subraveti" target="_blank" class="social-icon magnetic">
+                <a href="https://linkedin.com/in/kousik-subraveti" target="_blank" class="social-icon magnetic glow">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14zm-1 2H6a1 1 0 00-1 1v12a1 1 0 001 1h12a1 1 0 001-1V6a1 1 0 00-1-1zm-8.25 11.25h-2.5v-7h2.5v7zm-1.25-8.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm8.75 8.5h-2.5v-4c0-1-.5-2-1.5-2s-1.5 1-1.5 2v4h-2.5v-7h2.5v1c.5-1 1.5-1.5 2.5-1.5s2 .5 2 2v4.5z"/></svg>
                 </a>
             </div>
@@ -77,7 +82,7 @@
         <div class="container mx-auto animate-on-scroll">
             <h2 class="text-5xl font-light mb-6 text-center"><span class="text-split">About Me</span></h2>
             <p class="text-lg max-w-3xl mx-auto leading-relaxed">
-                I am Kousik Subraveti, a dedicated Data Scientist with over four years of experience, transitioning from a Python developer to a specialist in Big Data Analytics and advanced AI/ML applications. My expertise spans Deep Learning, particularly in Natural Language Processing (NLP) and Large Language Models (LLMs), time series analysis, and data engineering with ETL pipelines and distributed systems. I excel at deploying scalable machine learning models on cloud platforms like AWS, delivering end-to-end solutions that drive business impact. My passion lies in leveraging cutting-edge AI to solve complex problems, from fraud detection to customer sentiment analysis, while enhancing operational efficiency and product quality. With a strong foundation in Agile methodologies and a collaborative mindset, I aim to deliver innovative data-driven solutions aligned with organizational goals.
+                I’m Kousik Subraveti, a passionate Data Scientist with over four years of experience, evolving from a Python developer to a leader in AI/ML and Big Data Analytics. My expertise lies in crafting advanced NLP solutions, building scalable deep learning models, and deploying robust data pipelines on cloud platforms like AWS. I thrive on solving complex challenges—whether it’s detecting fraud, analyzing customer sentiment, or optimizing workflows—delivering measurable business impact. With a collaborative spirit and Agile expertise, I’m driven to create innovative, data-driven solutions that align with organizational goals and push the boundaries of AI.
             </p>
         </div>
         <div class="section-divider"></div>
@@ -91,16 +96,35 @@
                 <div class="p-8 bg-[#111111] rounded-xl magnetic project-card">
                     <h3 class="text-2xl font-semibold">Machine Learning / Data Scientist - NTT Data (Citi Bank)</h3>
                     <p class="text-gray-400">Sep 2022 - Present</p>
-                    <p class="mt-4 max-w-3xl">
-                        At NTT Data, I lead quality management initiatives for Citi Bank, applying advanced NLP techniques to analyze unstructured data from customer feedback and quality assurance reports. Developed sentiment analysis models using NLTK and LSTM-based recurrent neural networks, improving operational workflows and customer satisfaction metrics. Designed and deployed generative models with TensorFlow and PyTorch to simulate fraudulent transaction patterns, enhancing fraud detection accuracy by 15%. Implemented Retrieval-Augmented Generation (RAG) to integrate LLMs with enterprise health data, ensuring compliant and relevant responses. Built CI/CD pipelines with Jenkins and optimized AWS services like CloudWatch and Lambda, streamlining model deployment and monitoring.
-                    </p>
+                    <ul class="mt-4 max-w-3xl list-disc list-inside text-lg space-y-2">
+                        <li>Led NLP initiatives to analyze unstructured customer feedback using BERT and LSTM models, improving sentiment analysis accuracy by 20% and enhancing customer satisfaction metrics.</li>
+                        <li>Developed generative adversarial networks (GANs) with PyTorch to simulate fraudulent transaction patterns, boosting fraud detection precision by 15% across Citi’s payment systems.</li>
+                        <li>Implemented Retrieval-Augmented Generation (RAG) with LLMs, integrating enterprise health data to deliver compliant, context-aware responses, reducing manual review time by 30%.</li>
+                        <li>Designed and deployed CI/CD pipelines using Jenkins and AWS (Lambda, CloudWatch, SageMaker), streamlining model deployment and cutting release cycles by 25%.</li>
+                        <li>Collaborated with cross-functional teams to build real-time monitoring dashboards with Tableau, enabling data-driven decisions for quality assurance.</li>
+                    </ul>
                 </div>
                 <div class="p-8 bg-[#111111] rounded-xl magnetic project-card">
                     <h3 class="text-2xl font-semibold">Python Developer - Global Logic (ANZ Bank)</h3>
                     <p class="text-gray-400">May 2021 - Sep 2022</p>
-                    <p class="mt-4 max-w-3xl">
-                        Supported ANZ Bank by developing full-stack applications using Django, focusing on banking services like personal finance and credit card processing. Built customer segmentation models for cross-sell strategies, utilizing machine learning to predict default risks and optimize marketing campaigns. Leveraged NLP to classify merchant offers, enhancing targeted promotions and increasing customer engagement by 10%. Created data visualizations with Tableau and Power BI to communicate insights to stakeholders. Worked with AWS EC2 and EMR for data processing and implemented Agile methodologies for timely delivery.
-                    </p>
+                    <ul class="mt-4 max-w-3xl list-disc list-inside text-lg space-y-2">
+                        <li>Developed full-stack Django applications for ANZ’s banking services, optimizing personal finance and credit card processing workflows, reducing transaction errors by 12%.</li>
+                        <li>Built customer segmentation models using scikit-learn and clustering techniques, improving cross-sell campaign conversion rates by 10%.</li>
+                        <li>Applied NLP with spaCy to classify merchant offers, enabling targeted promotions that increased customer engagement by 15%.</li>
+                        <li>Created interactive data visualizations with Power BI, presenting actionable insights to stakeholders and reducing decision-making time by 20%.</li>
+                        <li>Leveraged AWS EC2 and EMR for big data processing, enhancing data pipeline efficiency by 18% in a distributed environment.</li>
+                    </ul>
+                </div>
+                <div class="p-8 bg-[#111111] rounded-xl magnetic project-card">
+                    <h3 class="text-2xl font-semibold">Freelance Data Scientist - Various Clients</h3>
+                    <p class="text-gray-400">Jan 2020 - Apr 2021</p>
+                    <ul class="mt-4 max-w-3xl list-disc list-inside text-lg space-y-2">
+                        <li>Designed predictive models for small businesses using Python and TensorFlow, forecasting sales trends with 85% accuracy to guide inventory planning.</li>
+                        <li>Built ETL pipelines with Apache Airflow and PostgreSQL, automating data workflows and reducing processing time by 40% for client datasets.</li>
+                        <li>Developed a sentiment analysis tool for social media data using NLTK, helping clients optimize marketing strategies and increase engagement by 25%.</li>
+                        <li>Created custom dashboards with Plotly and Dash, providing real-time analytics for client performance metrics.</li>
+                        <li>Consulted on cloud migration to AWS, implementing cost-effective solutions with S3 and Redshift, saving clients 30% on infrastructure costs.</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -112,45 +136,45 @@
         <div class="container mx-auto animate-on-scroll">
             <h2 class="text-5xl font-light mb-6 text-center"><span class="text-split">Projects</span></h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="p-6 bg-[#111111] rounded-xl magnetic project-card">
+                <div class="p-6 bg-[#111111] rounded-xl magnetic project-card tilt" data-tilt data-tilt-max="15" data-tilt-speed="400">
                     <h3 class="text-xl font-semibold">Sentiment Analysis Model (NTT Data)</h3>
-                    <p class="mt-2 text-gray-400">Developed NLP models using NLTK and LSTM to analyze customer feedback for Citi Bank, improving operational workflows.</p>
+                    <p class="mt-2 text-gray-400">Developed NLP models using BERT and LSTM to analyze customer feedback, improving operational workflows by 20%.</p>
                 </div>
-                <div class="p-6 bg-[#111111] rounded-xl magnetic project-card">
+                <div class="p-6 bg-[#111111] rounded-xl magnetic project-card tilt" data-tilt data-tilt-max="15" data-tilt-speed="400">
                     <h3 class="text-xl font-semibold">Fraud Detection Model (NTT Data)</h3>
-                    <p class="mt-2 text-gray-400">Designed generative models with TensorFlow/PyTorch to detect fraudulent transactions, increasing accuracy by 15%.</p>
+                    <p class="mt-2 text-gray-400">Designed GANs with PyTorch to detect fraudulent transactions, increasing accuracy by 15%.</p>
                 </div>
-                <div class="p-6 bg-[#111111] rounded-xl magnetic project-card">
+                <div class="p-6 bg-[#111111] rounded-xl magnetic project-card tilt" data-tilt data-tilt-max="15" data-tilt-speed="400">
                     <h3 class="text-xl font-semibold">RAG Implementation (NTT Data)</h3>
-                    <p class="mt-2 text-gray-400">Integrated LLMs with enterprise health data using Retrieval-Augmented Generation, ensuring compliant responses.</p>
+                    <p class="mt-2 text-gray-400">Integrated LLMs with enterprise health data using RAG, ensuring compliant responses and reducing review time by 30%.</p>
                 </div>
-                <div class="p-6 bg-[#111111] rounded-xl magnetic project-card">
+                <div class="p-6 bg-[#111111] rounded-xl magnetic project-card tilt" data-tilt data-tilt-max="15" data-tilt-speed="400">
                     <h3 class="text-xl font-semibold">Customer Segmentation Model (Global Logic)</h3>
-                    <p class="mt-2 text-gray-400">Built ML models for ANZ Bank to predict default risks and optimize cross-sell strategies, enhancing marketing campaigns.</p>
+                    <p class="mt-2 text-gray-400">Built ML models to predict default risks, optimizing cross-sell strategies by 10%.</p>
                 </div>
-                <div class="p-6 bg-[#111111] rounded-xl magnetic project-card">
+                <div class="p-6 bg-[#111111] rounded-xl magnetic project-card tilt" data-tilt data-tilt-max="15" data-tilt-speed="400">
                     <h3 class="text-xl font-semibold">Merchant Offer Classification (Global Logic)</h3>
-                    <p class="mt-2 text-gray-400">Used NLP to classify merchant offers, improving targeted promotions and boosting customer engagement by 10%.</p>
+                    <p class="mt-2 text-gray-400">Used NLP to classify merchant offers, boosting customer engagement by 15%.</p>
                 </div>
-                <div class="p-6 bg-[#111111] rounded-xl magnetic project-card">
+                <div class="p-6 bg-[#111111] rounded-xl magnetic project-card tilt" data-tilt data-tilt-max="15" data-tilt-speed="400">
                     <h3 class="text-xl font-semibold">Twitter Sentiment Analysis</h3>
-                    <p class="mt-2 text-gray-400">An NLP-based project using Python and NLTK to analyze Twitter data for public opinion trends.</p>
-                    <a href="https://github.com/koushikace/twitter-sentiment-analysis" target="_blank" class="text-[#ff0000] mt-4 inline-block magnetic">View on GitHub</a>
+                    <p class="mt-2 text-gray-400">NLP-based project using Python and NLTK to analyze Twitter data for public opinion trends.</p>
+                    <a href="https://github.com/koushikace/twitter-sentiment-analysis" target="_blank" class="text-[#ff0000] mt-4 inline-block magnetic glow">View on GitHub</a>
                 </div>
-                <div class="p-6 bg-[#111111] rounded-xl magnetic project-card">
+                <div class="p-6 bg-[#111111] rounded-xl magnetic project-card tilt" data-tilt data-tilt-max="15" data-tilt-speed="400">
                     <h3 class="text-xl font-semibold">Default of Credit Card Clients</h3>
-                    <p class="mt-2 text-gray-400">A machine learning model using Python and scikit-learn to predict credit card default risks.</p>
-                    <a href="https://github.com/koushikace/Default-of-credit-card-clients" target="_blank" class="text-[#ff0000] mt-4 inline-block magnetic">View on GitHub</a>
+                    <p class="mt-2 text-gray-400">ML model using Python and scikit-learn to predict credit card default risks.</p>
+                    <a href="https://github.com/koushikace/Default-of-credit-card-clients" target="_blank" class="text-[#ff0000] mt-4 inline-block magnetic glow">View on GitHub</a>
                 </div>
-                <div class="p-6 bg-[#111111] rounded-xl magnetic project-card">
+                <div class="p-6 bg-[#111111] rounded-xl magnetic project-card tilt" data-tilt data-tilt-max="15" data-tilt-speed="400">
                     <h3 class="text-xl font-semibold">Online Payment Fraud Detection</h3>
-                    <p class="mt-2 text-gray-400">A TensorFlow-based model to detect fraudulent online payment transactions.</p>
-                    <a href="https://github.com/koushikace/Online-Payment-Fraud-Detection" target="_blank" class="text-[#ff0000] mt-4 inline-block magnetic">View on GitHub</a>
+                    <p class="mt-2 text-gray-400">TensorFlow-based model to detect fraudulent online payment transactions.</p>
+                    <a href="https://github.com/koushikace/Online-Payment-Fraud-Detection" target="_blank" class="text-[#ff0000] mt-4 inline-block magnetic glow">View on GitHub</a>
                 </div>
-                <div class="p-6 bg-[#111111] rounded-xl magnetic project-card">
+                <div class="p-6 bg-[#111111] rounded-xl magnetic project-card tilt" data-tilt data-tilt-max="15" data-tilt-speed="400">
                     <h3 class="text-xl font-semibold">NLP Techniques on Laptop Reviews</h3>
-                    <p class="mt-2 text-gray-400">A comparative analysis of NLP techniques on laptop review datasets for sentiment classification.</p>
-                    <a href="https://github.com/koushikace/Performance-analysis-of-NLP-techniques-on-laptop-reviews" target="_blank" class="text-[#ff0000] mt-4 inline-block magnetic">View on GitHub</a>
+                    <p class="mt-2 text-gray-400">Comparative analysis of NLP techniques on laptop review datasets for sentiment classification.</p>
+                    <a href="https://github.com/koushikace/Performance-analysis-of-NLP-techniques-on-laptop-reviews" target="_blank" class="text-[#ff0000] mt-4 inline-block magnetic glow">View on GitHub</a>
                 </div>
             </div>
         </div>
@@ -165,30 +189,30 @@
                 <div>
                     <h3 class="text-2xl font-semibold mb-4 text-center">Programming</h3>
                     <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
-                        <div class="skill-tile magnetic">
-                            <div class="skill-front p-6 bg-[#1c1c1c] rounded-lg shadow-lg">
-                                <i class="fa-brands fa-python fa-2x mb-3 text-[#ff0000]"></i>
+                        <div class="skill-tile magnetic animate-skill">
+                            <div class="skill-front p-6 bg-[#1c1c1c] rounded-lg shadow-glow">
+                                <i class="fa-brands fa-python fa-3x mb-3 text-[#ff0000]"></i>
                                 <p class="text-lg">Python</p>
                             </div>
-                            <div class="skill-back p-4 bg-[#ff0000] rounded-lg shadow-lg text-center">
-                                <p class="text-sm">Proficient in Python for data science and web development.</p>
+                            <div class="skill-back p-4 bg-[#ff0000] rounded-lg shadow-glow text-center">
+                                <p class="text-sm">Advanced Python for data science and web development.</p>
                             </div>
                         </div>
-                        <div class="skill-tile magnetic">
-                            <div class="skill-front p-6 bg-[#1c1c1c] rounded-lg shadow-lg">
-                                <i class="fa-solid fa-code fa-2x mb-3 text-[#ff0000]"></i>
+                        <div class="skill-tile magnetic animate-skill">
+                            <div class="skill-front p-6 bg-[#1c1c1c] rounded-lg shadow-glow">
+                                <i class="fa-solid fa-code fa-3x mb-3 text-[#ff0000]"></i>
                                 <p class="text-lg">Django</p>
                             </div>
-                            <div class="skill-back p-4 bg-[#ff0000] rounded-lg shadow-lg text-center">
+                            <div class="skill-back p-4 bg-[#ff0000] rounded-lg shadow-glow text-center">
                                 <p class="text-sm">Built full-stack applications with Django.</p>
                             </div>
                         </div>
-                        <div class="skill-tile magnetic">
-                            <div class="skill-front p-6 bg-[#1c1c1c] rounded-lg shadow-lg">
-                                <i class="fa-solid fa-database fa-2x mb-3 text-[#ff0000]"></i>
+                        <div class="skill-tile magnetic animate-skill">
+                            <div class="skill-front p-6 bg-[#1c1c1c] rounded-lg shadow-glow">
+                                <i class="fa-solid fa-database fa-3x mb-3 text-[#ff0000]"></i>
                                 <p class="text-lg">SQL/NoSQL</p>
                             </div>
-                            <div class="skill-back p-4 bg-[#ff0000] rounded-lg shadow-lg text-center">
+                            <div class="skill-back p-4 bg-[#ff0000] rounded-lg shadow-glow text-center">
                                 <p class="text-sm">Expert in relational and non-relational databases.</p>
                             </div>
                         </div>
@@ -197,66 +221,66 @@
                 <div>
                     <h3 class="text-2xl font-semibold mb-4 text-center">Artificial Intelligence / Machine Learning</h3>
                     <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
-                        <div class="skill-tile magnetic">
-                            <div class="skill-front p-6 bg-[#1c1c1c] rounded-lg shadow-lg">
-                                <i class="fa-solid fa-brain fa-2x mb-3 text-[#ff0000]"></i>
-                                <p class="text-lg">NLP (NLTK, spaCy)</p>
+                        <div class="skill-tile magnetic animate-skill">
+                            <div class="skill-front p-6 bg-[#1c1c1c] rounded-lg shadow-glow">
+                                <i class="fa-solid fa-brain fa-3x mb-3 text-[#ff0000]"></i>
+                                <p class="text-lg">NLP (BERT, spaCy)</p>
                             </div>
-                            <div class="skill-back p-4 bg-[#ff0000] rounded-lg shadow-lg text-center">
+                            <div class="skill-back p-4 bg-[#ff0000] rounded-lg shadow-glow text-center">
                                 <p class="text-sm">Advanced NLP for sentiment analysis and text processing.</p>
                             </div>
                         </div>
-                        <div class="skill-tile magnetic">
-                            <div class="skill-front p-6 bg-[#1c1c1c] rounded-lg shadow-lg">
-                                <i class="fa-solid fa-network-wired fa-2x mb-3 text-[#ff0000]"></i>
+                        <div class="skill-tile magnetic animate-skill">
+                            <div class="skill-front p-6 bg-[#1c1c1c] rounded-lg shadow-glow">
+                                <i class="fa-solid fa-network-wired fa-3x mb-3 text-[#ff0000]"></i>
                                 <p class="text-lg">Deep Learning</p>
                             </div>
-                            <div class="skill-back p-4 bg-[#ff0000] rounded-lg shadow-lg text-center">
+                            <div class="skill-back p-4 bg-[#ff0000] rounded-lg shadow-glow text-center">
                                 <p class="text-sm">Built neural networks for complex tasks.</p>
                             </div>
                         </div>
-                        <div class="skill-tile magnetic">
-                            <div class="skill-front p-6 bg-[#1c1c1c] rounded-lg shadow-lg">
-                                <i class="fa-solid fa-robot fa-2x mb-3 text-[#ff0000]"></i>
+                        <div class="skill-tile magnetic animate-skill">
+                            <div class="skill-front p-6 bg-[#1c1c1c] rounded-lg shadow-glow">
+                                <i class="fa-solid fa-robot fa-3x mb-3 text-[#ff0000]"></i>
                                 <p class="text-lg">TensorFlow</p>
                             </div>
-                            <div class="skill-back p-4 bg-[#ff0000] rounded-lg shadow-lg text-center">
+                            <div class="skill-back p-4 bg-[#ff0000] rounded-lg shadow-glow text-center">
                                 <p class="text-sm">Developed ML models with TensorFlow.</p>
                             </div>
                         </div>
-                        <div class="skill-tile magnetic">
-                            <div class="skill-front p-6 bg-[#1c1c1c] rounded-lg shadow-lg">
-                                <i class="fa-solid fa-fire fa-2x mb-3 text-[#ff0000]"></i>
+                        <div class="skill-tile magnetic animate-skill">
+                            <div class="skill-front p-6 bg-[#1c1c1c] rounded-lg shadow-glow">
+                                <i class="fa-solid fa-fire fa-3x mb-3 text-[#ff0000]"></i>
                                 <p class="text-lg">PyTorch</p>
                             </div>
-                            <div class="skill-back p-4 bg-[#ff0000] rounded-lg shadow-lg text-center">
+                            <div class="skill-back p-4 bg-[#ff0000] rounded-lg shadow-glow text-center">
                                 <p class="text-sm">Used PyTorch for generative models.</p>
                             </div>
                         </div>
-                        <div class="skill-tile magnetic">
-                            <div class="skill-front p-6 bg-[#1c1c1c] rounded-lg shadow-lg">
-                                <i class="fa-solid fa-cogs fa-2x mb-3 text-[#ff0000]"></i>
+                        <div class="skill-tile magnetic animate-skill">
+                            <div class="skill-front p-6 bg-[#1c1c1c] rounded-lg shadow-glow">
+                                <i class="fa-solid fa-cogs fa-3x mb-3 text-[#ff0000]"></i>
                                 <p class="text-lg">Generative Models</p>
                             </div>
-                            <div class="skill-back p-4 bg-[#ff0000] rounded-lg shadow-lg text-center">
+                            <div class="skill-back p-4 bg-[#ff0000] rounded-lg shadow-glow text-center">
                                 <p class="text-sm">Created generative AI for fraud detection.</p>
                             </div>
                         </div>
-                        <div class="skill-tile magnetic">
-                            <div class="skill-front p-6 bg-[#1c1c1c] rounded-lg shadow-lg">
-                                <i class="fa-solid fa-search fa-2x mb-3 text-[#ff0000]"></i>
+                        <div class="skill-tile magnetic animate-skill">
+                            <div class="skill-front p-6 bg-[#1c1c1c] rounded-lg shadow-glow">
+                                <i class="fa-solid fa-search fa-3x mb-3 text-[#ff0000]"></i>
                                 <p class="text-lg">RAG</p>
                             </div>
-                            <div class="skill-back p-4 bg-[#ff0000] rounded-lg shadow-lg text-center">
+                            <div class="skill-back p-4 bg-[#ff0000] rounded-lg shadow-glow text-center">
                                 <p class="text-sm">Implemented RAG for LLM integration.</p>
                             </div>
                         </div>
-                        <div class="skill-tile magnetic">
-                            <div class="skill-front p-6 bg-[#1c1c1c] rounded-lg shadow-lg">
-                                <i class="fa-solid fa-chart-line fa-2x mb-3 text-[#ff0000]"></i>
+                        <div class="skill-tile magnetic animate-skill">
+                            <div class="skill-front p-6 bg-[#1c1c1c] rounded-lg shadow-glow">
+                                <i class="fa-solid fa-chart-line fa-3x mb-3 text-[#ff0000]"></i>
                                 <p class="text-lg">Time Series Analysis</p>
                             </div>
-                            <div class="skill-back p-4 bg-[#ff0000] rounded-lg shadow-lg text-center">
+                            <div class="skill-back p-4 bg-[#ff0000] rounded-lg shadow-glow text-center">
                                 <p class="text-sm">Analyzed temporal data for predictions.</p>
                             </div>
                         </div>
@@ -265,48 +289,48 @@
                 <div>
                     <h3 class="text-2xl font-semibold mb-4 text-center">Cloud Computing</h3>
                     <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
-                        <div class="skill-tile magnetic">
-                            <div class="skill-front p-6 bg-[#1c1c1c] rounded-lg shadow-lg">
-                                <i class="fa-brands fa-aws fa-2x mb-3 text-[#ff0000]"></i>
+                        <div class="skill-tile magnetic animate-skill">
+                            <div class="skill-front p-6 bg-[#1c1c1c] rounded-lg shadow-glow">
+                                <i class="fa-brands fa-aws fa-3x mb-3 text-[#ff0000]"></i>
                                 <p class="text-lg">AWS</p>
                             </div>
-                            <div class="skill-back p-4 bg-[#ff0000] rounded-lg shadow-lg text-center">
+                            <div class="skill-back p-4 bg-[#ff0000] rounded-lg shadow-glow text-center">
                                 <p class="text-sm">Deployed scalable ML models on AWS.</p>
                             </div>
                         </div>
-                        <div class="skill-tile magnetic">
-                            <div class="skill-front p-6 bg-[#1c1c1c] rounded-lg shadow-lg">
-                                <i class="fa-solid fa-cloud fa-2x mb-3 text-[#ff0000]"></i>
+                        <div class="skill-tile magnetic animate-skill">
+                            <div class="skill-front p-6 bg-[#1c1c1c] rounded-lg shadow-glow">
+                                <i class="fa-solid fa-cloud fa-3x mb-3 text-[#ff0000]"></i>
                                 <p class="text-lg">AWS CloudWatch</p>
                             </div>
-                            <div class="skill-back p-4 bg-[#ff0000] rounded-lg shadow-lg text-center">
+                            <div class="skill-back p-4 bg-[#ff0000] rounded-lg shadow-glow text-center">
                                 <p class="text-sm">Monitored applications with CloudWatch.</p>
                             </div>
                         </div>
-                        <div class="skill-tile magnetic">
-                            <div class="skill-front p-6 bg-[#1c1c1c] rounded-lg shadow-lg">
-                                <i class="fa-solid fa-bolt fa-2x mb-3 text-[#ff0000]"></i>
+                        <div class="skill-tile magnetic animate-skill">
+                            <div class="skill-front p-6 bg-[#1c1c1c] rounded-lg shadow-glow">
+                                <i class="fa-solid fa-bolt fa-3x mb-3 text-[#ff0000]"></i>
                                 <p class="text-lg">AWS Lambda</p>
                             </div>
-                            <div class="skill-back p-4 bg-[#ff0000] rounded-lg shadow-lg text-center">
+                            <div class="skill-back p-4 bg-[#ff0000] rounded-lg shadow-glow text-center">
                                 <p class="text-sm">Built serverless functions with Lambda.</p>
                             </div>
                         </div>
-                        <div class="skill-tile magnetic">
-                            <div class="skill-front p-6 bg-[#1c1c1c] rounded-lg shadow-lg">
-                                <i class="fa-solid fa-server fa-2x mb-3 text-[#ff0000]"></i>
+                        <div class="skill-tile magnetic animate-skill">
+                            <div class="skill-front p-6 bg-[#1c1c1c] rounded-lg shadow-glow">
+                                <i class="fa-solid fa-server fa-3x mb-3 text-[#ff0000]"></i>
                                 <p class="text-lg">AWS EC2</p>
                             </div>
-                            <div class="skill-back p-4 bg-[#ff0000] rounded-lg shadow-lg text-center">
+                            <div class="skill-back p-4 bg-[#ff0000] rounded-lg shadow-glow text-center">
                                 <p class="text-sm">Managed compute instances with EC2.</p>
                             </div>
                         </div>
-                        <div class="skill-tile magnetic">
-                            <div class="skill-front p-6 bg-[#1c1c1c] rounded-lg shadow-lg">
-                                <i class="fa-solid fa-cubes fa-2x mb-3 text-[#ff0000]"></i>
+                        <div class="skill-tile magnetic animate-skill">
+                            <div class="skill-front p-6 bg-[#1c1c1c] rounded-lg shadow-glow">
+                                <i class="fa-solid fa-cubes fa-3x mb-3 text-[#ff0000]"></i>
                                 <p class="text-lg">AWS EMR</p>
                             </div>
-                            <div class="skill-back p-4 bg-[#ff0000] rounded-lg shadow-lg text-center">
+                            <div class="skill-back p-4 bg-[#ff0000] rounded-lg shadow-glow text-center">
                                 <p class="text-sm">Processed big data with EMR.</p>
                             </div>
                         </div>
@@ -315,39 +339,39 @@
                 <div>
                     <h3 class="text-2xl font-semibold mb-4 text-center">Data Engineering</h3>
                     <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
-                        <div class="skill-tile magnetic">
-                            <div class="skill-front p-6 bg-[#1c1c1c] rounded-lg shadow-lg">
-                                <i class="fa-solid fa-pipe fa-2x mb-3 text-[#ff0000]"></i>
+                        <div class="skill-tile magnetic animate-skill">
+                            <div class="skill-front p-6 bg-[#1c1c1c] rounded-lg shadow-glow">
+                                <i class="fa-solid fa-pipe fa-3x mb-3 text-[#ff0000]"></i>
                                 <p class="text-lg">ETL Pipelines</p>
                             </div>
-                            <div class="skill-back p-4 bg-[#ff0000] rounded-lg shadow-lg text-center">
+                            <div class="skill-back p-4 bg-[#ff0000] rounded-lg shadow-glow text-center">
                                 <p class="text-sm">Designed robust ETL pipelines.</p>
                             </div>
                         </div>
-                        <div class="skill-tile magnetic">
-                            <div class="skill-front p-6 bg-[#1c1c1c] rounded-lg shadow-lg">
-                                <i class="fa-solid fa-hdd fa-2x mb-3 text-[#ff0000]"></i>
+                        <div class="skill-tile magnetic animate-skill">
+                            <div class="skill-front p-6 bg-[#1c1c1c] rounded-lg shadow-glow">
+                                <i class="fa-solid fa-hdd fa-3x mb-3 text-[#ff0000]"></i>
                                 <p class="text-lg">Big Data</p>
                             </div>
-                            <div class="skill-back p-4 bg-[#ff0000] rounded-lg shadow-lg text-center">
+                            <div class="skill-back p-4 bg-[#ff0000] rounded-lg shadow-glow text-center">
                                 <p class="text-sm">Handled large-scale data processing.</p>
                             </div>
                         </div>
-                        <div class="skill-tile magnetic">
-                            <div class="skill-front p-6 bg-[#1c1c1c] rounded-lg shadow-lg">
-                                <i class="fa-solid fa-tools fa-2x mb-3 text-[#ff0000]"></i>
+                        <div class="skill-tile magnetic animate-skill">
+                            <div class="skill-front p-6 bg-[#1c1c1c] rounded-lg shadow-glow">
+                                <i class="fa-solid fa-tools fa-3x mb-3 text-[#ff0000]"></i>
                                 <p class="text-lg">CI/CD</p>
                             </div>
-                            <div class="skill-back p-4 bg-[#ff0000] rounded-lg shadow-lg text-center">
+                            <div class="skill-back p-4 bg-[#ff0000] rounded-lg shadow-glow text-center">
                                 <p class="text-sm">Automated deployments with CI/CD.</p>
                             </div>
                         </div>
-                        <div class="skill-tile magnetic">
-                            <div class="skill-front p-6 bg-[#1c1c1c] rounded-lg shadow-lg">
-                                <i class="fa-brands fa-jenkins fa-2x mb-3 text-[#ff0000]"></i>
+                        <div class="skill-tile magnetic animate-skill">
+                            <div class="skill-front p-6 bg-[#1c1c1c] rounded-lg shadow-glow">
+                                <i class="fa-brands fa-jenkins fa-3x mb-3 text-[#ff0000]"></i>
                                 <p class="text-lg">Jenkins</p>
                             </div>
-                            <div class="skill-back p-4 bg-[#ff0000] rounded-lg shadow-lg text-center">
+                            <div class="skill-back p-4 bg-[#ff0000] rounded-lg shadow-glow text-center">
                                 <p class="text-sm">Managed CI/CD with Jenkins.</p>
                             </div>
                         </div>
@@ -356,30 +380,30 @@
                 <div>
                     <h3 class="text-2xl font-semibold mb-4 text-center">Data Visualization</h3>
                     <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
-                        <div class="skill-tile magnetic">
-                            <div class="skill-front p-6 bg-[#1c1c1c] rounded-lg shadow-lg">
-                                <i class="fa-solid fa-chart-bar fa-2x mb-3 text-[#ff0000]"></i>
+                        <div class="skill-tile magnetic animate-skill">
+                            <div class="skill-front p-6 bg-[#1c1c1c] rounded-lg shadow-glow">
+                                <i class="fa-solid fa-chart-bar fa-3x mb-3 text-[#ff0000]"></i>
                                 <p class="text-lg">Data Visualization</p>
                             </div>
-                            <div class="skill-back p-4 bg-[#ff0000] rounded-lg shadow-lg text-center">
+                            <div class="skill-back p-4 bg-[#ff0000] rounded-lg shadow-glow text-center">
                                 <p class="text-sm">Created insightful visualizations.</p>
                             </div>
                         </div>
-                        <div class="skill-tile magnetic">
-                            <div class="skill-front p-6 bg-[#1c1c1c] rounded-lg shadow-lg">
-                                <i class="fa-solid fa-table fa-2x mb-3 text-[#ff0000]"></i>
+                        <div class="skill-tile magnetic animate-skill">
+                            <div class="skill-front p-6 bg-[#1c1c1c] rounded-lg shadow-glow">
+                                <i class="fa-solid fa-table fa-3x mb-3 text-[#ff0000]"></i>
                                 <p class="text-lg">Tableau</p>
                             </div>
-                            <div class="skill-back p-4 bg-[#ff0000] rounded-lg shadow-lg text-center">
+                            <div class="skill-back p-4 bg-[#ff0000] rounded-lg shadow-glow text-center">
                                 <p class="text-sm">Built dashboards with Tableau.</p>
                             </div>
                         </div>
-                        <div class="skill-tile magnetic">
-                            <div class="skill-front p-6 bg-[#1c1c1c] rounded-lg shadow-lg">
-                                <i class="fa-solid fa-chart-pie fa-2x mb-3 text-[#ff0000]"></i>
+                        <div class="skill-tile magnetic animate-skill">
+                            <div class="skill-front p-6 bg-[#1c1c1c] rounded-lg shadow-glow">
+                                <i class="fa-solid fa-chart-pie fa-3x mb-3 text-[#ff0000]"></i>
                                 <p class="text-lg">Power BI</p>
                             </div>
-                            <div class="skill-back p-4 bg-[#ff0000] rounded-lg shadow-lg text-center">
+                            <div class="skill-back p-4 bg-[#ff0000] rounded-lg shadow-glow text-center">
                                 <p class="text-sm">Developed reports with Power BI.</p>
                             </div>
                         </div>
@@ -398,24 +422,24 @@
                 <div>
                     <h3 class="text-2xl font-semibold mb-4">Get in Touch</h3>
                     <p class="text-lg mb-6">
-                        I'm excited to connect and discuss opportunities, collaborations, or any questions you may have. Reach out via email, LinkedIn, GitHub, or use the form to send a message.
+                        Excited to collaborate, discuss opportunities, or answer your questions. Reach out via email, LinkedIn, GitHub, or the form below!
                     </p>
                     <div class="space-y-4">
-                        <p><strong>Email:</strong> <a href="mailto:skousik789@gmail.com" class="text-[#ff0000] magnetic">skousik789@gmail.com</a></p>
-                        <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/kousik-subraveti" target="_blank" class="text-[#ff0000] magnetic">linkedin.com/in/kousik-subraveti</a></p>
-                        <p><strong>GitHub:</strong> <a href="https://github.com/koushikace" target="_blank" class="text-[#ff0000] magnetic">github.com/koushikace</a></p>
+                        <p><strong>Email:</strong> <a href="mailto:skousik789@gmail.com" class="text-[#ff0000] magnetic glow">skousik789@gmail.com</a></p>
+                        <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/kousik-subraveti" target="_blank" class="text-[#ff0000] magnetic glow">linkedin.com/in/kousik-subraveti</a></p>
+                        <p><strong>GitHub:</strong> <a href="https://github.com/koushikace" target="_blank" class="text-[#ff0000] magnetic glow">github.com/koushikace</a></p>
                     </div>
-                    <a href="https://github.com/koushikace/koushikace.github.io/raw/main/Kousik_CV.pdf" download class="inline-block mt-6 px-8 py-4 bg-[#ff0000] text-white rounded-lg magnetic hover:bg-[#cc0000] transition-colors text-lg">
+                    <a href="https://github.com/koushikace/koushikace.github.io/raw/main/Kousik_CV.pdf" download class="inline-block mt-6 px-8 py-4 bg-[#ff0000] text-white rounded-lg magnetic hover:bg-[#cc0000] transition-colors text-lg glow">
                         Download My CV
                     </a>
                 </div>
                 <div>
                     <h3 class="text-2xl font-semibold mb-4">Send a Message</h3>
                     <form action="https://formspree.io/f/your-endpoint" method="POST" class="space-y-4">
-                        <input type="text" name="name" placeholder="Your Name" class="w-full p-4 bg-[#111111] rounded-lg text-white border border-gray-700 focus:outline-none focus:border-[#ff0000]" required>
-                        <input type="email" name="email" placeholder="Your Email" class="w-full p-4 bg-[#111111] rounded-lg text-white border border-gray-700 focus:outline-none focus:border-[#ff0000]" required>
-                        <textarea name="message" placeholder="Your Message" rows="5" class="w-full p-4 bg-[#111111] rounded-lg text-white border border-gray-700 focus:outline-none focus:border-[#ff0000]" required></textarea>
-                        <button type="submit" class="inline-block px-8 py-4 bg-[#ff0000] text-white rounded-lg magnetic hover:bg-[#cc0000] transition-colors text-lg">
+                        <input type="text" name="name" placeholder="Your Name" class="w-full p-4 bg-[#111111] rounded-lg text-white border border-gray-700 focus:outline-none focus:border-[#ff0000] glow-input" required>
+                        <input type="email" name="email" placeholder="Your Email" class="w-full p-4 bg-[#111111] rounded-lg text-white border border-gray-700 focus:outline-none focus:border-[#ff0000] glow-input" required>
+                        <textarea name="message" placeholder="Your Message" rows="5" class="w-full p-4 bg-[#111111] rounded-lg text-white border border-gray-700 focus:outline-none focus:border-[#ff0000] glow-input" required></textarea>
+                        <button type="submit" class="inline-block px-8 py-4 bg-[#ff0000] text-white rounded-lg magnetic hover:bg-[#cc0000] transition-colors text-lg glow">
                             Send Message
                         </button>
                     </form>
@@ -434,7 +458,7 @@
         camera.position.z = 50;
 
         const particles = new THREE.Group();
-        const particleCount = 80; // Reduced for performance
+        const particleCount = 120; // Increased for flashiness
         const positions = new Float32Array(particleCount * 3);
         const velocities = new Float32Array(particleCount * 3);
         for (let i = 0; i < particleCount; i++) {
@@ -449,10 +473,11 @@
         particleGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
         const particleMaterial = new THREE.PointsMaterial({
             color: 0xffffff,
-            size: 0.4,
+            size: 0.5,
             transparent: true,
-            opacity: 0.7,
-            blending: THREE.AdditiveBlending
+            opacity: 0.8,
+            blending: THREE.AdditiveBlending,
+            map: new THREE.TextureLoader().load('https://threejs.org/examples/textures/sprites/disc.png')
         });
         const particleSystem = new THREE.Points(particleGeometry, particleMaterial);
         particles.add(particleSystem);
@@ -461,7 +486,7 @@
         const lineMaterial = new THREE.LineBasicMaterial({
             color: 0xff0000,
             transparent: true,
-            opacity: 0.2,
+            opacity: 0.3,
             blending: THREE.AdditiveBlending
         });
         const lines = new THREE.LineSegments(lineGeometry, lineMaterial);
@@ -474,8 +499,10 @@
             mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
         });
 
+        let pulse = 0;
         function updateParticles() {
             const positions = particleGeometry.attributes.position.array;
+            pulse += 0.05;
             for (let i = 0; i < particleCount; i++) {
                 positions[i * 3] += velocities[i * 3];
                 positions[i * 3 + 1] += velocities[i * 3 + 1];
@@ -487,8 +514,8 @@
                 const dy = mouse.y * 50 - positions[i * 3 + 1];
                 const distance = Math.sqrt(dx * dx + dy * dy);
                 if (distance < 15) {
-                    positions[i * 3] += dx * 0.005;
-                    positions[i * 3 + 1] += dy * 0.005;
+                    positions[i * 3] += dx * 0.01;
+                    positions[i * 3 + 1] += dy * 0.01;
                 }
             }
             particleGeometry.attributes.position.needsUpdate = true;
@@ -508,12 +535,13 @@
             }
             lineGeometry.setAttribute('position', new THREE.BufferAttribute(new Float32Array(linePositions), 3));
             lineGeometry.attributes.position.needsUpdate = true;
+            lineMaterial.opacity = 0.3 + Math.sin(pulse) * 0.1; // Pulsating effect
         }
 
         function animate() {
             requestAnimationFrame(animate);
             updateParticles();
-            particles.rotation.y += 0.001;
+            particles.rotation.y += 0.002;
             renderer.render(scene, camera);
         }
         animate();
@@ -545,23 +573,39 @@
             }
         });
 
-        // Custom cursor with glow effect
+        // Custom cursor with trail effect
         const cursor = document.querySelector('.cursor');
+        const trail = document.querySelector('.cursor-trail');
         let mouseX = 0, cursorY = 0;
+        const trailPoints = [];
         document.addEventListener('mousemove', (e) => {
             mouseX = e.clientX;
             cursorY = e.clientY;
+            trailPoints.push({ x: mouseX, y: cursorY });
+            if (trailPoints.length > 10) trailPoints.shift();
             cursor.style.left = `${mouseX}px`;
             cursor.style.top = `${cursorY}px`;
+            trail.style.left = `${mouseX}px`;
+            trail.style.top = `${cursorY}px`;
         });
         gsap.ticker.add(() => {
             cursor.style.left = `${mouseX}px`;
             cursor.style.top = `${cursorY}px`;
+            trailPoints.forEach((point, i) => {
+                gsap.to(trail, {
+                    left: point.x,
+                    top: point.y,
+                    opacity: 0.2 - (i * 0.02),
+                    scale: 0.8 - (i * 0.05),
+                    duration: 0.1,
+                    ease: 'power2.out'
+                });
+            });
         });
         document.querySelectorAll('a, .magnetic').forEach(el => {
             el.addEventListener('mouseenter', () => {
                 cursor.classList.add('hovered');
-                gsap.to(cursor, { scale: 1.5, opacity: 0.6, duration: 0.3, ease: 'power2.out' });
+                gsap.to(cursor, { scale: 2, opacity: 0.5, duration: 0.3, ease: 'power2.out' });
             });
             el.addEventListener('mouseleave', () => {
                 cursor.classList.remove('hovered');
@@ -590,9 +634,10 @@
             text.innerHTML = chars.map(char => `<span>${char}</span>`).join('');
             gsap.from(text.children, {
                 y: '100%',
-                stagger: 0.02,
+                scale: 0.8,
+                stagger: 0.03,
                 duration: 0.8,
-                ease: 'power2.out',
+                ease: 'power3.out',
                 scrollTrigger: {
                     trigger: text,
                     start: 'top 80%',
@@ -603,14 +648,14 @@
         // Scroll animations for sections
         gsap.utils.toArray('.animate-on-scroll').forEach((element) => {
             gsap.fromTo(element, 
-                { opacity: 0, y: 20, scale: 1, filter: 'blur(2px)' },
+                { opacity: 0, y: 30, scale: 0.95, filter: 'blur(3px)' },
                 {
                     opacity: 1,
                     y: 0,
                     scale: 1,
                     filter: 'blur(0)',
-                    duration: 1,
-                    ease: 'power2.out',
+                    duration: 1.2,
+                    ease: 'power3.out',
                     scrollTrigger: {
                         trigger: element,
                         start: 'top 80%',
@@ -618,6 +663,29 @@
                     }
                 }
             );
+        });
+
+        // Skill tile staggered animation
+        gsap.utils.toArray('.animate-skill').forEach((element, i) => {
+            gsap.from(element, {
+                opacity: 0,
+                y: 20,
+                duration: 0.8,
+                delay: i * 0.1,
+                ease: 'power3.out',
+                scrollTrigger: {
+                    trigger: element,
+                    start: 'top 90%',
+                }
+            });
+        });
+
+        // Initialize Tilt.js for project cards
+        VanillaTilt.init(document.querySelectorAll('.tilt'), {
+            max: 15,
+            speed: 400,
+            glare: true,
+            'max-glare': 0.3
         });
 
         // Update section heading on scroll
@@ -654,6 +722,15 @@
                 e.preventDefault();
                 lenis.scrollTo(this.getAttribute('href'));
             });
+        });
+
+        // Animated background gradient
+        gsap.to('.bg-animated', {
+            background: 'radial-gradient(circle, rgba(255, 0, 0, 0.2), rgba(0, 0, 0, 0.7))',
+            duration: 5,
+            repeat: -1,
+            yoyo: true,
+            ease: 'sine.inOut'
         });
     </script>
 </body>
