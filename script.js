@@ -1,22 +1,8 @@
-// Three.js Data Mountain and Particles
+// Three.js Particles
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('data-mountain'), alpha: true });
+const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('particles'), alpha: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
-
-// Data Mountain (2,000+ cubes with pulsing, rotation, and glow)
-const dataPoints = [];
-const geometry = new THREE.BoxGeometry(0.1, 0.1, 0.1);
-const material = new THREE.MeshBasicMaterial({ color: 0xff0000 });
-for (let x = -7; x <= 7; x += 0.2) {
-    for (let z = -7; z <= 7; z += 0.2) {
-        const height = Math.exp(-(x * x + z * z) / 15); // Taller, sharper mountain
-        const cube = new THREE.Mesh(geometry, material);
-        cube.position.set(x, height * 8, z);
-        scene.add(cube);
-        dataPoints.push({ mesh: cube, baseHeight: height * 8, phase: Math.random() * Math.PI * 2 });
-    }
-}
 
 // Particles (1,000+ with orbits, glow, and mouse interaction)
 const particleCount = 1000;
@@ -45,21 +31,10 @@ document.addEventListener('mousemove', e => {
     mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
 });
 
-// Animation: Data mountain pulsing, rotating; particles orbiting
+// Animation: Particles orbiting
 function animate() {
     requestAnimationFrame(animate);
     const time = performance.now() * 0.001;
-    dataPoints.forEach(point => {
-        point.mesh.position.y = point.baseHeight * (1 + 0.3 * Math.sin(time + point.phase)); // Pulsing
-        point.mesh.rotation.y += 0.02; // Rotation
-        point.mesh.scale.set(1 + 0.2 * Math.sin(time + point.phase), 1 + 0.2 * Math.sin(time + point.phase), 1 + 0.2 * Math.sin(time + point.phase));
-        // Mouse interaction
-        const dx = point.mesh.position.x - mouseX * 10;
-        const dy = point.mesh.position.y - mouseY * 10;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 5) point.mesh.scale.set(1.5, 1.5, 1.5);
-        else point.mesh.scale.set(1, 1, 1);
-    });
     for (let i = 0; i < particleCount; i++) {
         positions[i * 3] += velocities[i * 3];
         positions[i * 3 + 1] += velocities[i * 3 + 1];
