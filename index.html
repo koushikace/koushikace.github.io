@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kousik Subraveti - Data Scientist</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Orbitron:wght@700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
@@ -15,11 +15,12 @@
         body { margin: 0; font-family: system-ui, -apple-system, sans-serif; scroll-behavior: smooth; }
         .fade-in { opacity: 0; transform: translateY(50px) rotate(5deg) scale(0.9); filter: blur(5px); transition: all 1s ease; }
         .fade-in.visible { opacity: 1; transform: translateY(0) rotate(0) scale(1); filter: blur(0); }
+        #home h1 { font-family: 'Orbitron', sans-serif; }
     </style>
 </head>
 <body>
-    <!-- 3D Data Mountain and Particles Canvas -->
-    <canvas id="data-mountain"></canvas>
+    <!-- Particles Canvas -->
+    <canvas id="particles"></canvas>
 
     <!-- Neural Cursor -->
     <div class="cursor"></div>
@@ -27,9 +28,7 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="logo">
-            <img src="images/logo.png" alt="Kousik Logo" class="logo-img shadow-glow">
-            <!-- Alternative: profile picture (uncomment if preferred) -->
-            <!-- <img src="images/profile.jpg" alt="Kousik Subraveti" class="logo-img shadow-glow"> -->
+            <img src="images/profile.jpg" alt="Kousik Subraveti" class="logo-img shadow-glow">
         </div>
         <ul class="nav-links">
             <li><a href="#home" class="glow">Home</a></li>
@@ -46,7 +45,7 @@
         <div class="container">
             <h1 class="text-split">Kousik Subraveti</h1>
             <p class="text-split">Data Scientist</p>
-            <p class="text-split"> Architecting cutting-edge AI solutions with expertise in NLP, Deep Learning, and cloud technologies.</p>
+            <p class="text-split">Architecting cutting-edge AI solutions with expertise in NLP, Deep Learning, and cloud technologies.</p>
             <a href="#projects" class="btn magnetic glow">Explore My Work</a>
             <div class="stats">
                 <div class="stat"><span class="text-split">4+</span><p>Years Experience</p></div>
@@ -63,7 +62,6 @@
             <h2 class="text-split">About Me</h2>
             <img src="images/profile.jpg" alt="Kousik Subraveti" class="profile-img mx-auto mb-6 magnetic glow">
             <p class="text-split">I’m Kousik Subraveti, a passionate Data Scientist with over four years of experience, evolving from a Python developer to a leader in AI/ML and Big Data Analytics. My expertise lies in crafting advanced NLP solutions, building scalable deep learning models, and deploying robust data pipelines on cloud platforms like AWS. I thrive on solving complex challenges—whether it’s detecting fraud, analyzing customer sentiment, or optimizing workflows—delivering measurable business impact. With a collaborative spirit and Agile expertise, I’m driven to create innovative, data-driven solutions that align with organizational goals and push the boundaries of AI.</p>
-            <a href="https://raw.githubusercontent.com/koushikace/koushikace.github.io/main/Kousik_CV.pdf" download="Kousik_CV.pdf" class="btn magnetic glow">Download CV</a>
         </div>
         <div class="section-divider"></div>
     </section>
@@ -78,18 +76,17 @@
                 <p>Led NLP initiatives to analyze unstructured customer feedback using BERT and LSTM models, improving sentiment analysis accuracy by 20% and enhancing customer satisfaction metrics.</p>
                 <p>Developed generative adversarial networks (GANs) with PyTorch to simulate fraudulent transaction patterns, boosting fraud detection precision by 15% across Citi’s payment systems.</p>
                 <p>Implemented Retrieval-Augmented Generation (RAG) with LLMs, integrating enterprise health data to deliver compliant, context-aware responses, reducing manual review time by 30%.</p>
+                <p>Designed and deployed CI/CD pipelines using Jenkins and AWS (Lambda, CloudWatch, SageMaker), streamlining model deployment and cutting release cycles by 25%.</p>
+                <p>Collaborated with cross-functional teams to build real-time monitoring dashboards with Tableau, enabling data-driven decisions for quality assurance.</p>
             </div>
             <div class="work-item project-card magnetic shadow-glow">
                 <h3>Python Developer - Global Logic (ANZ Bank)</h3>
                 <p>May 2021 - Sep 2022</p>
                 <p>Developed full-stack Django applications for ANZ’s banking services, optimizing personal finance and credit card processing workflows, reducing transaction errors by 12%.</p>
                 <p>Built customer segmentation models using scikit-learn and clustering techniques, improving cross-sell campaign conversion rates by 10%.</p>
-            </div>
-            <div class="work-item project-card magnetic shadow-glow">
-                <h3>Freelance Data Scientist - Various Clients</h3>
-                <p>Jan 2020 - Apr 2021</p>
-                <p>Designed predictive models for small businesses using Python and TensorFlow, forecasting sales trends with 85% accuracy to guide inventory planning.</p>
-                <p>Built ETL pipelines with Apache Airflow and PostgreSQL, automating data workflows and reducing processing time by 40% for client datasets.</p>
+                <p>Applied NLP with spaCy to classify merchant offers, enabling targeted promotions that increased customer engagement by 15%.</p>
+                <p>Created interactive data visualizations with Power BI, presenting actionable insights to stakeholders and reducing decision-making time by 20%.</p>
+                <p>Leveraged AWS EC2 and EMR for big data processing, enhancing data pipeline efficiency by 18% in a distributed environment.</p>
             </div>
         </div>
         <div class="section-divider"></div>
@@ -108,8 +105,35 @@
                 <p>Designed GANs with PyTorch to detect fraudulent transactions, increasing accuracy by 15%.</p>
             </div>
             <div class="project-card magnetic shadow-glow">
+                <h3>RAG Implementation (NTT Data)</h3>
+                <p>Integrated LLMs with enterprise health data using RAG, ensuring compliant responses and reducing review time by 30%.</p>
+            </div>
+            <div class="project-card magnetic shadow-glow">
+                <h3>Customer Segmentation Model (Global Logic)</h3>
+                <p>Built ML models to predict default risks, optimizing cross-sell strategies by 10%.</p>
+            </div>
+            <div class="project-card magnetic shadow-glow">
+                <h3>Merchant Offer Classification (Global Logic)</h3>
+                <p>Used NLP to classify merchant offers, boosting customer engagement by 15%.</p>
+            </div>
+            <div class="project-card magnetic shadow-glow">
                 <h3>Twitter Sentiment Analysis</h3>
                 <p>NLP-based project using Python and NLTK to analyze Twitter data for public opinion trends.</p>
+                <a href="https://github.com/koushikace" class="link glow">View on GitHub</a>
+            </div>
+            <div class="project-card magnetic shadow-glow">
+                <h3>Default of Credit Card Clients</h3>
+                <p>ML model using Python and scikit-learn to predict credit card default risks.</p>
+                <a href="https://github.com/koushikace" class="link glow">View on GitHub</a>
+            </div>
+            <div class="project-card magnetic shadow-glow">
+                <h3>Online Payment Fraud Detection</h3>
+                <p>TensorFlow-based model to detect fraudulent online payment transactions.</p>
+                <a href="https://github.com/koushikace" class="link glow">View on GitHub</a>
+            </div>
+            <div class="project-card magnetic shadow-glow">
+                <h3>NLP Techniques on Laptop Reviews</h3>
+                <p>Comparative analysis of NLP techniques on laptop review datasets for sentiment classification.</p>
                 <a href="https://github.com/koushikace" class="link glow">View on GitHub</a>
             </div>
         </div>
@@ -126,20 +150,88 @@
                     <div class="skill-back">Advanced Python for data science and web development.</div>
                 </div>
                 <div class="skill-tile magnetic shadow-glow">
+                    <div class="skill-front">Django</div>
+                    <div class="skill-back">Built full-stack applications with Django.</div>
+                </div>
+                <div class="skill-tile magnetic shadow-glow">
+                    <div class="skill-front">SQL/NoSQL</div>
+                    <div class="skill-back">Expert in relational and non-relational databases.</div>
+                </div>
+                <div class="skill-tile magnetic shadow-glow">
                     <div class="skill-front">NLP (BERT, spaCy)</div>
                     <div class="skill-back">Advanced NLP for sentiment analysis and text processing.</div>
                 </div>
                 <div class="skill-tile magnetic shadow-glow">
-                    <div class="skill-front">AWS</div>
-                    <div class="skill-back">Deployed scalable ML models on AWS.</div>
+                    <div class="skill-front">Deep Learning</div>
+                    <div class="skill-back">Built neural networks for complex tasks.</div>
                 </div>
                 <div class="skill-tile magnetic shadow-glow">
                     <div class="skill-front">TensorFlow</div>
                     <div class="skill-back">Developed ML models with TensorFlow.</div>
                 </div>
                 <div class="skill-tile magnetic shadow-glow">
+                    <div class="skill-front">PyTorch</div>
+                    <div class="skill-back">Used PyTorch for generative models.</div>
+                </div>
+                <div class="skill-tile magnetic shadow-glow">
+                    <div class="skill-front">Generative Models</div>
+                    <div class="skill-back">Created generative AI for fraud detection.</div>
+                </div>
+                <div class="skill-tile magnetic shadow-glow">
+                    <div class="skill-front">RAG</div>
+                    <div class="skill-back">Implemented RAG for LLM integration.</div>
+                </div>
+                <div class="skill-tile magnetic shadow-glow">
+                    <div class="skill-front">Time Series Analysis</div>
+                    <div class="skill-back">Analyzed temporal data for predictions.</div>
+                </div>
+                <div class="skill-tile magnetic shadow-glow">
+                    <div class="skill-front">AWS</div>
+                    <div class="skill-back">Deployed scalable ML models on AWS.</div>
+                </div>
+                <div class="skill-tile magnetic shadow-glow">
+                    <div class="skill-front">AWS CloudWatch</div>
+                    <div class="skill-back">Monitored applications with CloudWatch.</div>
+                </div>
+                <div class="skill-tile magnetic shadow-glow">
+                    <div class="skill-front">AWS Lambda</div>
+                    <div class="skill-back">Built serverless functions with Lambda.</div>
+                </div>
+                <div class="skill-tile magnetic shadow-glow">
+                    <div class="skill-front">AWS EC2</div>
+                    <div class="skill-back">Managed compute instances with EC2.</div>
+                </div>
+                <div class="skill-tile magnetic shadow-glow">
+                    <div class="skill-front">AWS EMR</div>
+                    <div class="skill-back">Processed big data with EMR.</div>
+                </div>
+                <div class="skill-tile magnetic shadow-glow">
+                    <div class="skill-front">ETL Pipelines</div>
+                    <div class="skill-back">Designed robust ETL pipelines.</div>
+                </div>
+                <div class="skill-tile magnetic shadow-glow">
+                    <div class="skill-front">Big Data</div>
+                    <div class="skill-back">Handled large-scale data processing.</div>
+                </div>
+                <div class="skill-tile magnetic shadow-glow">
+                    <div class="skill-front">CI/CD</div>
+                    <div class="skill-back">Automated deployments with CI/CD.</div>
+                </div>
+                <div class="skill-tile magnetic shadow-glow">
+                    <div class="skill-front">Jenkins</div>
+                    <div class="skill-back">Managed CI/CD with Jenkins.</div>
+                </div>
+                <div class="skill-tile magnetic shadow-glow">
+                    <div class="skill-front">Data Visualization</div>
+                    <div class="skill-back">Created insightful visualizations.</div>
+                </div>
+                <div class="skill-tile magnetic shadow-glow">
                     <div class="skill-front">Tableau</div>
                     <div class="skill-back">Built dashboards with Tableau.</div>
+                </div>
+                <div class="skill-tile magnetic shadow-glow">
+                    <div class="skill-front">Power BI</div>
+                    <div class="skill-back">Developed reports with Power BI.</div>
                 </div>
             </div>
         </div>
