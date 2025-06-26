@@ -22,11 +22,11 @@ const fragmentShader = `
         float dist = length(gl_PointCoord - vec2(0.5));
         if (dist > 0.5) discard;
         float intensity = 1.0 - smoothstep(0.0, 0.5, dist);
-        gl_FragColor = vec4(vColor, intensity * 0.8);
+        gl_FragColor = vec4(vColor, intensity * 0.9);
     }
 `;
 
-const particleCount = 800; // Reduced for performance
+const particleCount = 800;
 const particles = new THREE.BufferGeometry();
 const positions = new Float32Array(particleCount * 3);
 const sizes = new Float32Array(particleCount);
@@ -37,13 +37,13 @@ for (let i = 0; i < particleCount; i++) {
     positions[i * 3] = (Math.random() - 0.5) * 20;
     positions[i * 3 + 1] = (Math.random() - 0.5) * 20;
     positions[i * 3 + 2] = (Math.random() - 0.5) * 20;
-    sizes[i] = 0.2 + Math.random() * 0.3;
-    colors[i * 3] = 0.23; // Blue R
-    colors[i * 3 + 1] = 0.51; // Blue G
-    colors[i * 3 + 2] = 0.96; // Blue B
-    velocities[i * 3] = (Math.random() - 0.5) * 0.02;
-    velocities[i * 3 + 1] = (Math.random() - 0.5) * 0.02;
-    velocities[i * 3 + 2] = (Math.random() - 0.5) * 0.02;
+    sizes[i] = 0.15 + Math.random() * 0.25;
+    colors[i * 3] = 0.97; // White R (#f8fafc)
+    colors[i * 3 + 1] = 0.98; // White G
+    colors[i * 3 + 2] = 0.99; // White B
+    velocities[i * 3] = (Math.random() - 0.5) * 0.015;
+    velocities[i * 3 + 1] = (Math.random() - 0.5) * 0.015;
+    velocities[i * 3 + 2] = (Math.random() - 0.5) * 0.015;
 }
 
 particles.setAttribute('position', new THREE.BufferAttribute(positions, 3));
@@ -70,7 +70,7 @@ document.addEventListener('mousemove', e => {
     mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
 });
 
-// Animation: Particles with Orbital Paths
+// Animation: Particles with Breezy Orbital Paths
 function animate() {
     requestAnimationFrame(animate);
     const time = performance.now() * 0.001;
@@ -78,21 +78,21 @@ function animate() {
         positions[i * 3] += velocities[i * 3];
         positions[i * 3 + 1] += velocities[i * 3 + 1];
         positions[i * 3 + 2] += velocities[i * 3 + 2];
-        // Subtle orbital paths
-        positions[i * 3] += 0.01 * Math.sin(time + i * 0.1);
-        positions[i * 3 + 2] += 0.01 * Math.cos(time + i * 0.1);
+        // Breezy orbital paths
+        positions[i * 3] += 0.008 * Math.sin(time + i * 0.12);
+        positions[i * 3 + 2] += 0.008 * Math.cos(time + i * 0.12);
         // Mouse repulsion
         const dx = positions[i * 3] - mouseX * 8;
         const dz = positions[i * 3 + 2] - mouseY * 8;
         const dist = Math.sqrt(dx * dx + dz * dz);
-        if (dist < 4) {
-            velocities[i * 3] += dx * 0.0005;
-            velocities[i * 3 + 2] += dz * 0.0005;
+        if (dist < 3.5) {
+            velocities[i * 3] += dx * 0.0004;
+            velocities[i * 3 + 2] += dz * 0.0004;
         }
         // Boundary checks
-        if (Math.abs(positions[i * 3]) > 10) velocities[i * 3] *= -0.8;
-        if (Math.abs(positions[i * 3 + 1]) > 10) velocities[i * 3 + 1] *= -0.8;
-        if (Math.abs(positions[i * 3 + 2]) > 10) velocities[i * 3 + 2] *= -0.8;
+        if (Math.abs(positions[i * 3]) > 10) velocities[i * 3] *= -0.85;
+        if (Math.abs(positions[i * 3 + 1]) > 10) velocities[i * 3 + 1] *= -0.85;
+        if (Math.abs(positions[i * 3 + 2]) > 10) velocities[i * 3 + 2] *= -0.85;
     }
     particles.attributes.position.needsUpdate = true;
     renderer.render(scene, camera);
@@ -122,11 +122,11 @@ document.querySelectorAll('.magnetic, .btn, .social-icon, .project-card, .skill-
             sparkle.style.top = elem.getBoundingClientRect().top + 'px';
             document.body.appendChild(sparkle);
             gsap.to(sparkle, {
-                duration: 0.6,
-                x: elem.getBoundingClientRect().left + (Math.random() - 0.5) * 50,
-                y: elem.getBoundingClientRect().top + (Math.random() - 0.5) * 50,
+                duration: 0.7,
+                x: elem.getBoundingClientRect().left + (Math.random() - 0.5) * 40,
+                y: elem.getBoundingClientRect().top + (Math.random() - 0.5) * 40,
                 opacity: 0,
-                scale: 0.3,
+                scale: 0.4,
                 onComplete: () => sparkle.remove()
             });
         }
@@ -141,8 +141,8 @@ document.querySelectorAll('.text-split').forEach(text => {
         y: 0,
         scale: 1,
         rotate: 0,
-        stagger: 0.06,
-        duration: 1.2,
+        stagger: 0.05,
+        duration: 1.3,
         ease: 'power4.out',
         scrollTrigger: { trigger: text, start: 'top 80%' }
     });
@@ -163,7 +163,7 @@ VanillaTilt.init(document.querySelectorAll('.project-card'), {
     max: 12,
     speed: 400,
     glare: true,
-    'max-glare': 0.5,
+    'max-glare': 0.4,
     scale: 1.05
 });
 
@@ -172,6 +172,6 @@ VanillaTilt.init(document.querySelectorAll('.skill-tile'), {
     max: 15,
     speed: 300,
     glare: true,
-    'max-glare': 0.6,
+    'max-glare': 0.5,
     scale: 1.1
 });
