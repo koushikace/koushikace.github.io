@@ -6,9 +6,9 @@
 }
 
 body {
-    font-family: system-ui, -apple-system, sans-serif;
-    color: #ffffff;
-    background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+    font-family: 'Lato', sans-serif;
+    color: #1f2937;
+    background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
     line-height: 1.6;
     scroll-behavior: smooth;
     position: relative;
@@ -16,12 +16,12 @@ body {
 }
 
 h1, h2, h3 {
-    font-family: 'Montserrat', sans-serif;
-    color: #bfdbfe;
+    font-family: 'Inter', sans-serif;
+    color: #60a5fa;
 }
 
 #home h1 {
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 5.5rem;
 }
 
@@ -41,7 +41,7 @@ h1, h2, h3 {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(30, 58, 138, 0.8); /* Blue translucent */
+    background: rgba(255, 255, 255, 0.9); /* White translucent */
     padding: 0.5rem 2rem;
     display: flex;
     justify-content: space-between;
@@ -51,9 +51,9 @@ h1, h2, h3 {
 }
 
 .navbar.scrolled {
-    background: rgba(30, 58, 138, 0.85);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
-    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+    box-shadow: 0 4px 15px rgba(96, 165, 250, 0.3);
 }
 
 .logo-img {
@@ -66,7 +66,7 @@ h1, h2, h3 {
 
 .logo-img:hover, .profile-img:hover {
     transform: scale(1.1) rotate(3deg);
-    box-shadow: 0 0 25px rgba(59, 130, 246, 0.6);
+    box-shadow: 0 0 20px rgba(96, 165, 250, 0.5);
 }
 
 .nav-links {
@@ -76,35 +76,35 @@ h1, h2, h3 {
 }
 
 .nav-links a {
-    color: #ffffff;
+    color: #1f2937;
     text-decoration: none;
     font-size: 1.1rem;
     transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #3b82f6;
-    text-shadow: 0 0 12px rgba(59, 130, 246, 0.7);
+    color: #60a5fa;
+    text-shadow: 0 0 10px rgba(96, 165, 250, 0.6);
 }
 
 /* Neural Cursor */
 .cursor {
     width: 20px;
     height: 20px;
-    background: radial-gradient(circle, #ffffff, #3b82f6);
+    background: radial-gradient(circle, #f8fafc, #60a5fa);
     border-radius: 50%;
     position: fixed;
     pointer-events: none;
     z-index: 9999;
     transform: translate(-50%, -50%);
-    box-shadow: 0 0 30px rgba(59, 130, 246, 0.8);
-    animation: pulse-cursor 1.2s infinite;
+    box-shadow: 0 0 25px rgba(96, 165, 250, 0.7);
+    animation: pulse-cursor 1.5s infinite;
 }
 
 .cursor.hovered {
-    transform: translate(-50%, -50%) scale(2);
-    opacity: 0.8;
-    box-shadow: 0 0 40px rgba(59, 130, 246, 0.9);
+    transform: translate(-50%, -50%) scale(1.8);
+    opacity: 0.9;
+    box-shadow: 0 0 35px rgba(96, 165, 250, 0.8);
 }
 
 /* Sections */
@@ -146,7 +146,7 @@ p {
     height: 200px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid #3b82f6;
+    border: 3px solid #60a5fa;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     margin: 0 auto 1.5rem;
 }
@@ -166,7 +166,7 @@ p {
 .stat span {
     font-size: 2rem;
     font-weight: bold;
-    color: #3b82f6;
+    color: #60a5fa;
 }
 
 .stat p {
@@ -178,23 +178,23 @@ p {
 .btn {
     display: inline-block;
     padding: 1rem 2rem;
-    color: #ffffff;
+    color: #1f2937;
     text-decoration: none;
     font-size: 1.1rem;
-    background: linear-gradient(135deg, #3b82f6, #ffffff);
+    background: linear-gradient(135deg, #60a5fa, #f8fafc);
     border-radius: 8px;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     margin: 1rem;
-    animation: pulse-btn 1.5s infinite;
+    animation: pulse-btn 1.8s infinite;
 }
 
 .btn:hover {
     transform: scale(1.1) translateY(-5px);
-    box-shadow: 0 0 30px rgba(59, 130, 246, 0.8);
+    box-shadow: 0 0 25px rgba(96, 165, 250, 0.7);
 }
 
 .cv-download {
-    background: linear-gradient(135deg, #3b82f6, #ffffff);
+    background: linear-gradient(135deg, #60a5fa, #f8fafc);
 }
 
 /* Form */
@@ -214,8 +214,8 @@ input, textarea {
     border: none;
     border-radius: 8px;
     font-size: 1rem;
-    background: rgba(255, 255, 255, 0.1);
-    color: #ffffff;
+    background: rgba(255, 255, 255, 0.8);
+    color: #1f2937;
     transition: box-shadow 0.4s ease;
 }
 
@@ -225,7 +225,7 @@ textarea {
 }
 
 .glow-input:focus {
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.8);
+    box-shadow: 0 0 15px rgba(96, 165, 250, 0.7);
 }
 
 /* Social Icons */
@@ -238,19 +238,19 @@ textarea {
 
 .social-icon {
     font-size: 2rem;
-    color: #ffffff;
+    color: #1f2937;
     transition: color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .social-icon:hover {
-    color: #3b82f6;
-    transform: translateY(-8px) rotate(5deg);
-    box-shadow: 0 0 25px rgba(59, 130, 246, 0.7);
+    color: #60a5fa;
+    transform: translateY(-6px) rotate(4deg);
+    box-shadow: 0 0 20px rgba(96, 165, 250, 0.6);
 }
 
 /* Project Cards */
 .project-card {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(59, 130, 246, 0.2));
+    background: rgba(255, 255, 255, 0.9);
     padding: 2rem;
     border-radius: 12px;
     margin-bottom: 2rem;
@@ -258,9 +258,9 @@ textarea {
 }
 
 .project-card:hover {
-    transform: translateY(-10px) rotateX(6deg) rotateY(6deg);
-    box-shadow: 0 15px 30px rgba(59, 130, 246, 0.6);
-    background: linear-gradient(135deg, #3b82f6, #ffffff);
+    transform: translateY(-8px) rotateX(5deg) rotateY(5deg);
+    box-shadow: 0 12px 25px rgba(96, 165, 250, 0.4);
+    background: linear-gradient(135deg, #60a5fa, #f8fafc);
 }
 
 /* Skills Grid */
@@ -284,14 +284,14 @@ textarea {
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
-    transition: transform 1s ease, box-shadow 0.5s ease;
+    transition: transform 0.8s ease, box-shadow 0.5s ease;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 12px;
-    color: #ffffff;
+    color: #1f2937;
     font-size: 1.2rem;
 }
 
@@ -301,49 +301,50 @@ textarea {
 
 .skill-back {
     transform: rotateY(180deg);
-    background: linear-gradient(135deg, #3b82f6, #ffffff);
+    background: linear-gradient(135deg, #60a5fa, #f8fafc);
     font-size: 0.9rem;
+    color: #1f2937;
 }
 
 .skill-tile:hover .skill-front {
     transform: rotateY(-180deg);
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.8);
+    box-shadow: 0 0 15px rgba(96, 165, 250, 0.7);
 }
 
 .skill-tile:hover .skill-back {
     transform: rotateY(0deg);
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.8);
+    box-shadow: 0 0 15px rgba(96, 165, 250, 0.7);
 }
 
 /* Section Divider */
 .section-divider {
     width: 100%;
     height: 60px;
-    background: linear-gradient(to bottom, rgba(59, 130, 246, 0.3), transparent);
+    background: linear-gradient(to bottom, rgba(96, 165, 250, 0.2), transparent);
     position: absolute;
     bottom: 0;
     z-index: 5;
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
-    animation: wave-divider 3s infinite;
+    box-shadow: 0 0 15px rgba(96, 165, 250, 0.4);
+    animation: wave-divider 4s infinite;
 }
 
 /* Animations */
 @keyframes pulse-cursor {
     0% { transform: translate(-50%, -50%) scale(1); opacity: 0.9; }
-    50% { transform: translate(-50%, -50%) scale(1.3); opacity: 0.6; }
+    50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.7; }
     100% { transform: translate(-50%, -50%) scale(1); opacity: 0.9; }
 }
 
 @keyframes pulse-btn {
-    0% { transform: scale(1); box-shadow: 0 0 15px rgba(59, 130, 246, 0.5); }
-    50% { transform: scale(1.05); box-shadow: 0 0 25px rgba(59, 130, 246, 0.8); }
-    100% { transform: scale(1); box-shadow: 0 0 15px rgba(59, 130, 246, 0.5); }
+    0% { transform: scale(1); box-shadow: 0 0 10px rgba(96, 165, 250, 0.4); }
+    50% { transform: scale(1.05); box-shadow: 0 0 20px rgba(96, 165, 250, 0.7); }
+    100% { transform: scale(1); box-shadow: 0 0 10px rgba(96, 165, 250, 0.4); }
 }
 
 @keyframes wave-divider {
-    0% { transform: translateY(0); opacity: 0.7; }
-    50% { transform: translateY(10px); opacity: 1; }
-    100% { transform: translateY(0); opacity: 0.7; }
+    0% { transform: translateY(0); opacity: 0.6; }
+    50% { transform: translateY(8px); opacity: 0.9; }
+    100% { transform: translateY(0); opacity: 0.6; }
 }
 
 .fade-in {
