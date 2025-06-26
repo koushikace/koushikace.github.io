@@ -5,86 +5,175 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kousik Subraveti - Data Scientist</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+    <script src="https://kit.fontawesome.com/your-font-awesome-id.js" crossorigin="anonymous"></script>
     <style>
         /* Inline critical CSS for faster loading */
         body { margin: 0; font-family: system-ui, -apple-system, sans-serif; scroll-behavior: smooth; }
-        .fade-in { opacity: 0; transition: opacity 0.5s ease-in; }
-        .fade-in.visible { opacity: 1; }
+        .fade-in { opacity: 0; transform: translateY(50px) rotate(5deg) scale(0.9); filter: blur(5px); transition: all 1s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0) rotate(0) scale(1); filter: blur(0); }
     </style>
 </head>
 <body>
-    <!-- 3D Data Mountain Canvas -->
+    <!-- 3D Data Mountain and Particles Canvas -->
     <canvas id="data-mountain"></canvas>
+
+    <!-- Neural Cursor -->
+    <div class="cursor"></div>
 
     <!-- Navbar -->
     <nav class="navbar">
         <div class="logo">
-            <img src="images/logo.png" alt="Kousik Logo" class="logo-img">
+            <img src="images/logo.png" alt="Kousik Logo" class="logo-img shadow-glow">
             <!-- Alternative: profile picture (uncomment if preferred) -->
-            <!-- <img src="images/profile.jpg" alt="Kousik Subraveti" class="logo-img"> -->
+            <!-- <img src="images/profile.jpg" alt="Kousik Subraveti" class="logo-img shadow-glow"> -->
         </div>
         <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#work">Work</a></li>
-            <li><a href="#updates">Updates</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#home" class="glow">Home</a></li>
+            <li><a href="#about" class="glow">About</a></li>
+            <li><a href="#experience" class="glow">Experience</a></li>
+            <li><a href="#projects" class="glow">Projects</a></li>
+            <li><a href="#skills" class="glow">Skills</a></li>
+            <li><a href="#contact" class="glow">Contact</a></li>
         </ul>
     </nav>
 
     <!-- Home Section -->
     <section id="home" class="section fade-in">
         <div class="container">
-            <h1>Kousik Subraveti</h1>
-            <p>Data Scientist specializing in NLP and AWS</p>
+            <h1 class="text-split">Kousik Subraveti</h1>
+            <p class="text-split">Data Scientist</p>
+            <p class="text-split"> Architecting cutting-edge AI solutions with expertise in NLP, Deep Learning, and cloud technologies.</p>
+            <a href="#projects" class="btn magnetic glow">Explore My Work</a>
+            <div class="stats">
+                <div class="stat"><span class="text-split">4+</span><p>Years Experience</p></div>
+                <div class="stat"><span class="text-split">12+</span><p>Projects Delivered</p></div>
+                <div class="stat"><span class="text-split">25+</span><p>Skills Mastered</p></div>
+            </div>
         </div>
+        <div class="section-divider"></div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="section fade-in">
         <div class="container">
-            <h2>About Me</h2>
-            <p>I’m a Data Scientist with 4+ years of experience in Natural Language Processing, Machine Learning, and AWS. Passionate about building AI-driven solutions that drive impact.</p>
-            <a href="https://raw.githubusercontent.com/koushikace/koushikace.github.io/main/Kousik_CV.pdf" download="Kousik_CV.pdf" class="btn">Download CV</a>
+            <h2 class="text-split">About Me</h2>
+            <img src="images/profile.jpg" alt="Kousik Subraveti" class="profile-img mx-auto mb-6 magnetic glow">
+            <p class="text-split">I’m Kousik Subraveti, a passionate Data Scientist with over four years of experience, evolving from a Python developer to a leader in AI/ML and Big Data Analytics. My expertise lies in crafting advanced NLP solutions, building scalable deep learning models, and deploying robust data pipelines on cloud platforms like AWS. I thrive on solving complex challenges—whether it’s detecting fraud, analyzing customer sentiment, or optimizing workflows—delivering measurable business impact. With a collaborative spirit and Agile expertise, I’m driven to create innovative, data-driven solutions that align with organizational goals and push the boundaries of AI.</p>
+            <a href="https://raw.githubusercontent.com/koushikace/koushikace.github.io/main/Kousik_CV.pdf" download="Kousik_CV.pdf" class="btn magnetic glow">Download CV</a>
         </div>
+        <div class="section-divider"></div>
     </section>
 
-    <!-- Work Section -->
-    <section id="work" class="section fade-in">
+    <!-- Experience Section -->
+    <section id="experience" class="section fade-in">
         <div class="container">
-            <h2>Work</h2>
-            <div class="work-item">
-                <h3>NLP Model Development</h3>
-                <p>Built an NLP model improving text classification accuracy by 20% using BERT and AWS SageMaker.</p>
+            <h2 class="text-split">Experience</h2>
+            <div class="work-item project-card magnetic shadow-glow">
+                <h3>Machine Learning / Data Scientist - NTT Data (Citi Bank)</h3>
+                <p>Sep 2022 - Present</p>
+                <p>Led NLP initiatives to analyze unstructured customer feedback using BERT and LSTM models, improving sentiment analysis accuracy by 20% and enhancing customer satisfaction metrics.</p>
+                <p>Developed generative adversarial networks (GANs) with PyTorch to simulate fraudulent transaction patterns, boosting fraud detection precision by 15% across Citi’s payment systems.</p>
+                <p>Implemented Retrieval-Augmented Generation (RAG) with LLMs, integrating enterprise health data to deliver compliant, context-aware responses, reducing manual review time by 30%.</p>
             </div>
-            <div class="work-item">
-                <h3>Cloud Pipeline Automation</h3>
-                <p>Automated data pipelines with AWS Lambda, reducing processing time by 30%.</p>
+            <div class="work-item project-card magnetic shadow-glow">
+                <h3>Python Developer - Global Logic (ANZ Bank)</h3>
+                <p>May 2021 - Sep 2022</p>
+                <p>Developed full-stack Django applications for ANZ’s banking services, optimizing personal finance and credit card processing workflows, reducing transaction errors by 12%.</p>
+                <p>Built customer segmentation models using scikit-learn and clustering techniques, improving cross-sell campaign conversion rates by 10%.</p>
+            </div>
+            <div class="work-item project-card magnetic shadow-glow">
+                <h3>Freelance Data Scientist - Various Clients</h3>
+                <p>Jan 2020 - Apr 2021</p>
+                <p>Designed predictive models for small businesses using Python and TensorFlow, forecasting sales trends with 85% accuracy to guide inventory planning.</p>
+                <p>Built ETL pipelines with Apache Airflow and PostgreSQL, automating data workflows and reducing processing time by 40% for client datasets.</p>
             </div>
         </div>
+        <div class="section-divider"></div>
     </section>
 
-    <!-- Updates Section -->
-    <section id="updates" class="section fade-in">
+    <!-- Projects Section -->
+    <section id="projects" class="section fade-in">
         <div class="container">
-            <h2>Updates</h2>
-            <p>Recent project: Deployed a sentiment analysis model for real-time social media monitoring. <a href="https://github.com/koushikace" class="link">View on GitHub</a>.</p>
+            <h2 class="text-split">Projects</h2>
+            <div class="project-card magnetic shadow-glow">
+                <h3>Sentiment Analysis Model (NTT Data)</h3>
+                <p>Developed NLP models using BERT and LSTM to analyze customer feedback, improving operational workflows by 20%.</p>
+            </div>
+            <div class="project-card magnetic shadow-glow">
+                <h3>Fraud Detection Model (NTT Data)</h3>
+                <p>Designed GANs with PyTorch to detect fraudulent transactions, increasing accuracy by 15%.</p>
+            </div>
+            <div class="project-card magnetic shadow-glow">
+                <h3>Twitter Sentiment Analysis</h3>
+                <p>NLP-based project using Python and NLTK to analyze Twitter data for public opinion trends.</p>
+                <a href="https://github.com/koushikace" class="link glow">View on GitHub</a>
+            </div>
         </div>
+        <div class="section-divider"></div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section fade-in">
+        <div class="container">
+            <h2 class="text-split">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-tile magnetic shadow-glow">
+                    <div class="skill-front">Python</div>
+                    <div class="skill-back">Advanced Python for data science and web development.</div>
+                </div>
+                <div class="skill-tile magnetic shadow-glow">
+                    <div class="skill-front">NLP (BERT, spaCy)</div>
+                    <div class="skill-back">Advanced NLP for sentiment analysis and text processing.</div>
+                </div>
+                <div class="skill-tile magnetic shadow-glow">
+                    <div class="skill-front">AWS</div>
+                    <div class="skill-back">Deployed scalable ML models on AWS.</div>
+                </div>
+                <div class="skill-tile magnetic shadow-glow">
+                    <div class="skill-front">TensorFlow</div>
+                    <div class="skill-back">Developed ML models with TensorFlow.</div>
+                </div>
+                <div class="skill-tile magnetic shadow-glow">
+                    <div class="skill-front">Tableau</div>
+                    <div class="skill-back">Built dashboards with Tableau.</div>
+                </div>
+            </div>
+        </div>
+        <div class="section-divider"></div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="section fade-in">
         <div class="container">
-            <h2>Contact</h2>
-            <form>
-                <input type="text" placeholder="Name" required>
-                <input type="email" placeholder="Email" required>
-                <textarea placeholder="Message" required></textarea>
-                <button type="submit" class="btn">Send Message</button>
-            </form>
-            <a href="https://raw.githubusercontent.com/koushikace/koushikace.github.io/main/Kousik_CV.pdf" download="Kousik_CV.pdf" class="btn">Download CV</a>
+            <h2 class="text-split">Contact</h2>
+            <div class="contact-info">
+                <h3 class="text-split">Get in Touch</h3>
+                <p class="text-split">Excited to collaborate, discuss opportunities, or answer your questions. Reach out via email, LinkedIn, GitHub, or the form below!</p>
+                <p class="text-split">Email: <a href="mailto:[email protected]" class="link glow">[email protected]</a></p>
+                <p class="text-split">LinkedIn: <a href="https://linkedin.com/in/kousik-subraveti" class="link glow">linkedin.com/in/kousik-subraveti</a></p>
+                <p class="text-split">GitHub: <a href="https://github.com/koushikace" class="link glow">github.com/koushikace</a></p>
+                <a href="https://raw.githubusercontent.com/koushikace/koushikace.github.io/main/Kousik_CV.pdf" download="Kousik_CV.pdf" class="btn magnetic glow cv-download">Download My CV</a>
+            </div>
+            <div class="contact-form">
+                <h3 class="text-split">Send a Message</h3>
+                <form>
+                    <input type="text" placeholder="Name" class="glow-input" required>
+                    <input type="email" placeholder="Email" class="glow-input" required>
+                    <textarea placeholder="Message" class="glow-input" required></textarea>
+                    <button type="submit" class="btn magnetic glow">Send Message</button>
+                </form>
+            </div>
+            <div class="socials">
+                <a href="mailto:[email protected]" class="social-icon glow"><i class="fas fa-envelope"></i></a>
+                <a href="https://linkedin.com/in/kousik-subraveti" class="social-icon glow"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/koushikace" class="social-icon glow"><i class="fab fa-github"></i></a>
+            </div>
         </div>
+        <div class="section-divider"></div>
     </section>
 
     <script src="script.js"></script>
