@@ -19,14 +19,20 @@ h1, h2, h3 {
     font-family: 'Montserrat', sans-serif;
 }
 
-/* 3D Data Mountain and Particles Canvas */
-#data-mountain {
+#home h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 5.5rem;
+}
+
+/* Particles Canvas */
+#particles {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: 2;
+    background: radial-gradient(circle, rgba(255, 0, 0, 0.2), rgba(0, 0, 0, 0.7));
 }
 
 /* Navbar */
